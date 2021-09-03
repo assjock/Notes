@@ -1,0 +1,71 @@
+\section{Sets and their Operations}
+
+$A$ set is a collection of well-defined objects.
+
+If $A$ is a set, we write $a \in A$ to express element $a$ belongs to set $A$, the negetive proposition of which is $a \notin A$. We use the symbol $\oslash$ to denote the empty set, that is, the set with no elements.
+
+\begin{theorem}[Cantor]\label{thm:Russell's paradox}
+    There is no set contains all the sets.
+\end{theorem}
+\begin{proof}
+    We assume $P(M)$ represents $M$ doesn't contain itself.
+
+    Consider $K=\{M|P(M)\}$ which is made of \textbf{sets} $M$ that satisfies  $P$. Assuming $K$ is a set, then either $P(K)$ or $\lnot P(K)$ is true.
+    
+    If $P(K)$ is true, $K$ doesn't contain itself,but because of the definition of $K$, $K$ is belong to $K$, which means $\lnot P(M)$.
+
+    If $\lnot P(M)$ is ture, it's easy to find the similar conclusion.
+
+    So to the contrary, $K$ is not a set. This reveals a set can't contain all the sets.
+\end{proof}
+
+\thmref{thm:Russell's paradox} is a typical paradox called Russell's paradox.
+
+$\forall $and $\exists $ are logical symbols to describe
+\begin{table}[H]
+    \centering
+    \caption{Universial and Exsitential Quantifications}
+    \begin{tabular}{|c|c|}\hline
+        Symbols&Meanings\\\hline
+        $\forall x \in A$&For all elements $x$ in $A$\\
+        $\exists x \in A$&There exist at least one element $x$ in $A$\\
+        \hline
+    \end{tabular}
+\end{table}
+To show the inclusion relation of two sets, we often use the Symbol $A \subset B$, which means set $A$ is a \textbf{subset} of set $B$ (All the elements in $A$ also belong to $B$).We indicate that $A$ is not a subset of $B$ by this notaion: $A \not\subset B$.
+\[(A\subset B ):=\forall x((x\in A)\Rightarrow (x\in B))\]
+
+We define the equal relation between two sets, using the symbol $=$:
+\[A=B =:(A\subset B)\wedge(B\subset A)\]
+We often use this definition to prove $A=B$.
+Symbol $\neq$ denotes the negetive proposition of equal.
+
+$A$ is a \textbf{proper subset} of $B$, if $A$ is a subset of $B$, and $A\neq B$, denoted by the symbol $\subseteq $.
+
+If $A$ and $B$ are sets, then their \textbf{union}, denoted by $A \cup  B$,is the set of all elements that are elements of either $A$ or $B$:
+\[(A\cup B)=:\{x\in M|(x\in A)\vee (x\in B)\}\]
+Clearly, $A\cup B=B\cup A$.
+\begin{figure}
+    \centering
+    \caption{Union of two sets}
+    \input{img/img2.pdf_tex}
+\end{figure}
+
+If $A$ and $B$ are sets, then their \textbf{intersection}, denoted by $A \cap  B$,contains all the elements in both $A$ and $B$:
+\[(A\cap B)=:\{x\in M|(x\in A)\wedge (x\in B)\}\]
+Also, we have $A\cap B=B\cap A$.
+\begin{figure}[h] 
+    \centering
+    \caption{Intersection of two sets}
+    \input{img/img1.pdf_tex}
+\end{figure}
+
+For $B\subset A$, we use the donation $C_{A}B$ to represent the set contains all the elements which belongs to $A$ but not belong to $B$.
+\[C_{A}B=:\{x\in M|(x\in A)\wedge(x\not\in B)\}\]
+\begin{figure}[h]
+    \centering
+    \caption{Complement}
+    \input{img/img3.pdf_tex}
+\end{figure}
+
+We can also denote it as the symbol $A\backslash B$.

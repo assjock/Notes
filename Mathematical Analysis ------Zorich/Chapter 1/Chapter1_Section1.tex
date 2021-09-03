@@ -1,0 +1,86 @@
+\section{Logical Symbols}
+The logical symbols are a kind of symbols using for theoretical statements.
+    \begin{table}[H]
+        \centering
+        \caption{Frequently-used Logical Symbols}
+        \begin{tabular}{|c|c|}\hline
+            Symbols&Meanings\\\hline
+            $L\Longrightarrow P$& Proposition $L$ is contained in proposition $P$\\
+            $L \Longleftrightarrow P $&Proposition $L$ is equivalent to proposition $P$\\
+            $\lnot P$&Not $P$\\
+            $L\wedge P$&Proposition $L$ and proposition $P$\\
+            $L \vee P$&Proposition $L$ or proposition $P$\\
+            \hline
+        \end{tabular}
+    \end{table}
+e.g.\[((A\Longrightarrow B)\wedge(\lnot B)\Longrightarrow (\lnot A) )\]
+
+
+stands for `` if $A$ is contained in  $B$,and $B$ is not true,then $A$ is not true''.
+
+We also call $ A \Longleftrightarrow B$ ``$A$ is the necessary and suffiecent condition of $B$''.
+
+The typical math proposition is like ``$A\Longrightarrow B$''.In order to prove this proposition ,we can use the  implication relationship \[A\Longrightarrow C_1\Longrightarrow \cdots \Longrightarrow C_n\Longrightarrow B\]The every implication relationship in this chain is general truth or proved proposition.
+
+\begin{table}[H]
+    \centering
+    \caption{Truth Table}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multirow{2}{*}{$\lnot A$}                       & $A$                    & 0         & 1             \\ \cline{2-4} 
+                                                 & $\lnot A$            & 1            & 0             \\ \hline
+        \multirow{3}{*}{$A \vee B$}                       &       \diagbox{$A$}{$B$}     &    0        &       1        \\ \cline{2-4} 
+                                                 &          0       &   0         &        1        \\ \cline{2-4} 
+                                                 &       1         &  1        &        1       \\ \hline
+        \multirow{3}{*}{$A \wedge B$}                       &        \diagbox{$A$}{$B$}    &           0&        1          \\ \cline{2-4} 
+                                                 &     0         &     0          &      0          \\ \cline{2-4} 
+                                                 &        1        &                0       &    1       \\ \hline
+        \multirow{3}{*}{$A\Longrightarrow B$}                      &  \diagbox{$A$}{$B$} & 0  &  1 \\ \cline{2-4} 
+                                                & 0  &  1 &  1 \\ \cline{2-4} 
+                                                & 1  &  0 & 1  \\ \hline
+        \end{tabular}
+    \end{table}
+\begin{question}$\lnot (A\wedge B )\Leftrightarrow (\lnot A \vee \lnot B)$.
+\end{question}
+\begin{proof}
+    (Use the truth table)
+
+    If $A$ is ture, $B$ is ture, $A\wedge B$ is ture. $\lnot (A\wedge B)$ is false.$\lnot A $ is false,$\lnot B$ is false, $(\lnot A \vee \lnot B)$ is false.
+
+    If $A$ is ture, $B$ is false, $A\wedge B$ is false. $\lnot (A\wedge B)$ is true.$\lnot A $ is false,$\lnot B$ is true, $(\lnot A \vee \lnot B)$ is ture.
+
+    If $A$ is flase, $B$ is true, $A\wedge B$ is false. $\lnot (A\wedge B)$ is true.$\lnot A $ is true,$\lnot B$ is false, $(\lnot A \vee \lnot B)$ is ture.
+
+    If $A$ is false, $B$ is false, $A\wedge B$ is false. $\lnot (A\wedge B)$ is true.$\lnot A $ is true,$\lnot B$ is true, $(\lnot A \vee \lnot B)$ is ture.
+
+    So
+    \[\lnot (A\wedge B )\Leftrightarrow (\lnot A \vee \lnot B)\]
+\end{proof}    
+
+\begin{question}
+    $(A \Rightarrow B)\Leftrightarrow\lnot A \vee B$.
+\end{question}
+\begin{proof}
+    Firstly, we confirm the truth of \[(A \Rightarrow B)\Rightarrow\lnot A \vee B\]
+
+    If $(A \Rightarrow B)$ is false, then $\lnot A \vee B$ is true.
+
+    If $(A \Rightarrow B)$ is ture ,then we have two posibilities. The first is $A$ is ture, $B$ is true, so $\lnot A \vee B$ is true. The second is $A$ is false,then $B$ can be true or false, but $\lnot A \vee B$ will be true.
+
+    Hence, $(A \Rightarrow B)\Rightarrow\lnot A \vee B$.
+
+    Secondly, we prove \[(A \Rightarrow B)\Leftarrow\lnot A \vee B\]
+
+    If $\lnot A \vee B$ is false, then $(A \Rightarrow B)$ is true.
+
+    If $\lnot A \vee B$ is true, we have
+    \begin{enumerate}
+        \item $\lnot A$ is true, $B$ is false, then, $A$ is false, $(A \Rightarrow B)$ is true.
+        \item $\lnot A$ is false, $B$ is true, then, $A$ is true, $(A \Rightarrow B)$ is true.
+        \item $\lnot A$ is true, $B$ is true, then, $A$ is false, $(A \Rightarrow B)$ is true.
+    \end{enumerate}
+
+    So $(A \Rightarrow B)\Leftarrow\lnot A \vee B$.
+\end{proof}
+
+

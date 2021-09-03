@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="img2.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     showborder="false"
+     inkscape:zoom="2.261442"
+     inkscape:cx="59.475326"
+     inkscape:cy="101.48392"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid9"
+       dotted="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="图层 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.123472px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 0,0 V 46.302083 H 46.302083 V 0 H 0"
+       id="path433" />
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:0.192489;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path2527"
+       cx="16.616987"
+       cy="24.789635"
+       rx="12.176967"
+       ry="11.374777" />
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:0.180894;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path2529"
+       cx="31.56167"
+       cy="19.567949"
+       rx="13.202609"
+       ry="10.80942" />
+    <path
+       style="fill:#808080;stroke:#000000;stroke-width:0.0953422;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 26.463462,29.37844 c -2.628531,-0.941002 -4.814316,-2.524179 -6.210512,-4.498313 -0.565134,-0.799063 -1.214734,-2.165793 -1.471022,-3.09497 -0.299338,-1.085246 -0.297786,-3.365396 0.003,-4.460157 0.224457,-0.816853 1.00741,-2.495663 1.366892,-2.930894 l 0.219299,-0.265508 0.571154,0.19656 c 3.062372,1.0539 5.79889,3.643916 6.955171,6.582817 0.549478,1.3966 0.65336,2.004173 0.656906,3.842024 0.0029,1.501541 -0.02435,1.818118 -0.220354,2.55964 -0.286694,1.084648 -0.789551,2.286913 -0.969352,2.317593 -0.07682,0.01311 -0.482371,-0.09885 -0.901217,-0.248792 z"
+       id="path4513" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.81093px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.123472"
+       x="18.009699"
+       y="22.083599"
+       id="text8112"><tspan
+         sodipodi:role="line"
+         id="tspan8110"
+         style="font-size:1.81093px;stroke-width:0.123472"
+         x="18.009699"
+         y="22.083599">$A \cap B$</tspan></text>
+    <path
+       style="fill:#808080;stroke:#000000;stroke-width:0.442892"
+       d="m 53.284586,135.10475 c -17.929107,-3.89416 -30.919245,-16.16739 -35.005591,-33.0737 -1.08929,-4.506678 -0.991313,-12.610106 0.211394,-17.483823 1.962099,-7.950995 5.826965,-14.460033 12.163367,-20.485009 5.937541,-5.64572 12.420237,-9.233797 20.33329,-11.254178 6.607057,-1.686932 15.228351,-1.854396 22.093683,-0.429159 l 2.546075,0.528563 -1.147728,1.846805 c -2.062056,3.318055 -3.737248,7.34283 -4.595223,11.04038 -1.041835,4.489899 -1.437861,15.390245 -0.569672,15.67982 0.773542,0.258008 0.69166,0.995055 -0.110549,0.995055 -0.986609,0 -0.804717,0.654307 0.442196,1.5907 0.608019,0.456603 1.105489,1.037307 1.105489,1.290453 0,0.950772 3.220503,7.131301 5.05688,9.70475 2.310282,3.237572 7.59518,8.331993 11.137646,10.736223 3.461481,2.34926 8.962277,5.06431 12.769295,6.30256 1.702452,0.55374 3.165712,1.06673 3.251692,1.13998 0.42738,0.36412 -4.767332,7.06812 -7.573921,9.77447 -5.707748,5.50386 -12.332658,9.2467 -20.266843,11.45002 -5.823939,1.61731 -15.985878,1.91791 -21.84148,0.64609 z"
+       id="path997"
+       transform="scale(0.26458333)" />
+    <path
+       style="fill:#808080;stroke:#000000;stroke-width:0.442892"
+       d="m 112.38187,113.86277 c -1.54556,-0.21787 -3.8817,-0.61859 -5.19141,-0.89048 l -2.3813,-0.49436 0.71405,-1.38082 c 1.24132,-2.40045 2.72073,-7.21787 3.27862,-10.67625 0.74366,-4.609908 0.31981,-13.767694 -0.81038,-17.50916 C 103.97467,69.614236 94.620898,59.235432 81.902416,53.963699 l -4.037168,-1.673382 1.196639,-1.572009 c 1.712565,-2.249776 7.148653,-6.782731 10.726768,-8.944661 4.365029,-2.637389 10.078923,-4.998649 15.453925,-6.386317 6.15184,-1.588223 16.96585,-2.02014 23.54111,-0.940244 14.2381,2.338414 26.82842,9.945582 33.70042,20.362054 4.24136,6.428997 5.98407,12.0442 5.98936,19.298459 0.0135,18.490818 -15.69964,34.636381 -38.05351,39.100711 -4.07982,0.81479 -14.27625,1.18473 -18.03809,0.65446 z"
+       id="path1036"
+       transform="scale(0.26458333)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.93887px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.123472"
+       x="8.6032972"
+       y="27.73638"
+       id="text26232"><tspan
+         sodipodi:role="line"
+         id="tspan26230"
+         style="stroke-width:0.123472;fill:#000000"
+         x="8.6032972"
+         y="27.73638">$A$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.93887px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.123472"
+       x="30.444929"
+       y="20.626789"
+       id="text29366"><tspan
+         sodipodi:role="line"
+         id="tspan29364"
+         style="fill:#000000;stroke-width:0.123472"
+         x="30.444929"
+         y="20.626789">$B$</tspan></text>
+  </g>
+</svg>
