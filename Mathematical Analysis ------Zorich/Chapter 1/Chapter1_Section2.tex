@@ -97,3 +97,34 @@ For $B\subset A$, we can also denote it as the symbol $C_{A}B$.
     \end{aligned}\]
     The other hand of this problem is the same.
 \end{proof}
+\begin{tips}
+    \begin{enumerate}
+        \item $(A\subset C)\wedge(B\subset C)\Leftrightarrow((A\cup B)\subset C)$;
+        \item $(C\subset A)\wedge(C\subset B)\Leftrightarrow (C\subset(A\cap B))$;
+        \item $C_{M}(C_{M}A)=A$;
+        \item $(A\subset C_{M}B)\Leftrightarrow (B\subset C_{M}A)$;
+        \item $(A\subset B)\Leftrightarrow(C_{M}A\supset C_{M}B)$.
+    \end{enumerate}
+\end{tips}
+\begin{question}
+    $A\cup (B\cap C)=(A\cup B)\cap (A\cup C)$.
+\end{question}
+\begin{proof}
+    \[
+        A\cup (B\cap C)\Leftrightarrow((x\in A)\vee ((x\in B))\wedge(x\in C))
+    \]
+    \[((x\in A)\vee(x\in B))\wedge((x\in A)\vee(x\in C))\Leftrightarrow(A\cup B)\cap (A\cup C)\]
+    So, we should prove:
+    \[((x\in A)\vee ((x\in B))\wedge(x\in C))\Leftrightarrow((x\in A)\vee(x\in B))\wedge((x\in A)\vee(x\in C))\]
+    That's the same as:
+    \[(A\vee(B\wedge C))\Leftrightarrow((A\vee B)\wedge(A\vee C))\]
+    It's easy to prove with the help of truth table.
+\end{proof}
+\begin{tips}
+    \begin{enumerate}
+        \item $A\cup (B\cup C)=(A\cup B)\cup C=:A\cup B\cup C$;
+        \item $A\cap (B\cap C)=(A\cap B)\cap C=:A\cap B\cap C$;
+        \item $A\cup (B\cap C)=(A\cup B)\cap (A\cup C)$;
+        \item $A\cap (B\cup C)=(A\cap B)\cup (A\cap C)$.
+    \end{enumerate}
+\end{tips}
