@@ -62,7 +62,7 @@ Also, we have $A\cap B=B\cap A$.
 
 We use the donation $A\backslash B$ to represent the set contains all the elements which belongs to $A$ but not belong to $B$.
 \[A\backslash B=:\{x\in M|(x\in A)\wedge(x\not\in B)\}\]
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \caption{Complement}
     \input{img/img3.pdf_tex}
@@ -77,12 +77,23 @@ For $B\subset A$, we can also denote it as the symbol $C_{A}B$.
 \begin{proof}We prove the first one.
     \[
     \begin{aligned}
-        &(x\in C_{M}(A\cup B))\Rightarrow (x \not\in (A\cup B))\\ &\Rightarrow ((x\not\in A)\wedge(x\not\in B))
-        \Rightarrow((x\in C_{m}A)\wedge(x\in C_{M}B))\\ &\Rightarrow((x\in C_{m}A)\cap(x\in C_{M}B))
+        &(x\in C_{M}(A\cup B))\Rightarrow (x \not\in (A\cup B))\\ \Rightarrow& ((x\not\in A)\wedge(x\not\in B))
+        \Rightarrow((x\in C_{m}A)\wedge(x\in C_{M}B))\\ \Rightarrow&((x\in C_{m}A)\cap(x\in C_{M}B))
     \end{aligned}\]
     So we have proved $C_{M}(A\cup B)\subset C_{M}A\cap C_{M}B$. On the other hand:
     \[\begin{aligned}
-        &((x\in C_{m}A)\cap(x\in C_{M}B))\Rightarrow ((x\in C_{m}A)\wedge(x\in C_{M}B))\\ &\Rightarrow ((x\not\in A)\wedge(x\not\in B))\Rightarrow (x \not\in (A\cup B))\\ &\Rightarrow(x\in C_{M}(A\cup B))
+        &((x\in C_{m}A)\cap(x\in C_{M}B))\Rightarrow ((x\in C_{m}A)\wedge(x\in C_{M}B))\\ \Rightarrow& ((x\not\in A)\wedge(x\not\in B))\Rightarrow (x \not\in (A\cup B))\\ \Rightarrow&(x\in C_{M}(A\cup B))
     \end{aligned}\]
     That's the same as $C_{M}(A\cup B)=C_{M}A\cap C_{M}B$.
+\end{proof}
+
+\begin{question}
+    $(A\subset C_{M}B)\Leftrightarrow (B\subset C_{M}A)$.
+\end{question}
+\begin{proof}
+    \[\begin{aligned}
+        &(A\subset C_{M}B)\Rightarrow ((x\in A)\Rightarrow((x\not\in B))\wedge(x\in M))\\ \Rightarrow& (\lnot(x\in A)\Leftarrow \lnot((x\not\in B))))\\
+        \Rightarrow&((x\in B)\Rightarrow(x\not\in A))\Rightarrow(B\subset C_{M}A)
+    \end{aligned}\]
+    The other hand of this problem is the same.
 \end{proof}
