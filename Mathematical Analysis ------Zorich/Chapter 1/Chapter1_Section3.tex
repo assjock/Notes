@@ -1,8 +1,20 @@
 \section{Function}
 
-A function or mapping $f$ from $X$ to $Y$ is a rule, or formula, or assignment, or relation of association that assigns to each $x\in X$ a unique element $y\in Y$.
+A \textbf{function} or \textbf{mapping} $f$ from $X$ to $Y$ is a rule, or formula, or assignment, or relation of association that assigns to each $x\in X$ a unique element $y\in Y$.
 
-Here we call $X$ the domain of the function $f$,. Elements $x\in X$ are the arguments  of the function. The elements $y\in Y$ are the dependent varibles(the image of $x$), denoted by the symbol $f(x)$.
-The set $Y$ is made of the value of the function,which called the range or codomain of the function $f$.
-\[f(X):=\{y\in Y|\, \exists x((x\in X)\wedge(y=f(x))\}\]
-We often use the symbol \[f:X\longrightarrow Y,X\stackrel{f}{\longrightarrow}Y\]to donate the function $f$.
+Here we call $X$ the domain of the function $f$,. Elements $x\in X$ are the \textbf{arguments}  of the function. The elements $y\in Y$ are the \textbf{dependent varibles}(the \textbf{image} of $x$), denoted by the symbol $f(x)$.
+The set $Y$ is made of the value of the function,which called the \textbf{range} or \textbf{codomain} of the function $f$.
+\[f(X):=\{y\in Y|\, \exists x\ ((x\in X)\wedge(y=f(x))\}\]
+We often use the symbol \[f:X\longrightarrow Y,X\stackrel{f}{\longrightarrow}Y\]to denote the function $f$.
+
+%Todo：延拓 泛函 平移算子
+
+While for a subset $D\subset X$, which is filled with the image of elements in $B\in Y$, we denote it as
+\[D=f^{-1}(B):=\{x\in X|f(x)\in B\}\]
+We call it the \textbf{preimage} or \textbf{inverse image} of set $B$.
+Mappings $f:X\rightarrow Y$ can be divided into several types:
+\begin{enumerate}
+    \item the \textbf{surjection}: $f(X)=Y$;
+    \item the \textbf{injection}: $\forall x_{1},x_{2}\in X\ (f(x_{1})=f(x_{2})\Rightarrow x_{1}=x_{2})$;
+    \item the \textbf{bijection}: the mapping that is both surjection and surjection.
+\end{enumerate}

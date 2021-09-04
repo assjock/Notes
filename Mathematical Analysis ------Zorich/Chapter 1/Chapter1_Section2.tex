@@ -1,8 +1,8 @@
 \section{Sets and their Operations}
 
-$A$ set is a collection of well-defined objects.
+$A$ \textbf{set} is a collection of well-defined objects.
 
-If $A$ is a set, we write $a \in A$ to express element $a$ belongs to set $A$, the negetive proposition of which is $a \notin A$. We use the symbol $\oslash$ to denote the empty set, that is, the set with no elements.
+If $A$ is a set, we write $a \in A$ to express element $a$ belongs to set $A$, the negetive proposition of which is $a \notin A$. We use the symbol $\oslash$ to denote the \textbf{empty set}, that is, the set with no elements.
 
 \begin{theorem}[Cantor]\label{thm:Russell's paradox}
     There is no set contains all the sets.
@@ -10,7 +10,7 @@ If $A$ is a set, we write $a \in A$ to express element $a$ belongs to set $A$, t
 \begin{proof}
     We assume $P(M)$ represents $M$ doesn't contain itself.
 
-    Consider $K=\{M|P(M)\}$ which is made of \textbf{sets} $M$ that satisfies  $P$. Assuming $K$ is a set, then either $P(K)$ or $\lnot P(K)$ is true.
+    Consider $K=\{M|P(M)\}$ which is made of sets $M$ that satisfies  $P$. Assuming $K$ is a set, then either $P(K)$ or $\lnot P(K)$ is true.
     
     If $P(K)$ is true, $K$ doesn't contain itself,but because of the definition of $K$, $K$ is belong to $K$, which means $\lnot P(M)$.
 
@@ -19,7 +19,7 @@ If $A$ is a set, we write $a \in A$ to express element $a$ belongs to set $A$, t
     So to the contrary, $K$ is not a set. This reveals a set can't contain all the sets.
 \end{proof}
 
-\thmref{thm:Russell's paradox} is a typical paradox called Russell's paradox.
+\thmref{thm:Russell's paradox} is a typical \textbf{paradox} called Russell's paradox.
 
 $\forall $and $\exists $ are logical symbols to describe
 \begin{table}[H]
@@ -60,7 +60,7 @@ Also, we have $A\cap B=B\cap A$.
     \input{img/img1.pdf_tex}
 \end{figure}
 
-We use the donation $A\backslash B$ to represent the set contains all the elements which belongs to $A$ but not belong to $B$.
+We use the denotion $A\backslash B$ to represent the set contains all the elements which belongs to $A$ but not belong to $B$, we call it the \textbf{defference set}.
 \[A\backslash B:=\{x\in M|(x\in A)\wedge(x\not\in B)\}\]
 \begin{figure}[ht]
     \centering
@@ -129,7 +129,7 @@ In this question, we also establish a relation between logical operation and set
         \item $A\cap (B\cup C)=(A\cap B)\cup (A\cap C)$.
     \end{enumerate}
 \end{tips}
-We denote two sets' Cartesian product as $A \times B $.
+We denote two sets' \textbf{Cartesian product} as $A \times B $.
 $A\times B$ is a set contains ordered pairs, which means $A\times B\neq B\times A$.
 \[A\times B:=\{(x,y)|(x\in A)\wedge(y\in B)\}\]
 \begin{question}
@@ -152,7 +152,7 @@ $A\times B$ is a set contains ordered pairs, which means $A\times B\neq B\times 
     \[\begin{aligned}
         (A\times B)\subset (X\times Y)\Rightarrow(((a\in A)\wedge(b\in B))\Rightarrow((x\in X)\wedge(y\in Y)))
     \end{aligned}\]
-    In this formula, we will get \[((a\in A)\Rightarrow(x\in X))\wedge((b\in B)\Rightarrow(y\in Y))\]. That's because $A\times B$ is a ordered pair, which means there is a consistent one-to-one match between $A$ and $X$, $B$ and $Y$.
+    In this formula, we will get \[((a\in A)\Rightarrow(x\in X))\wedge((b\in B)\Rightarrow(y\in Y))\] That's because $A\times B$ is a ordered pair, which means there is a consistent one-to-one match between $A$ and $X$, $B$ and $Y$.
     
     The proof of the other hand is similar.
 \end{proof}
