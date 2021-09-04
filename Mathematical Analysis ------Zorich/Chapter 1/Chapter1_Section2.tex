@@ -36,14 +36,14 @@ To show the inclusion relation of two sets, we often use the Symbol $A \subset B
 \[(A\subset B ):=\forall x((x\in A)\Rightarrow (x\in B))\]
 
 We define the equal relation between two sets, using the symbol $=$:
-\[A=B =:(A\subset B)\wedge(B\subset A)\]
+\[A=B :=(A\subset B)\wedge(B\subset A)\]
 We often use this definition to prove $A=B$.
 Symbol $\neq$ denotes the negetive proposition of equal.
 
 $A$ is a \textbf{proper subset} of $B$, if $A$ is a subset of $B$, and $A\neq B$, denoted by the symbol $\subseteq $.
 
 If $A$ and $B$ are sets, then their \textbf{union}, denoted by $A \cup  B$,is the set of all elements that are elements of either $A$ or $B$:
-\[(A\cup B)=:\{x\in M|(x\in A)\vee (x\in B)\}\]
+\[(A\cup B):=\{x\in M|(x\in A)\vee (x\in B)\}\]
 Clearly, $A\cup B=B\cup A$.
 \begin{figure}
     \centering
@@ -52,7 +52,7 @@ Clearly, $A\cup B=B\cup A$.
 \end{figure}
 
 If $A$ and $B$ are sets, then their \textbf{intersection}, denoted by $A \cap  B$,contains all the elements in both $A$ and $B$:
-\[(A\cap B)=:\{x\in M|(x\in A)\wedge (x\in B)\}\]
+\[(A\cap B):=\{x\in M|(x\in A)\wedge (x\in B)\}\]
 Also, we have $A\cap B=B\cap A$.
 \begin{figure}[h] 
     \centering
@@ -61,7 +61,7 @@ Also, we have $A\cap B=B\cap A$.
 \end{figure}
 
 We use the donation $A\backslash B$ to represent the set contains all the elements which belongs to $A$ but not belong to $B$.
-\[A\backslash B=:\{x\in M|(x\in A)\wedge(x\not\in B)\}\]
+\[A\backslash B:=\{x\in M|(x\in A)\wedge(x\not\in B)\}\]
 \begin{figure}[ht]
     \centering
     \caption{Complement}
@@ -123,15 +123,15 @@ For $B\subset A$, we can also denote it as the symbol $C_{A}B$.
 In this question, we also establish a relation between logical operation and sets' operation.
 \begin{tips}
     \begin{enumerate}
-        \item $A\cup (B\cup C)=(A\cup B)\cup C=:A\cup B\cup C$;
-        \item $A\cap (B\cap C)=(A\cap B)\cap C=:A\cap B\cap C$;
+        \item $A\cup (B\cup C)=(A\cup B)\cup C:=A\cup B\cup C$;
+        \item $A\cap (B\cap C)=(A\cap B)\cap C:=A\cap B\cap C$;
         \item $A\cup (B\cap C)=(A\cup B)\cap (A\cup C)$;
         \item $A\cap (B\cup C)=(A\cap B)\cup (A\cap C)$.
     \end{enumerate}
 \end{tips}
 We denote two sets' Cartesian product as $A \times B $.
 $A\times B$ is a set contains ordered pairs, which means $A\times B\neq B\times A$.
-\[A\times B=:\{(x,y)|(x\in A)\wedge(y\in B)\}\]
+\[A\times B:=\{(x,y)|(x\in A)\wedge(y\in B)\}\]
 \begin{question}
     $(X\times Y)\cup (Z\times Y)=(X\cup Z)\times Y$.
 \end{question}
@@ -145,9 +145,20 @@ $A\times B$ is a set contains ordered pairs, which means $A\times B\neq B\times 
     \end{aligned}\]
     In conclusion:$(X\times Y)\cup (Z\times Y)=(X\cup Z)\times Y$.
 \end{proof}
+\begin{question}
+    $(A\times B\subset X\times Y)\Leftrightarrow(A\subset X)\wedge(B\subset Y)$.
+\end{question}
+\begin{proof}
+    \[\begin{aligned}
+        (A\times B)\subset (X\times Y)\Rightarrow(((a\in A)\wedge(b\in B))\Rightarrow((x\in X)\wedge(y\in Y)))
+    \end{aligned}\]
+    In this formula, we will get \[((a\in A)\Rightarrow(x\in X))\wedge((b\in B)\Rightarrow(y\in Y))\]. That's because $A\times B$ is a ordered pair, which means there is a consistent one-to-one match between $A$ and $X$, $B$ and $Y$.
+    
+    The proof of the other hand is similar.
+\end{proof}
 \begin{tips}
     \begin{enumerate}
-        \item $(X\times Y=\oslash)\Leftrightarrow(X=\oslash)\vee(Y=\oslash)$,\\if $X\times Y\neq \oslash, A\times B\neq \oslash$, {\rm we have}
+        \item $(X\times Y=\oslash)\Leftrightarrow(X=\oslash)\vee(Y=\oslash)$,\\{\rm if} $X\times Y\neq \oslash, A\times B\neq \oslash$, {\rm we have}
         \item $(A\times B\subset X\times Y)\Leftrightarrow(A\subset X)\wedge(B\subset Y)$;
         \item $(X\times Y)\cup (Z\times Y)=(X\cup Z)\times Y$
         \item $(X\times Y)\cap (X'\times Y')=(X\cap X')\times (Y\times Y')$.
