@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="img1.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     showborder="false"
+     inkscape:zoom="2.261442"
+     inkscape:cx="59.475326"
+     inkscape:cy="101.48392"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid9"
+       dotted="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="图层 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.123472px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 0,0 V 46.302083 H 46.302083 V 0 H 0"
+       id="path433" />
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:0.192489;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path2527"
+       cx="16.616987"
+       cy="24.789635"
+       rx="12.176967"
+       ry="11.374777" />
+    <ellipse
+       style="fill:none;stroke:#000000;stroke-width:0.180894;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path2529"
+       cx="31.56167"
+       cy="19.567949"
+       rx="13.202609"
+       ry="10.80942" />
+    <path
+       style="fill:#808080;stroke:#000000;stroke-width:0.0953422;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 26.463462,29.37844 c -2.628531,-0.941002 -4.814316,-2.524179 -6.210512,-4.498313 -0.565134,-0.799063 -1.214734,-2.165793 -1.471022,-3.09497 -0.299338,-1.085246 -0.297786,-3.365396 0.003,-4.460157 0.224457,-0.816853 1.00741,-2.495663 1.366892,-2.930894 l 0.219299,-0.265508 0.571154,0.19656 c 3.062372,1.0539 5.79889,3.643916 6.955171,6.582817 0.549478,1.3966 0.65336,2.004173 0.656906,3.842024 0.0029,1.501541 -0.02435,1.818118 -0.220354,2.55964 -0.286694,1.084648 -0.789551,2.286913 -0.969352,2.317593 -0.07682,0.01311 -0.482371,-0.09885 -0.901217,-0.248792 z"
+       id="path4513" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.81093px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.123472"
+       x="18.009699"
+       y="22.083599"
+       id="text8112"><tspan
+         sodipodi:role="line"
+         id="tspan8110"
+         style="font-size:1.81093px;stroke-width:0.123472"
+         x="18.009699"
+         y="22.083599">$A \cap B$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.93887px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.123472"
+       x="12.347221"
+       y="24.694443"
+       id="text26232"><tspan
+         sodipodi:role="line"
+         id="tspan26230"
+         style="stroke-width:0.123472"
+         x="12.347221"
+         y="24.694443">$A$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.93887px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.123472"
+       x="33.954861"
+       y="18.520834"
+       id="text29366"><tspan
+         sodipodi:role="line"
+         id="tspan29364"
+         style="stroke-width:0.123472"
+         x="33.954861"
+         y="18.520834">$B$</tspan></text>
+  </g>
+</svg>
