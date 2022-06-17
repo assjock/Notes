@@ -1,0 +1,34 @@
+\documentclass[11pt,oneside]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{diagbox}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{{img/}}
+\usepackage{paralist}
+\let\itemize\compactitem
+\let\enditemize\endcompactitem
+\let\enumerate\compactenum
+\let\endenumerate\endcompactenum
+\let\description\compactdesc
+\let\enddescription\endcompactdesc
+\setlength{\parindent}{0pt}
+\title{Notes of Mathematical Analysis}
+\author{}
+\date{}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}{Definition}[section]
+\theoremstyle{definition}
+\newtheorem{ex}{Exercise}[section]
+\newcommand\thmref[1]{\textbf{Theorem \ref{#1}}}
+\newcommand\figref[1]{\textbf{Figure \ref{#1}}}
+\begin{document}
+\newtheorem*{tips}{\emph{TIPS}}
+\chapter{Groups}
+\include{Chapter 1/Chapter1_Section1.tex}
+\include{Chapter 1/Chapter1_Section2.tex}
+\end{document}

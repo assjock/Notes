@@ -2,8 +2,11 @@
 Notes of Mathematics
 ---
 ## Mathematical Analysis
-V.A.Zorich
+V.A.Zorich(习题做不动了)
 
 ~~写得累死了~~
 
 ~~tiring coding~~
+
+## Algebra
+Thomas W. Hungerford 的习题(希望不鸽)
