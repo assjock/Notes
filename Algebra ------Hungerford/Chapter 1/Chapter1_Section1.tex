@@ -72,7 +72,7 @@ $$ $$
     For a set $A$ whose order is $n$, we prove there's $n!$ different bijections by induction
     \begin{enumerate}
         \item For $n=1$, trivial.
-        \item Assume $n=k$, there's $k!$ bijections. For $n=k+1$m fix one element in $A$, and take $a\to a$, there's $k$ free elements, so there's $K!\cdot(k+1)$ bijections in total.
+        \item Assume $n=k$, there's $k!$ bijections. For $n=k+1$, fix one element in $A$, and take $a\to a$, there's $k$ free elements, so there's $k!\cdot(k+1)$ bijections in total.
     \end{enumerate}
     By induction, we get the result.
 \end{answer}
@@ -118,14 +118,14 @@ $$ $$
 
 \begin{ex}
     \begin{enumerate}
-        \item The relation given by $a ~ b \Leftrightarrow a - b \in \mathbf{Z}$ is a congruence relation on the additive group $\mathbf{Q}$ [see Theorem 1.5].
+        \item The relation given by $a \thicksim b \Leftrightarrow a - b \in \mathbf{Z}$ is a congruence relation on the additive group $\mathbf{Q}$ [see Theorem 1.5].
         \item The set $\mathbf{Q}/\mathbf{Z}$ of equivalence classes is an infinite abelian group.
     \end{enumerate}
 \end{ex}
 
 \begin{answer}
     \begin{enumerate}
-        \item For group $(\mathbf{Q}, +)$, $a_1~b_1\Leftrightarrow a_1-b_1=k_1\in \mathbf{Z}$, $a_2~b_2\Leftrightarrow a_2-b_2=k_2\in \mathbf{Z}$, so $(a_1+a_2)-(b_1+b_2)=((k_1+b_1)+(k_2+b_2))-(b_1+b_2)=k_1+k_2\in\mathbf{Z}$. $a~b$ is a congruence relation.
+        \item For group $(\mathbf{Q}, +)$, $a_1\thicksim b_1\Leftrightarrow a_1-b_1=k_1\in \mathbf{Z}$, $a_2\thicksim b_2\Leftrightarrow a_2-b_2=k_2\in \mathbf{Z}$, so $(a_1+a_2)-(b_1+b_2)=((k_1+b_1)+(k_2+b_2))-(b_1+b_2)=k_1+k_2\in\mathbf{Z}$. $a\thicksim b$ is a congruence relation.
         \item \begin{enumerate}[1]
             \item if $a+b\geq 1$, $\bar{a}+\bar{b}=\bar{a+b-1}$. If $a+b<1$, $\bar{a}+\bar{b}=\bar{a+b}$.
             \item $\mathbf{Q}/\mathbf{Z}$ is obviously associative and communicative.
