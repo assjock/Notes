@@ -290,6 +290,8 @@ $$ $$
     Suppose $x$ is a generator of $Z_{p}^{*}$, assume $a\in g_{k,1}^{-1}(x)$, $g_{k,1}^{-1}(x)=a\mathrm{Ker}f_{k,1}$, and $a^{p-1}\in g_{k,1}^{-1}(x^{p-1})=g_{k,1}^{-1}(\bar{1}_{p})=\mathrm{Ker}f_{k,1}$. If $a^{p-1}\notin \mathrm{Ker}f_{k,2}$, then $\left| a^{p-1} \right| =p^{k-1}$. If $a^{p-1}\in \mathrm{Ker}f_{k,2}$, $\forall h\in \mathrm{Ker}f_{k,1},h \notin\mathrm{Ker}f_{k,2}$. Since $(ah)^{p-1}=(a^{p-1}h^{p})h^{-1}$, $(ah)^{p-1}\in \mathrm{Ker}f_{k,1}, (ah)^{p-1}\notin \mathrm{Ker}f_{k,2}$, whence $\left| (ah)^{p-1} \right|=p^{k-1} $, $Z_{p^{k}}^{*}\cong Z_{(p-1)p^{k-1}}$.
 
     If $p=2$, $Z_{2^{k}}^{*}=\mathrm{Ker}f_{k,1}\cong Z_{2^{k-2}}\oplus Z_{2}$.
+
+    For $\mathrm{Aut}\mathbf{Z}$, assume there exist $f\neq 1_{G}, -1_{G}$, $f\in \mathbf{Aut}\mathbf{Z}$. WLOG, $f(1)=x\neq \pm 1, f(-1)=y$. $f(1)+f(-1)=f(0)=x+y=0$. Assume $af(1)+bf(-1)=f(a-b)=1=(a-b)x$, since $x\neq \pm 1$, there is a contradiction. $\mathrm{Aut}\mathbf{Z}\cong Z_{2}$.
 \end{answer}
 
 $$ $$
@@ -346,7 +348,7 @@ $$ $$
         \item  $S_3=\{(1), (12), (13), (23), (123), (132)\}$.
         \begin{figure}[H]\centering
             \begin{tikzpicture}
-                \node [above] at (5,5) {$S_{4}$};
+                \node [above] at (5,5) {$S_{3}$};
                 \node [above] at (0, 2.5) {$\{(1),(12)\}$};
                 \node [above] at (3.3, 2.5) {$\{(1),(13)\}$};
                 \node [above] at (6.6, 2.5) {$\{(1),(23)\}$};
