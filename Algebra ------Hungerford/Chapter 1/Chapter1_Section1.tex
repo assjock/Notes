@@ -18,12 +18,12 @@ $$ $$
 \begin{answer}
     Firstly we check $M(S,G)$ is a group
     \begin{enumerate}
-        \item $f+g: s\to f(s) + g(s) \in G$, so $f+g\in M(S,G)$
-        \item $(f+g)+h: s\to (f(s) + g(s)) + h(s)$, $G$ is a group, so $s\to (f(s) + g(s)) + h(s)\Leftrightarrow s\to f(s) + (g(s) + h(s))$, $(f+g)+h = f+(g+h)$.
-        \item Take the unit element as $e': s\to e$. $f+e': s\to f(s)+ e'(s) =f(s)+e=f(s)$, so $f+e'=f$. Similarly, $e'+f = f$.
-        \item For any $f\in M(S,G)$, take $f^{-1}: s\to (f(s))^{-1}$, whence $f(s)+(f(s))^{-1}=(f(s))^{-1}+f(s)=e$.
+        \item $f+g: s\mapsto f(s) + g(s) \in G$, so $f+g\in M(S,G)$
+        \item $(f+g)+h: s\mapsto (f(s) + g(s)) + h(s)$, $G$ is a group, so $s\mapsto (f(s) + g(s)) + h(s)\Leftrightarrow s\mapsto f(s) + (g(s) + h(s))$, $(f+g)+h = f+(g+h)$.
+        \item Take the unit element as $e': s\mapsto e$. $f+e': s\mapsto f(s)+ e'(s) =f(s)+e=f(s)$, so $f+e'=f$. Similarly, $e'+f = f$.
+        \item For any $f\in M(S,G)$, take $f^{-1}: s\mapsto (f(s))^{-1}$, whence $f(s)+(f(s))^{-1}=(f(s))^{-1}+f(s)=e$.
     \end{enumerate}
-    In conclusion, $M(S,G)$ is a group. If $G$ is abelian $f+g: s\to f(s)+g(s)=g(s)+f(s)$, $f+g=g+f$, so $M(S,G)$ is abelian.
+    In conclusion, $M(S,G)$ is a group. If $G$ is abelian $f+g: s\mapsto f(s)+g(s)=g(s)+f(s)$, $f+g=g+f$, so $M(S,G)$ is abelian.
 \end{answer}
 
 $$ $$
@@ -72,7 +72,7 @@ $$ $$
     For a set $A$ whose order is $n$, we prove there's $n!$ different bijections by induction
     \begin{enumerate}
         \item For $n=1$, trivial.
-        \item Assume $n=k$, there's $k!$ bijections. For $n=k+1$, fix one element in $A$, and take $a\to a$, there's $k$ free elements, so there's $k!\cdot(k+1)$ bijections in total.
+        \item Assume $n=k$, there's $k!$ bijections. For $n=k+1$, fix one element in $A$, and take $a\mapsto a$, there's $k$ free elements, so there's $k!\cdot(k+1)$ bijections in total.
     \end{enumerate}
     By induction, we get the result.
 \end{answer}
@@ -238,5 +238,5 @@ $$ $$
 \end{ex}
 
 \begin{answer}
-    Applying the Recursion Theorem with $a=a_1, S=G$ and $f_n:G\to G$ given by $x\to xa_{n+2}$ yields a function $\phi: \mathbf{N}\to G$. Let $\Psi=\phi\theta$, where $\theta:\mathbf{N^*}\to \mathbf{N}$ is given by $k\to k-1$.
+    Applying the Recursion Theorem with $a=a_1, S=G$ and $f_n:G\to G$ given by $x\mapsto xa_{n+2}$ yields a function $\phi: \mathbf{N}\to G$. Let $\Psi=\phi\theta$, where $\theta:\mathbf{N^*}\to \mathbf{N}$ is given by $k\mapsto k-1$.
 \end{answer}
