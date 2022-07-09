@@ -52,7 +52,7 @@ $$ $$
         -i&0\\0&1
     \end{pmatrix}\]So $BA=A^3B$. Take $X=A^{s_1}B^{s_2}A^{s_3}B^{s_4}\dots A^{s_{2n-1}}B^{s_{2n}}=A^{s_1}B^{s_2-1}A^3B\\A^{s_3-1}B^{s_4}\dots A^{s_{2n-1}}B^{s_{2n}}=\dots$ In finite steps , we can change it into $X=A^aB^b$. $A^{4}=B^{4}=I$, so we only consider $1\leq a,b\leq 4$. $A^{2}=B^{2}=\begin{pmatrix}
         -1&0\\0&-1
-    \end{pmatrix}$, we list all: $Q_8=\{A, A^{2}, B, B^{2}, AB, A^{2}B, AB^{2}, I\}$. The order of $Q_8$ is 8.
+    \end{pmatrix}$, we list all: $Q_8=\{A, A^{2}, B, BA, AB, A^{2}B, AB^{2}, I\}$. The order of $Q_8$ is 8.
 \end{answer}
 
 $$ $$
@@ -369,11 +369,19 @@ $$ $$
 
         \begin{figure}[H]\centering
             \begin{tikzpicture}
-                \node [above] at (2.5,3) {$D_{4}^{*}$};
-                \node [above] at (2.5,1.5) {$\{R,R^{2},R^{3},I\}$};
-                \node [above] at (2.5,0) {$I$};
-                \draw [-] (2.5,3) -- (2.5,2.2);
-                \draw [-] (2.5,1.5) -- (2.5,0.6);
+                \node [above] at (3.5,6) {$D_{4}^{*}$};
+                \node [above] at (3.5,4) {$\{R,R^{2},R^{3},I\}$};
+                \node [above] at (0,4) {$\{I, R^{2}, T_{x}, T_{y}\}$};
+                \node [above] at (7,4) {$\{I, R^{2}, T_{13}, T_{24}\}$};
+                \node [above] at (3.5,2) {$\{I, R^{2}\}$};
+                \node [above] at (3.5,0) {$\{I\}$};
+                \draw [-] (3.5,6) to (0,4.7);
+                \draw [-] (3.5,6) to (3.5,4.7);
+                \draw [-] (3.5,6) to (7,4.7);
+                \draw [-] (3.5,2.7) to (0,4);
+                \draw [-] (3.5,2.7) to (3.5,4);
+                \draw [-] (3.5,2.7) to (7,4);
+                \draw [-] (3.5,2) to (3.5,0.7);
             \end{tikzpicture}
         \end{figure}
 
