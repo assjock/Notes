@@ -16,7 +16,7 @@ $$ $$
 \begin{answer}
     If $(m,n)=1$, we know that $\forall a^{i}, i=1,2,\dots, m$, $b^{j}, j=1, 2, \dots, n$, $a^{i}b^{j}\neq e$, since if $a^{i}=b^{j}$, $\left| a^{i} \right| =n=\left| b^{-j} \right| =\left| b^{j} \right| =m$. $G$ is abelian, so $(ab)^{k}=a^{k}b^{k}\Rightarrow \left| ab \right|=mn=\left[ m,n\right]$.
 
-    If $m|n$ or $n|m$, then $a$ or $b$ is the element we want. We consider $m|\!\!/n$ and $n|\!\!/m$. Factorise $n=p_{1}^{t_{1}}p_{2}^{t_{2}}\cdots p_{l}^{t_{l}}$, $m=p_{1}^{s_{1}}p_{2}^{s_{2}}\cdots p_{l}^{s_{l}}$, where $p_{1},\cdots,p_{l}$ are primes and $t_{1},\cdots,t_{l}, s_{1},\cdots, s_{l}\geq 0$. We can choose a new arrangement of $p_{1},\cdots,p_{l}$ and make $t_{1}\geq s_{1}$, $t_{2}\geq s_{2}$,\dots, $t_{i}\geq s_{i}$, $t_{i+1}<s_{i+1}$,\dots, $t_{l}<s_{l}$.\[(m,n)=p_{1}^{s_{1}}\cdots p_{i}^{s_{i}}p_{i+1}^{t_{i+1}}\cdots p_{l}^{t_{l}}, \left[m,n\right]=p_{1}^{t_{1}}\cdots p_{i}^{t_{i}}p_{i+1}^{s_{i+1}}\cdots p_{l}^{s_{l}}\] Take $x=a^{{p_{i+1}^{s_{i+1}}}\cdots p_{l}^{s_{l}}}$, $y=b^{{p_{1}^{t_{1}}}\cdots p_{i}^{t_{i}}}$, then $\left| x \right| ={p_{1}^{t_{1}}}\cdots p_{i}^{t_{i}}$, $\left| y \right| =p_{i+1}^{s_{i+1}}\cdots p_{l}^{s_{l}}$. Thus $(x,y)=1$, the order of $xy$ is $\left| x \right| \cdot\left| y \right| =p_{1}^{t_{1}}\cdots p_{i}^{t_{i}}p_{i+1}^{s_{i+1}}\cdots p_{l}^{s_{l}}=\left[m,n\right]$.
+    If $m|n$ or $n|m$, then $a$ or $b$ is the element we want. We consider $m\nmid n$ and $n\nmid m$. Factorise $n=p_{1}^{t_{1}}p_{2}^{t_{2}}\cdots p_{l}^{t_{l}}$, $m=p_{1}^{s_{1}}p_{2}^{s_{2}}\cdots p_{l}^{s_{l}}$, where $p_{1},\cdots,p_{l}$ are primes and $t_{1},\cdots,t_{l}, s_{1},\cdots, s_{l}\geq 0$. We can choose a new arrangement of $p_{1},\cdots,p_{l}$ and make $t_{1}\geq s_{1}$, $t_{2}\geq s_{2}$,\dots, $t_{i}\geq s_{i}$, $t_{i+1}<s_{i+1}$,\dots, $t_{l}<s_{l}$.\[(m,n)=p_{1}^{s_{1}}\cdots p_{i}^{s_{i}}p_{i+1}^{t_{i+1}}\cdots p_{l}^{t_{l}}, \left[m,n\right]=p_{1}^{t_{1}}\cdots p_{i}^{t_{i}}p_{i+1}^{s_{i+1}}\cdots p_{l}^{s_{l}}\] Take $x=a^{{p_{i+1}^{s_{i+1}}}\cdots p_{l}^{s_{l}}}$, $y=b^{{p_{1}^{t_{1}}}\cdots p_{i}^{t_{i}}}$, then $\left| x \right| ={p_{1}^{t_{1}}}\cdots p_{i}^{t_{i}}$, $\left| y \right| =p_{i+1}^{s_{i+1}}\cdots p_{l}^{s_{l}}$. Thus $(x,y)=1$, the order of $xy$ is $\left| x \right| \cdot\left| y \right| =p_{1}^{t_{1}}\cdots p_{i}^{t_{i}}p_{i+1}^{s_{i+1}}\cdots p_{l}^{s_{l}}=\left[m,n\right]$.
 \end{answer}
 
 $$ $$
@@ -36,7 +36,7 @@ $$ $$
 \end{ex}
 
 \begin{answer}
-    Assume $\left| f(a) \right| =n$, $\left| a \right| =m$, and $n|\!\!/m$. Trivially, $m\geq n$. Assume $\gcd(m,n)=k\leq n$. $a^{m}=e\Rightarrow f(a)^{m}=e'=f(a)^{n}$. By Bezout theorem $\exists x,y\in \mathbf{Z}$ s.t. $f(a)^{mx+ny}=f(a)^{k}=e'$, $k\leq n$, that's contradictory!
+    Assume $\left| f(a) \right| =n$, $\left| a \right| =m$, and $n\nmid m$. Trivially, $m\geq n$. Assume $\gcd(m,n)=k\leq n$. $a^{m}=e\Rightarrow f(a)^{m}=e'=f(a)^{n}$. By Bezout theorem $\exists x,y\in \mathbf{Z}$ s.t. $f(a)^{mx+ny}=f(a)^{k}=e'$, $k\leq n$, that's contradictory!
 \end{answer}
 
 $$ $$
@@ -84,7 +84,7 @@ $$ $$
 
 \begin{answer}
     \begin{enumerate}[(a)]
-        \item $\forall  x\in Z(p^{\infty})$, $x=\frac{a}{p^{n}}$ where $a<p^{n}$, $p|\!\!/a$. $p$ is a prime, so $\gcd(p,a)=1$. $m\cdot a|p^{n}\Rightarrow m=p^{n}$. Thus $m\cdot \frac{a}{p^{n}}=e$, $p^{n}$ is the smallest number satisfies it. $\frac{a}{p^{n}}$ has order $p^{n}$.
+        \item $\forall  x\in Z(p^{\infty})$, $x=\frac{a}{p^{n}}$ where $a<p^{n}$, $p\nmid a$. $p$ is a prime, so $\gcd(p,a)=1$. $m\cdot a|p^{n}\Rightarrow m=p^{n}$. Thus $m\cdot \frac{a}{p^{n}}=e$, $p^{n}$ is the smallest number satisfies it. $\frac{a}{p^{n}}$ has order $p^{n}$.
         \item For all $x\in Z(p^{\infty})$, if $x$ has order smaller than $p^{k}$, $x$ must have the form $x=\frac{a}{p^{i}}(i\leq k)$, $(p,a)=1$, so $x\in\left\langle\frac{1}{p^{k}}\right\rangle$. If not, assume $x=\frac{a}{p^{i}}(i>k)$, then $p^{k}\cdot x=\frac{a}{p^{i-k}}\neq 1$.
         \item Assume not, $H< Z(p^{\infty})$, $H\neq Z(p^{\infty})$. There exist $y\in H$ s.t. $y$ has order $p^{m}, m\geq n$. $y=\frac{b}{p^{m}}$, $(p,b)=1$, so there exists $b^{-1}\in\{1,2,\dots,p-1\}$, $bb^{-1}\equiv 1\mod p^{m}$. But $ab^{-1}p^{m-n}y=\frac{a}{p^{n}}=x\in H$, that's contradictory! Conversely, $H=Z(p^{\infty})$.
         \item From (b), we know that if there's least upper bound $p^{n}$ for elements in a subgroup $S$, then $S=C_{n}$.\[\left\langle0\right\rangle=C_{0}<C_{1}<C_{2}<C_{3}<\cdots<Z(p^{\infty})\] is easy to verify.
