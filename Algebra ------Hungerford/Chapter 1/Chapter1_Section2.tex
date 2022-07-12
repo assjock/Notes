@@ -159,14 +159,14 @@ $$ $$
 
 \begin{ex}
     Let $f: G\to H$ be a homomorphism of groups, $A$ a subgroup of $G$, and $B$ a subgroup of $H$.
-    \begin{enumerate}
+    \begin{enumerate}[(a)]
         \item $\mathrm{Ker} f$ and $f^{-1}(B)$ are subgroups of $G$.
         \item $f(A)$ is a subgroup of $H$.
     \end{enumerate}
 \end{ex}
 
 \begin{answer}
-    \begin{enumerate}
+    \begin{enumerate}[(a)]
         \item $f$ is a homomorphism, so $f(e)=e', e\in \mathrm{Ker} f$. $\forall a \in 
     \mathrm{Ker} f$, $f(aa^{-1})=f(a)f(a^{-1})=e'$, so $f(a^{-1})=f(a)^{-1}=e'^{-1}=e'$. $\forall a,b \in \mathrm{Ker} f, f(ab^{-1})=f(a)f(b^{-1})=f(a)f(b)^{-1}=e'\Rightarrow ab^{-1}\in \mathrm{Ker} f$, which means $\mathrm{Ker} f$ is a subgroup of $G$. The proof of $f^{-1}(B)$ is a subgroup of $G$ is similar.
         \item $f$ is a homomorphism, $f(e)=e'$. $\forall a,b\in A, ab^{-1}\in A$, so $f(ab^{-1})=f(a)f(b^{-1})=f(a)f(b)^{-1}\in f(A)$, $f(A)$ is a subgroup of $H$.
@@ -235,7 +235,7 @@ $$ $$
 
 \begin{ex}
     Let $G$ be a group and $\mathrm{Aut} G$ is the set of all automorphisms of $G$.
-    \begin{enumerate}
+    \begin{enumerate}[(a)]
         \item $\mathrm{Aut} G$ is a group with composition of functions as binary operation.
         \item $\mathrm{Aut} \mathbf{Z}\cong Z_2$ and $\mathrm{Aut} Z_6 \cong Z_2$; $\mathrm{Aut} Z_8\cong Z_2\oplus Z_2$; $\mathrm{Aut} Z_p\cong Z_{p-1}$ ($p$ prime).
         \item What is $\mathrm{Aut Z_n}$ for arbitrary $n\in \mathbf{N^*}$?
