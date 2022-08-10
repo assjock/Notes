@@ -1,0 +1,142 @@
+\section{Rings and homomorphisms}
+\begin{ex}
+    \begin{enumerate}[(a)]
+        \item Let $G$ be an (additive) abelian group. Define an operation of multiplication in $G$ by $ab=0$ (for all $a, b\in G$). Then $G$ is a ring.
+        \item Let $S$ be the set of all subsets of some fixed set $U$. For $A, B\in S$, define $A+B=(A-B)\cup (B-A)$ and $AB=A\cap B$. Then $S$ is a ring. Is $S$ commutative? Does it have an identity?
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $\{R_{i}|i\in I\}$ be a family of rings with identity. Make the direct sum of abelian groups $\sum\limits_{i\in I}R_{i}$ into a ring by defining multiplication coordinatewise. Does $\sum\limits_{i\in I}R_{i}$ have identity?
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    A ring $R$ such that $a^{2}=a$ for all $a\in R$ is called \textbf{Boolean ring}. Prove that every Boolean ring $R$ is commutative and $a+a=0$ for all $a\in R$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ be a ring and $S$ a nonempty set. Then the group $M(S,R)$ is a ring with multiplication defined as follows: the product of $f, g\in M(S,R)$ is the function $S\to R$ given by $s\mapsto f(s)g(s)$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    If $A$ is the abelian group $\mathbf{Z}\oplus \mathbf{Z}$, then $\mathrm{End} A$ is a noncommutative ring.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    A finite ring with more than one element and no zero divisors is a division ring.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ be a ring withe more than one element such that for each nonzero $a\in R$ there is a unique $b\in R$ such that $aba=a$. Prove:
+    \begin{enumerate}[(a)]
+        \item $R$ has no zero divisors.
+        \item $bab=b$.
+        \item $R$ has an identity.
+        \item $R$ is a division ring.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ be the set of all $2\times 2$ matrices over the complex field $\mathbf{C}$ of the form \[\begin{pmatrix}
+        z& w\\ -\bar{w}&\bar{z}
+    \end{pmatrix}\]where $\bar{z}, \bar{w}$ are the complex conjugates of $z$ and $w$ respectively. Then $R$ is a division ring that is isomorphic to the division ring $K$ of real quaternions.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    \begin{enumerate}[(a)]
+        \item The subset $G=\{1,-1, i, -i, j, -j, k, -k\}$ of the division ring $K$ of real quaternions forms a group under multiplication.
+        \item $G$ is isomorphic to the quaternion group.
+        \item What is the difference between the ring $K$ and the group $\mathbf{R}(G)$($\mathbf{R}$ the field of real numbers)?
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $k, n$ be integers such that $0\leq k\leq n$ and $\binom{n}{k}$ the binomial coefficient $n! /(n-k)!k!$, where $0! =1$ and for $n>0$, $n!=n(n-1)(n-2)\cdots 2\cdot 1$.
+    \begin{enumerate}[(a)]
+        \item $\binom{n}{k}=\binom{n}{n-k}$
+        \item $\binom{n}{k}<\binom{n}{k+1}$ for $k+1\leq n /2$.
+        \item $\binom{n}{k}+\binom{n}{k+1}=\binom{n+1}{k+1}$ for $k<n$.
+        \item $\binom{n}{k}$ is an integer.
+        \item if $p$ is prime and $1\leq k\leq p^{n}-1$, then $\binom{p^{n}}{k}$ is divisible by $p$.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ be a commutative ring with identity of prime characteristic $p$. If $a, b\in R$, then $(a\pm b)^{p^{n}}=a^{p^{n}}\pm b^{p^{n}}$ for all integers $n\geq 0$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    An element of a ring is \textbf{nilpotent} if $a^{n}=0$ for some $n$. Prove that in a commutative ring $a+b$ is nilpotent if $a$ and $b$ are. Show that this result may be false if $R$ is not commutative.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    In a ring $R$ the following conditions are equivalent.
+    \begin{enumerate}[(a)]
+        \item $R$ has no nonzero nilpotent elements.
+        \item If $a\in R$ and $a^{2}=0$, then $a=0$.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ be a commutative ring with identity and prime characteristic $p$. The map $R\to R$ given by $r\mapsto r^{p}$ is a homomorphism of rings called the Frobenius homomorphism.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    \begin{enumerate}[(a)]
+        \item Give an example of nonzero homomorphism $f:R\to S$ of rings with the identity such that $f(1_{R})\neq 1_{S}$.
+        \item If $f:R\to S$ is an epimorphism of rings with identity, then $f(1_{R})=1_{S}$.
+        \item If $f:R\to S$ is a homomorphism of rings with identity and $u$ is a unit in $R$ such that $f(u)$ is a unit in $S$, then $f(1_{R})=1_{S}$ and $f(u^{-1})=f(u)^{-1}$.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $f:R\to S$ be a homomorphism of rings such that $f(r)\neq 0$ for some nonzero $r\in R$. If $R$ has an identity and $S$ has no zero divisors, then $S$ is a ring with identity $f(1_{R})$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    \begin{enumerate}[(a)]
+        \item If $R$ is a ring, then so is $R^{op}$ is defined as follows. The underlying set of $R^{op}$ is precisely $R$ and addition in $R^{op}$ coincides with addition in $R$. Multiplication in $R^{op}$, denoted $\circ$, is defined by $a\circ b=ba$, where $ba$ is the product in $R$. $R^{op}$ is called the \textbf{opposite ring} of $R$.
+        \item $R$ has identity if and only if $R^{op}$ does.
+        \item $R$ is a division ring if and only if $R^{op}$ is.
+        \item $(R^{op})^{op}=R$.
+        \item If $S$ is a ring, then $R\cong S$ if and only if $R^{op}\cong S^{op}$.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $\mathbf{Q}$ be the field of rational numbers and $R$ any ring. If $f, g:\mathbf{Q}\to R$ are homomorphisms of rings such that $f|\mathbf{Z}=g|\mathbf{Z}$, then $f=g$.
+\end{ex}
