@@ -6,11 +6,24 @@
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item $\forall a, b\in G$, $ab=0\in G$, so $G$ is a monoid under multiplication, thus $G$ is a ring.
+        \item $A\subset U$, $B\subset U$, so $A-B\subset U$, $B-A\subset U$. Thus $A+B=B+A=(A-B)\cup (B-A)\subset U$. Take $\varnothing$ is the identity under addition and $U-A$ as the inverse of $A$, $S$ is abelian group under the addition. $AB=A\cap B\subset U$, $AB=A\cap B=B\cap A=BA\in S$. So $S$ is a commutative ring. $\forall A\in S$, $A\cap U=AU=A$ is the identity of the ring $S$.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Let $\{R_{i}|i\in I\}$ be a family of rings with identity. Make the direct sum of abelian groups $\sum\limits_{i\in I}R_{i}$ into a ring by defining multiplication coordinatewise. Does $\sum\limits_{i\in I}R_{i}$ have identity?
 \end{ex}
+
+\begin{answer}
+    Take $1_{R_{i}}\in R_{i}$ is the identity for $i=1,2,\dots, n$. $\forall (a_{1}, a_{2}, \dots, a_{n})\in \sum\limits_{i\in I}R_{i}$ \[\begin{aligned}
+        &(a_{1}, a_{2},\dots, a_{n})(1_{R_{1}}, 1_{R_{2}},\dots, 1_{R_{n}})\\ =&(1_{R_{1}}, 1_{R_{2}},\dots, 1_{R_{n}})(a_{1}, a_{2},\dots, a_{n})\\ =&(a_{1}, a_{2},\dots, a_{n})
+    \end{aligned}\] is the identity.
+\end{answer}
 
 $$ $$
 
@@ -18,11 +31,21 @@ $$ $$
     A ring $R$ such that $a^{2}=a$ for all $a\in R$ is called \textbf{Boolean ring}. Prove that every Boolean ring $R$ is commutative and $a+a=0$ for all $a\in R$.
 \end{ex}
 
+\begin{answer}
+    $\forall a\in R$, $(a+a)^{2}=a^{2}+2a+a^{2}=a+2a+a=2a$, so $a+a=0$.
+
+    $\forall a,b \in R$, $(a+b)^{2}=a^{2}+b^{2}+ab+ba=a+b=a+b+ba+ab$, so $ab+ba=0\Rightarrow ab=-ab=-ba$, $ab=ba$. Thus $R$ is commutative.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Let $R$ be a ring and $S$ a nonempty set. Then the group $M(S,R)$ is a ring with multiplication defined as follows: the product of $f, g\in M(S,R)$ is the function $S\to R$ given by $s\mapsto f(s)g(s)$.
 \end{ex}
+
+\begin{answer}
+    We only need to check $M(S,R)$ is a monoid under multiplication, which means $\forall f,g\in M(S,R)$, $fg\in M(S,R)$. $\forall a\in S$, $fg(a)=f(a)g(a)$. Since $f(a)\in R$, $g(a)\in R$, $f(a)g(a)\in R$, $fg:S\to G$ is a  well defined function. $fg\in M(S,R)$. $M(S,R)$ is a ring.
+\end{answer}
 
 $$ $$
 
@@ -30,11 +53,19 @@ $$ $$
     If $A$ is the abelian group $\mathbf{Z}\oplus \mathbf{Z}$, then $\mathrm{End} A$ is a noncommutative ring.
 \end{ex}
 
+\begin{answer}
+    We only need to verify that $\mathrm{End} A$ is not commutative. Take $f,g\in \mathrm{End}A$, $f:(x_{1},x_{2})\mapsto (x_{1}\mod 2, x_{2}\mod 2)$, $g:(x_{1}, x_{2})\mapsto (x_{1}\mod 3, x_{2}\mod 3)$. Then $gf(3,3)=(1,1)$, $fg(3,3)=(0,0)$. Thus $\mathrm{End} A$ is not commutative.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     A finite ring with more than one element and no zero divisors is a division ring.
 \end{ex}
+
+\begin{answer}
+    For any disjoint $a,b,c\in R$, $ab\neq ac$, otherwise $a(b-c)=0$, $b-c$ is a zero divisor. So $ax$ are different for different $x\in R$. $\left| \{ax|x\in R\} \right| =\left| R \right| $ and $\{ax|x\in R\}\subset R$. Thus $\{ax|x\in R\}=R$ which means $\exists a^{-1}\in R$ s.t. $aa^{-1}=R$. Similarly, $a$ is also left invertable and $R$ is a division ring.
+\end{answer}
 
 $$ $$
 
@@ -48,6 +79,15 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item If $x$ is a zero divisor of $a$. WLOG, assume $ax=0$, $axa\neq a$ so $b\neq x$. But $axa+aba=a(x+b)a=a$ which is contradictory to the uniqueness.
+        \item $aba=a\Rightarrow abab=ab$, $a(bab-b)=0$ and $a\neq 0$, so $bab-b=$, $bab=b$.
+        \item Assume $c=ab$, $abab=ab\Rightarrow c^{2}=c$. $\forall x\in R$, $xc^{2}=xc\Rightarrow (xc-x)c=0$ and $c\neq 0$, so $xc=x$ for any $x\in R$. Similarly, $cx=x$ for all $x\in R$, $c$ is the identity of $R$.
+        \item $\forall a,b\in R$, $aba=a\cdot 1_{R}=1_{R}\cdot a$. So $a(ba-1_{R})=(ab-1_{R})a=0$, $ba=ab=1_{R}$. That means $a, b$ are all units, so $R$ is a division ring.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
@@ -55,6 +95,31 @@ $$ $$
         z& w\\ -\bar{w}&\bar{z}
     \end{pmatrix}\]where $\bar{z}, \bar{w}$ are the complex conjugates of $z$ and $w$ respectively. Then $R$ is a division ring that is isomorphic to the division ring $K$ of real quaternions.
 \end{ex}
+
+\begin{answer}
+    Define $f:K\to R$ with $f(1)=\begin{pmatrix}
+        1&0\\0&1
+    \end{pmatrix}$, $f(i)=\begin{pmatrix}
+        i&0\\0&-i
+    \end{pmatrix}$, $f(j)=\begin{pmatrix}
+        0&1\\-1&0
+    \end{pmatrix}$, $f(k)=\begin{pmatrix}
+        0&i\\i&0
+    \end{pmatrix}$. Assume $z=a+bi$, $w=c+di$.
+    \[\begin{pmatrix}
+        z& w\\ -\bar{w}&\bar{z}
+    \end{pmatrix}=a\begin{pmatrix}
+        1&0\\0&1
+    \end{pmatrix}+b\begin{pmatrix}
+        i&0\\0&-i
+    \end{pmatrix}+c\begin{pmatrix}
+        0&1\\-1&0
+    \end{pmatrix}+d\begin{pmatrix}
+        0&i\\i&0
+    \end{pmatrix}\]Define\[f(\begin{pmatrix}
+        z& w\\ -\bar{w}&\bar{z}
+    \end{pmatrix})=af(1)+bf(i)+cf(j)+df(k)\]$f(xy)=f(x)f(y)$ and $f$ is a isomorphism, so $R\cong K$.
+\end{answer}
 
 $$ $$
 
@@ -65,6 +130,22 @@ $$ $$
         \item What is the difference between the ring $K$ and the group $\mathbf{R}(G)$($\mathbf{R}$ the field of real numbers)?
     \end{enumerate}
 \end{ex}
+
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item Trivial.
+        \item Define $f:G\to Q_{8}$ given by $f(1)=\begin{pmatrix}
+            1&0\\0&1
+        \end{pmatrix}$, $f(i)=\begin{pmatrix}
+            i&0\\0&-i
+        \end{pmatrix}$, $f(j)=\begin{pmatrix}
+            0&1\\-1&0
+        \end{pmatrix}$, $f(k)=\begin{pmatrix}
+            0&i\\i&0
+        \end{pmatrix}$. We can verify that $f$ is a isomorphism, $G\cong Q_{8}$.
+        \item $R(G)$ is a free abelian group while $K$ is not free on $G$.
+    \end{enumerate}
+\end{answer}
 
 $$ $$
 
@@ -79,17 +160,45 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{enumerate}[(a)]
+    \item $\binom{n}{k}=\frac{n!}{(n-k)!k!}=\frac{n!}{(n-(n-k))!(n-k)!}=\binom{n}{n-k}$.
+    \item $\binom{n}{k}=\frac{n!}{(n-k)!k!}$, $\binom{n}{k+1}=\frac{n!}{(n-k-1)!(k+1)!}$, since $k+1\leq n-k$ when $k+1\leq \frac{n}{2}$, then $\binom{n}{k}<\binom{n}{k+1}$.
+    \item $\binom{n}{k}+\binom{n}{k+1}=\frac{n!}{(n-k)!k!}+\frac{n!}{(n-k-1)!(k+1)!}=\frac{(n+1)!}{(n-k)!(k+1)!}=\binom{n+1}{k+1}$.
+    \item $\binom{n}{k}$ is an integer can be easily solved by induction and (c).
+    \item $\mathrm{ord}_{p}(p^{n}!)=\sum\limits_{i=1}^{\infty}\left[\frac{p^{n}}{p^{i}}\right]=\sum\limits_{i=0}^{n-1}p^{i}$. $\mathrm{ord}_{p}(k!)=\sum\limits_{i=1}^{\infty}\left[\frac{k}{p^{i}}\right]$, $\mathrm{ord}_{p}((p^{n}-k)!)=\sum\limits_{i=1}^{\infty}\left[\frac{p^{n}-k}{p^{i}}\right]$. $\forall i\in\mathbf{N}$, $\left[\frac{p^{n}-k}{p^{i}}\right]+\left[\frac{k}{p^{i}}\right]\leq \left[\frac{p^{n}}{p^{i}}\right]$, the equality holds if and only if $\frac{p^{n}-k}{p^{i}}, \frac{k}{p^{i}}\in \mathbf{Z}$. And $\left[\frac{p^{n}-k}{p^{n}}\right]=0$, $\left[\frac{k}{p^{n}}\right]=0$. So $\mathrm{ord}_{p}(\binom{p^{n}}{k})=\mathrm{ord}_{p}(p^{n}!)-\mathrm{ord}_{p}((n-k)!)-\mathrm{ord}_{p}(k!)\geq 1$. $p|\binom{p^{n}}{k}$.
+\end{enumerate}
+
 $$ $$
 
 \begin{ex}
     Let $R$ be a commutative ring with identity of prime characteristic $p$. If $a, b\in R$, then $(a\pm b)^{p^{n}}=a^{p^{n}}\pm b^{p^{n}}$ for all integers $n\geq 0$.
 \end{ex}
 
+\begin{answer}
+    $(a\pm b)^{p^{n}}=\sum\limits_{i=0}^{p^{n}}\binom{p^{n}}{i}(\pm a)^{i}b^{p^{n}-i}$. From \textbf{Exercise 3.1.10}, $p|\binom{p^{n}}{i}$ for all $i=1,2,\dots, n-1$, so $\binom{p^{n}}{i}a^{i}b^{p^{n}-i}=0$ for $i=1,2,\dots, n-1$. Thus $\sum\limits_{i=0}^{p^{n}}\binom{p^{n}}{i}(\pm a)^{i}b^{p^{n}-i}=a^{p^{n}}\pm b^{p^{n}}=(a\pm b)^{p^{n}}$.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     An element of a ring is \textbf{nilpotent} if $a^{n}=0$ for some $n$. Prove that in a commutative ring $a+b$ is nilpotent if $a$ and $b$ are. Show that this result may be false if $R$ is not commutative.
 \end{ex}
+
+\begin{answer}
+    Assume $a^{m}=0$, $b^{n}=0$. For $(a+b)^{m+n}=\sum\limits_{i=1}^{m+n}\binom{m+n}{i}a^{i}b^{m+n-i}$. If $i\geq m$, $a^{i}b^{m+n-i}=0b^{m+n-i}=0$; if $i\leq m$, $m+n-i\geq n$ so $a^{i}b^{m+n-i}=a^{i}0=0$. Thus $a^{i}b^{m+n-i}=0$ for all $i=1,2,\dots, m+n$. $a+b$ is also nilpotent.
+
+    For the $2\times 2$ matrix ring. $\begin{pmatrix}
+        0&1\\0&0
+    \end{pmatrix}$ and $\begin{pmatrix}
+        0&0\\1&0
+    \end{pmatrix}$ are nilpotent, but $\begin{pmatrix}
+        0&1\\0&0
+    \end{pmatrix}+\begin{pmatrix}
+        0&0\\1&0
+    \end{pmatrix}=\begin{pmatrix}
+        0&1\\1&0
+    \end{pmatrix}$ is not nilpotent.
+\end{answer}
 
 $$ $$
 
@@ -101,11 +210,21 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    (a)$Rightarrow$(b): Trivial.
+
+    (b)$Rightarrow$(a): If $\exists a\in R$, $a^{n}=0$ for some $n$ and $a\neq 0$. Assume $n=2^{m}\cdot k$ and $k$ is a odd integer. Then $(a^{k\cdot 2^{m-1}})^{2}=0\Rightarrow a^{k\cdot 2^{m-1}}=0\Rightarrow \cdots\Rightarrow a^{k}=0$. $a^{k}\cdot a^{k+1}=0$ and $2|k+1$, we can continue this step until $\frac{k+1}{2}\geq k$ which means $k=1$. So $a=0$.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Let $R$ be a commutative ring with identity and prime characteristic $p$. The map $R\to R$ given by $r\mapsto r^{p}$ is a homomorphism of rings called the Frobenius homomorphism.
 \end{ex}
+
+\begin{answer}
+    $\forall a,b\in R$, $pa=pb=0$ and the map $f:r\mapsto r^{p}$. $f(a+b)=(a+b)^{p}=\sum\limits_{i=0}^{p}\binom{p}{i}a^{i}b^{p-i}$. Since $p$ is a prime so $p\mid p!$ and $p\nmid i!(p-i)!$, $p\mid \binom{p}{i}$ for $i=1,2,\dots, p-1$. So $f(a+b)=a^{p}+b^{p}=f(a)+f(b)$, $f(ab)=(ab)^{p}=a^{p}b^{p}=f(a)f(b)$, $f$ is a homomorphism of rings.
+\end{answer}
 
 $$ $$
 
@@ -117,11 +236,23 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item For $f:Z_{2}\to Z_{6}$ defined by $f(0)=0$, $f(1)=3$. $f$ is a homomorphism of ring which satisfies the condition.
+        \item $\forall s\in S$, $\exists r\in R$ such that $f(r)=s$, so $f(r)f(1_{R})=f(1_{R})f(r)=f(r)=s$, so $f(1_{R})=1_{S}$ is the identity of $S$.
+        \item $f(u)f(u^{-1})=f(u^{-1})f(u)=f(1_{R})$. $\exists s\in S$ such that $f(u)s=sf(u)=1_{S}$, $sf(u)f(u^{-1})=sf(1_{R})=f(u^{-1})$, $sf(1_{R})f(u)=f(u^{-1})f(u)=f(1_{R})=sf(u)=1_{S}$. Thus $f(u^{-1}=s)$, $f(u^{-1})=f(u)^{-1}$.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Let $f:R\to S$ be a homomorphism of rings such that $f(r)\neq 0$ for some nonzero $r\in R$. If $R$ has an identity and $S$ has no zero divisors, then $S$ is a ring with identity $f(1_{R})$.
 \end{ex}
+
+\begin{answer}
+    $f(1_{R})f(1_{R})=f(1_{R})$, so $f(1_{R})(f(1_{R})-1_{S})=0\Rightarrow f(1_{R})=1_{S}$.
+\end{answer}
 
 $$ $$
 
@@ -135,8 +266,22 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item Trivial.
+        \item If $1_{R}$ is the identity of $R$. Take $1_{R^{op}}=1_{R}$ then $\forall a\in R^{op}$, $1_{R^{op}}\circ a=a1_{R}=a=1_{R}a=a\circ 1_{R^{op}}$. So $1_{R^{op}}$ is the identity of $R^{op}$.
+        \item $\forall a\in R^{op}$, take $a^{-1}\in R$, $a^{-1}\circ a=aa^{-1}=1_{R}=a^{-1}a=a\circ a^{-1}$. So $a$ is a unit, $R^{op}$ is a division ring.
+        \item Denote $*$ is the multiplication in $(R^{op})^{op}$.\[a*b=b\circ a=ab\in R\] The multiplications are identical. The underlying set and addition of $R$ and $(R^{op})^{op}$ are identical. So $R=(R^{op})^{op}$.
+        \item If $R\cong S$, there exists isomorphism $f:R\to S$. We verify that $f'R^{op}\to S^{op}$ defined by $f'=f$ is an isomorphism. $f'=f$ is obviously a bijection. $f'(a)\circ f'(b)=f(b)f(a)=f(ba)=f'(a\circ b)$. $f'$ is a well defined homomorphism, so $R^{op}\cong S^{op}$.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Let $\mathbf{Q}$ be the field of rational numbers and $R$ any ring. If $f, g:\mathbf{Q}\to R$ are homomorphisms of rings such that $f|\mathbf{Z}=g|\mathbf{Z}$, then $f=g$.
 \end{ex}
+
+\begin{answer}
+    $f(n)=g(n)$ for $n\in \mathbf{Z}$. $g(n)g(\frac{1}{n})=g(1)\Rightarrow f(n)g(\frac{1}{n})=g(1)=f(1)$, so $f(\frac{1}{n})f(n)g(\frac{1}{n})=g(\frac{1}{n})=f(\frac{1}{n})$ for all $n\in \mathbf{Z}$. Thus $f=g$.
+\end{answer}
