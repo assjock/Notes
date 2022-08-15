@@ -1,0 +1,205 @@
+\section{Ideals}
+\begin{ex}
+    The set of all nilpotent elements in a commutative ring forms an ideal.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $I$ be an ideal in a commutative ring $R$ and let $\mathrm{Rad} I=\{r\in R| r^{n}\in I \text{ for some } n\}$. Show that $\mathrm{Rad}I$ is an ideal.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    If $R$ is a ring and $a\in R$, then $J=\{r\in R|ra=0\}$ is a left ideal and $K=\{r\in R|ar=0\}$ is a right ideal in $R$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    If $I$ is a left ideal of $R$, then $A(I)=\{r\in R|rx=0 \text{ for every }x\in I\}$ is an ideal in $R$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    If $I$ is an ideal in a ring $R$, let $\left[R:I\right]=\{r\in R|xr\in I \text{ for every }x\in R\}$. Prove that $\left[ R:I\right]$ is an ideal of $R$ which contains $I$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    \begin{enumerate}[(a)]
+        \item The center of the ring $S$ of all $2\times 2$ matrices over a field $F$ consists of all matrices of the form $\begin{pmatrix}
+            a&0\\0&a
+        \end{pmatrix}$.
+        \item Then center of $S$ is not an ideal in $S$.
+        \item What is the center of the ring of all $n\times n$ matrices over a division ring?
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    \begin{enumerate}[(a)]
+        \item A ring $R$ with identity is a division ring if and only if $R$ has no proper left ideals.
+        \item If $S$ is a ring (possibly without identity) with no proper left ideals, then either $S^{2}=0$ or $S$ is a division ring.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ be a ring with identity and $S$ the ring of all $n\times n$ matrices over $R$. $J$ is an ideals of $S$ if and only if $J$ is the ring of all $n\times n$ matrices over $I$ for some ideal $I$ in $R$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $S$ be the ring of all $n\times n$ matrices over a division ring $D$.
+    \begin{enumerate}[(a)]
+        \item $S$ has no proper ideals (that is, 0 is the maximal ideal).
+        \item $S$ has zero divisors. Consequently, (i) $S\cong S /0$ is not a division ring and (ii) 0 is a prime ideal which does not satisfy condition (1) of Theorem 2.15.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    \begin{enumerate}[(a)]
+        \item Show that $\mathbf{Z}$ is a principle ideal ring.
+        \item Every homomorphic image of a principle ideal ring is also a principle ideal ring.
+        \item $Z_{m}$ is a principle ideal ring for every $m>0$.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    If $N$ is the ideal of all nilpotent elements in a commutative ring $R$, then $R /N$ is a ring with no nonzero nilpotent elements.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ be a ring without identity and with no zero divisors. Let $S$ be the ring whose additive group is $R\times \mathbf{Z}$ as in the proof of Theorem 1.10. Let $A=\{(r,n)\in S|rx+nx=0 \text{ for every }x\in R\}$.
+    \begin{enumerate}[(a)]
+        \item $A$ is an ideal in $S$.
+        \item $S /A$ has an identity and contains a subring isomorphic to $R$.
+        \item $S /A$ has no zero divisors.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $f:R\to S$ be a homomorphism of rings, $I$ and ideal in $R$, and $J$ an ideal in $S$.
+    \begin{enumerate}[(a)]
+        \item $f^{-1}(J)$ is and ideal in $R$ that contains $\mathrm{Ker}f$.
+        \item If $f$ is an epimorphism, then $f(I)$ is an ideal in $S$. If $f$ is not surjective, $f(I)$ need not be an ideal.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    If $P$ is an ideal in a not necessarily commutative ring $R$, then the following conditions are equivalent.
+    \begin{enumerate}[(a)]
+        \item $P$ is a prime ideal.
+        \item If $r,s\in R$ are such that $rRs\subset R$, then $r\in P$ or $s\in P$.
+        \item If $(r)$ and $(s)$ are principle ideals of $R$ such that $(r)(s)\subset P$, then $r\in P$ or $s\in P$.
+        \item If $U$ and $V$ are right ideals in $R$ such that $UV\subset R$, then $U\subset R$ or $V\subset R$.
+        \item If $U$ and $V$ are left ideals in $R$ such that $UV\subset R$, then $U\subset R$ or $V\subset R$.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    The set consisting of zero and all zero divisors in a commutative ring with identity contains at least one prime ideal.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ be a commutative ring with identity and suppose that the ideal $A$ of $R$ is contained in a finite union of prime ideals $P_{1}\cup\cdots\cup P_{n}$. Show that $A\subset P_{i}$ for some $i$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $f:R\to S$ be an epimorphism of rings with kernel $K$.
+    \begin{enumerate}[(a)]
+        \item If $P$ is a prime ideal in $R$ that contains $K$, then $f(P)$ is a prime ideal in $S$.
+        \item If $Q$ is a prime ideal in $S$, then $f^{-1}(Q)$ is a prime ideal in $R$ that contains $K$.
+        \item There is a one-to-one correspondence between the set of all prime ideals in $R$ that contain $K$ and the set of all prime ideals in $S$, given by $P\mapsto f(P)$.
+        \item If $I$ is an ideal in a ring $R$, then every prime ideal in $R /I$ is of the form $P /I$, where $P$ is a prime ideal in $R$ that contains $I$.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    An ideal $M\neq R$ in a commutative ring $R$ with identity is maximal if and only if for every $r\in R-M$, there exists $x\in R$ such that $1_{R}-rx\in M$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    The ring $E$ of even integers contains a maximal ideal $M$ such that $E /M$ is not a field.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    In the ring $\mathbf{Z}$ the following conditions on a nonzero ideal $I$ are equivalent: (i) $I$ is prime; (ii) $I$ is maximal; (iii) $I=(p)$ with $p$ prime.    
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Determine all prime and maximal ideals in the ring $Z_{m}$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    \begin{enumerate}[(a)]
+        \item If $R_{1},\dots, R_{n}$ are rings with identity and $I$ is an ideal in $R_{1}\times \cdots\times R_{n}$, then $I=A_{1}\times \cdots\times A_{m}$, where each $A_{i}$ is an ideal in $R_{i}$.
+        \item Show that the conclusion of (a) need not hold if the rings $R_{i}$ do not have identities.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    An element $e$ in a ring $R$ is said to be \textbf{idempotent} if $e^{2}=e$. An element  of the center of the ring $R$ is said to be central. If $e$ is a central idempotent in a ring $R$ with identity, then
+    \begin{enumerate}[(a)]
+        \item $1_{R}-e$ is a central idempotent;
+        \item $eR$ and $(1_{R}-e)R$ are ideals in $R$ such that $R=eR\times (1_{R}-e)R$.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Idempotent elements $e_{1},\dots,e_{n}$ in a ring $R$ are said to be \textbf{orthogonal} if $e_{i}e_{j}=0$ for $i\neq j$. If $R,R_{1},\dots, R_{n}$ are rings with identity, then the following conditions are equivalent:
+    \begin{enumerate}[(a)]
+        \item $R\cong R_{1}\times \cdots\times R_{n}$.
+        \item $R$ contains a set of orthogonal central idempotents $\{e_{1}, \dots, e_{n}\}$ such that $e_{1}+e_{2}+\cdots+e_{n}=1_{R}$ and $e_{i}R\cong R$ for each $i$.
+        \item $R$ is the internal direct product $R=A_{1}\times \cdots\times A_{n}$ where each $A_{i}$ is an ideal of $R$ such that $A_{i}\cong R_{i}$.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    If $m\in \mathbf{Z}$ has a prime decomposition $m=p_{1}^{k_{1}}\cdots p_{t}^{k_{t}}$($k_{i}>0$; $p_{i}$ distinct primes), then there is an isomorphism of rings $Z_{m}\cong Z_{p_{1}^{k_{1}}}\times \cdots\times Z_{p_{t}^{k_{t}}}$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    If $R=\mathbf{Z}$, $A_{1}=(6)$ and $A_{2}=(4)$, then the map $\theta :R /A_{1}\cap A_{2}\to R_{1} /A_{1}\times R_{2} /A_{2}$ of Corollary 2.27 is not surjective.
+\end{ex}
