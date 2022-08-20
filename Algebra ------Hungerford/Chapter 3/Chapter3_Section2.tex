@@ -220,6 +220,15 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item $\forall a\in f^{-1}(J)$ and $r\in R$, $f(ar)=f(a)f(r)\in J\Rightarrow ar\in J$. Similarly, $ra\in J$, $f^{-1}(J)$ is an ideal. $\mathrm{Ker}f\subset f^{-1}(J)$ since $0_{S}\in J$.
+        \item $\forall b\in f(I)$ and $s\in S$, $f$ is a epimorphism so $s=f(r)$, $b=f(a)$ for some $r, a\in R$. $sb=f(r)f(a)=f(ar)$, $ar\in I\Rightarrow sb\in f(I)$, similarly $bs\in f(I)$. $f(I)$ is an ideal.
+        
+        If $f$ is not surjective. Take $Z\left[x\right]$ and $\mathbf{Z}$ which is a subring but not an ideal in $Z\left[x\right]$. $\mathbf{Z}$ is an ideal of itself, $f=1_{\mathbf{Z}}$ satisfies the condition.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
@@ -239,11 +248,19 @@ $$ $$
     The set consisting of zero and all zero divisors in a commutative ring with identity contains at least one prime ideal.
 \end{ex}
 
+\begin{answer}
+    Denote $S=R-Z$. $\forall a,b\in S$, we prove that $ab\in S$. Suppose $\exists (ab)c=0$ for some $c\in R$, $a$, $b$ are not zero divisors so $abc=b(ac)=a(bc)=0$, so $ac=0$, $bc=0\Rightarrow c=0$, so $ab$ is not a zero divisor. Thus $Z=R-S$ contains an prime ideal.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Let $R$ be a commutative ring with identity and suppose that the ideal $A$ of $R$ is contained in a finite union of prime ideals $P_{1}\cup\cdots\cup P_{n}$. Show that $A\subset P_{i}$ for some $i$.
 \end{ex}
+
+\begin{answer}
+    Suppose not. We choose the smallest $I$ such that for all $i\in I$, $P_{i}\cap A\neq \varnothing$ and $A\cap P_{i}\not\subset\bigcup\limits_{j\neq i}P_{j}$ for any $i\in I$. So $\exists a_{i}\in (A\cap P_{i})-(\bigcup\limits_{j\neq i}P_{j})$, $\forall i\in I$. Take $x=a_{1}+a_{2}a_{3}\cdots a_{n}$, $x\in A$ since $a_{i}\in A$ for all $i\in I$. And $x\notin P_{i}$ for $i=2,3,\dots, n$ since $a_{1}\notin P_{i}$, $i=2,3,\dots, n$. $x\notin P_{1}$ since $P_{1}$ is prime and $a_{2}, \dots, a_{n}\notin P_{1}$. So $x\notin \bigcup\limits_{j\neq i}P_{j}$, which is contradictory!
+\end{answer}
 
 $$ $$
 
@@ -257,11 +274,24 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item From \textbf{Exercise 3.2.13} we know $f(P)$ is an ideal. $\forall x,y\in f(P)$, $\exists a.b\in R$, $x=f(a)$, $y=f(b)$ and $a,b\notin P$. Assume $\exists p\in P$ such that $f(ab)=f(p)$, then $f(ab-p)=0$, $ab-p\in\mathrm{Ker}f\subset P\Rightarrow ab\in P$. That's contradictory to $a,b\notin P$ so $xy\notin f(P)$. $f(P)$ is prime.
+        \item From \textbf{Exercise 3.2.13}, $f^{-1}(Q)$ is an ideal. Take $g:S\to S /Q$ and $gf:R\to S /Q$. By the Theorem of homomorphism, $R /f^{-1}(Q) \cong S /Q$ is a ring without divisor, so $f^{-1}(Q)$ is prime.
+        \item From (a), (b), $f$ is a one-to-one map between prime ideals given by $P\mapsto f(P)$.
+        \item Consider the homomorphism $f:R\to R /I$. For any prime ideal $P\subset R$ and $f(P)$ is an prime ideal in $R$, $\mathrm{Ker}f=I$ so for prime ideals $I\subset P\subset R$. $P$ can have one to one correspondence with $f(P)=P /I\subset R/I$. So all the prime ideals has the form $P /I$.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     An ideal $M\neq R$ in a commutative ring $R$ with identity is maximal if and only if for every $r\in R-M$, there exists $x\in R$ such that $1_{R}-rx\in M$.
 \end{ex}
+
+\begin{answer}
+    If $M$ is maximal, then $M$ is prime. So $rR+M=R$, $r(R-M)+M=R$ and $r(R-M)\cap M=\varnothing$. Take $1_{R}\in R$ we have $x\in R-M$, $1_{R}-xr\in M$. If $\forall r\in R-M$, $\exists x\in R$ such that $1_{R}-rx\in M$. Suppose $M\subset I\subset R$ where $I$ is an ideal, $I\neq R$ so $1_{R}\notin R$. Take $r\in I-M\subset R-M$, then $\forall x\in R$, $rx\in I$, so $1_{R}-rx\notin I$ thus $1_{R}-rx\notin M$. That's contradictory!
+\end{answer}
 
 $$ $$
 
@@ -269,17 +299,37 @@ $$ $$
     The ring $E$ of even integers contains a maximal ideal $M$ such that $E /M$ is not a field.
 \end{ex}
 
+\begin{answer}
+    $E=2\mathbf{Z}$ and $M$ is a maximal ideal in $E$ and for any subring of $E$ has the form $wn\mathbf{Z}$ where $n\in \mathbf{Z}$. $2n\mathbf{Z}$ is an ideal in $2\mathbf{Z}$. Take $n=15$, $(2,15)=1$ so $2\mathbf{Z} /30\mathbf{Z}\cong \mathbf{Z} /15\mathbf{Z}$ which is not a field since $3\cdot 5=0$ is a zero divisor.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     In the ring $\mathbf{Z}$ the following conditions on a nonzero ideal $I$ are equivalent: (i) $I$ is prime; (ii) $I$ is maximal; (iii) $I=(p)$ with $p$ prime.    
 \end{ex}
 
+\begin{answer}
+    $\mathbf{Z}$ is an integer domain so (ii)$\Rightarrow$(i).
+
+    (i)$\Rightarrow$(iii): Trivial.
+
+    (iii)$\Rightarrow$(ii): For any $n\notin (p)$, we have $p\nmid n$ thus $\exists x,y\in \mathbf{Z}$ such that $px+my=1$. Consider an ideal $I$ and $(p)\subset I$, $n\in I$, then $1\in I$ so $I=\mathbf{Z}$ which means $(p)$ is maximal.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Determine all prime and maximal ideals in the ring $Z_{m}$.
 \end{ex}
+
+\begin{answer}
+    $Z_{m}^{2}=Z_{m}$ so every maximal ideal is prime in $Z_{m}$. $Z_{m}\cong \mathbf{Z} /m\mathbf{Z}$ via $\varphi:\bar{x}\mapsto mz+x$. From \textbf{Exercise 3.2.17}, all the prime ideals in $\mathbf{Z}/m\mathbf{Z}$ are $P /m\mathbf{Z}$, where $P$ is a prime ideal contains $m\mathbf{Z}=(m)$.
+
+    If $m$ is prime, $(m)$ is prime, too. So no such ideal exist.
+
+    If $m=p_{1}^{s_{1}}p_{2}^{s_{2}}\cdots p_{n}^{s_{n}}$ where $p_{i}$ are primes, then $(p_{1}), (p_{2}),\dots, (p_{n})$ are prime ideals and $f((\bar{p_{i}}))=(p_{i})/m\mathbf{Z}$ are prime ideals. So all the prime ideals in $Z_{m}$ are $(\bar{p_{i}})$, $i,1,2,\dots,n$.
+\end{answer}
 
 $$ $$
 
@@ -300,6 +350,13 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item $(1_{R}-e)^{2}=1_{R}-2e+e^{2}=1_{R}-2e+e=1_{R}-e$. $\forall x\in R$, $ex=xe$ so $(1_{R}-e)x=x-ex=x-xe=x(1_{R}-e)$. $1_{R}-e$ is a central idempotent.
+        \item $eR\cup (1_{R}-e)R\subset R$ so $\left\langle eR\cap(1_{R}-e)R\right\rangle\subset R$. $R=eR+(1_{R}-e)R$ so $R\subset\left\langle eR\cap(1_{R}-e)R\right\rangle$. So $R=\left\langle eR\cap(1_{R}-e)R\right\rangle$. $\left\langle eR\right\rangle=eR$ and $\left\langle (1_{R}-e)R\right\rangle=(1_{R}-e)R$ so $\left\langle eR\right\rangle\cap \left\langle (1_{R}-e)R\right\rangle=0$. Thus $R=eR\times (1_{R}-e)R$.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
@@ -311,14 +368,34 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    Assume $f:R_{1}\times \cdots\times R_{n}\to R$ is an isomorphism.
+
+    (a)$\Rightarrow$(b): Denote $\bar{e_{1}}=(1_{R},0,\dots,0)$, $\bar{e_{2}}=(0,1_{R},\dots,0)$, $\dots$, $\bar{e_{n}}=(0, 0, \dots,\\1_{R})$. They are orthogonal central idempotent in $S=R_{1}\times \cdots\times R_{n}$ and $f(\bar{e_{n}})=e_{n}$, $e_{1}+e_{2}+\cdots+e_{n}=1_{S}$, $\sum\limits_{i=1}^{n}e_{i}S=S$.
+    
+    Take  $\varphi_{i}:(r_{1}, r_{2},\dots, r_{i}, \dots, r_{n})\mapsto r_{i}$. Then $\varphi_{i}$ is a well defined isomorphism between $e_{i}S$ and $R_{i}$. $e_{i}R\cong \bar{e_{i}}S\cong R_{i}$.
+
+    (b)$\Rightarrow$(c): Take $A_{i}=e_{i}R$, then $A_{i}\cong R_{i}$. We need to prove $R=e_{i}R\times e_{2}R\times \cdots\times e_{n}R$. $e_{i}R\cap (e_{1}R+e_{2}R+\cdots+e_{i-1}R+e_{i+1}R+\cdots+e_{n}R)=0$ since $e_{i}x_{i}=e_{1}x_{1}+e_{2}x_{2}+\cdots+e_{i-1}x_{i-1}+e_{i+1}x_{i+1}+\cdots+e_{n}x_{n}\Rightarrow e_{i}^{2}x_{i}=0$. $R=1_{R}R=\sum\limits_{i=1}^{n}e_{i}R$ so $R=e_{i}R\times e_{2}R\times \cdots\times e_{n}R$.
+
+    (c)$\Rightarrow$(a): Trivial.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     If $m\in \mathbf{Z}$ has a prime decomposition $m=p_{1}^{k_{1}}\cdots p_{t}^{k_{t}}$($k_{i}>0$; $p_{i}$ distinct primes), then there is an isomorphism of rings $Z_{m}\cong Z_{p_{1}^{k_{1}}}\times \cdots\times Z_{p_{t}^{k_{t}}}$.
 \end{ex}
 
+\begin{answer}
+    For any $m\in\mathbf{Z}$, $\mathbf{Z} /m\mathbf{Z}\cong Z_{m}$. $p_{1}^{k_{1}}\mathbf{Z}\cap\cdots\cap p_{t}^{k_{t}}\mathbf{Z}=m\mathbf{Z}$. So $\exists \varphi:Z_{m}\mapsto Z_{p_{i}^{k_{1}}}\times \cdots\times Z_{p_{t}^{k_{t}}}$. $\forall i,j\in I$, $p_{i}^{k_{i}}\in p_{i}^{k_{i}}\mathbf{Z}$ and $p_{j}^{k_{j}}\in p_{j}^{k_{j}}\mathbf{Z}$, $\exists x,y\in \mathbf{Z}$ such that $xp_{i}^{k_{i}}+yp_{j}^{k_{j}}=1\in\mathbf{Z}$. So $p_{i}^{k_{i}}\mathbf{Z}+p_{j}^{k_{j}}\mathbf{Z}=\mathbf{Z}$, $\varphi$ is an isomorphism so $Z_{m}\cong Z_{p_{1}^{k_{1}}}\times \cdots\times Z_{p_{t}^{k_{t}}}$.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     If $R=\mathbf{Z}$, $A_{1}=(6)$ and $A_{2}=(4)$, then the map $\theta :R /A_{1}\cap A_{2}\to R_{1} /A_{1}\times R_{2} /A_{2}$ of Corollary 2.27 is not surjective.
 \end{ex}
+
+\begin{answer}
+    $R /(A_{1}\cap A_{2})=Z_{12}$, $R /A_{1}=Z_{6}$ and $R /A_{2}=Z_{4}$. $\left| Z_{6}\times Z_{4} \right| =\left| Z_{6} \right| \times \left| Z_{4} \right| =24$ but $\left| Z_{12} \right| =12$, so $\theta$ is surjective.
+\end{answer}
