@@ -1,0 +1,98 @@
+\section{Factorization in commutative rings}
+\begin{ex}
+    A nonzero ideal in a principle ideal domain is maximal if and only if it is prime.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    An integral domain $R$ is unique factorization domain if and only if every non zero prime ideal in $R$ contains a nonzero principle ideal that is prime.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ be the subring $\{a+b\sqrt{10}|a,b\in \mathbf{Z}\}$ of the field of real numbers
+    \begin{enumerate}[(a)]
+        \item The map $N:R\to Z$ given by $a+b\sqrt{10}\mapsto (a+b\sqrt{10})(a-b\sqrt{10})=a^{2}-10b^{2}$ is such that $N(uv)=N(u)N(v)$ for all $u,v\in R$ and $N(u)=0$ if and only if $u=0$.
+        \item $u$ is a unit in $R$ if and only if $N(u)=\pm 1$.
+        \item $2,3,4+\sqrt{10}$ and $4-\sqrt{10}$ are irreducible elements of $R$.
+        \item $2,3,4+\sqrt{10}$ and $4-\sqrt{10}$ are not prime elements of $R$.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Show that in the integral domain of \textbf{Exercise 3.3.3} every element can be factored into a product of irreducibles, but this factorization need not be unique.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ be a principle ideal domain.
+    \begin{enumerate}[(a)]
+        \item Every proper ideal is a product $P_{1}P_{2}\cdots P_{n}$ of maximal ideals, which are unique ly determined up to order.
+        \item An ideal $P$ in $R$ is said to be primary if $ab\in P$ and $a\notin P$ imply $b^{n}\in P$ for some $n$. Show that $P$ is primary if and only if for some $n$, $P=(p^{n})$ where $p\in R$ is prime or $p=0$.
+        \item If $P_{1}, P_{2},\dots, P_{n}$ are primary ideals such that $P_{i}=(p_{i}^{n_{i}})$ and the $p_{i}$ are distinct primes, then $P_{1}P_{2}\cdots P_{n}=P_{1}\cap P_{2}\cap \cdots\cap P_{n}$.
+        \item Every proper ideal in $R$ can be expressed (uniquely up to order) as the intersection of a finite number of primary ideals.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    \begin{enumerate}[(a)]
+        \item If $a$ and $n$ are integers, $n>0$, then there exist integers $q$ and $r$ such that $a=qn+r$, where $\left| r \right| \leq n /2$.
+        \item The Gaussian integers $\mathbf{Z}[i]$ form a Euclidean domain with $\varphi(a+bi)=a^{2}+b^{2}$.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    What are the units in the ring of Gaussian integers $\mathbf{Z}[i]$?
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ be the following subring of the complex numbers: $R=\{a+b(1+\sqrt{19}i) /2|a,b\in \mathbf{Z}\}$. The $R$ is a principle ideal domain that is not a Euclidean domain.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ be a unique factorization domain and $d$ a nonzero element of $R$. There are only a finite number of distinct principle ideals that contain the ideal $(d)$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    If $R$ is a unique factorization domain and $a,b\in R$ are relatively prime and $a\mid bc$, then $a\mid c$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ be a Euclidean ring and $a\in R$. Then $a$ is a unit in $R$ if and only if $\varphi(a)=\varphi(1_{R})$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Every nonempty set of elements (possibly infinite) in a commutative principle ideal ring with identity has a greatest common divisor.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ be a Euclidean domain with associated function $\varphi :R-\{0\}\to \mathbf{N}$. If $a,b\in R$ and $b\neq 0$, here is a method for finding the greatest common divisor of $a$ and $b$. By repeated use of Definition 3.8(ii) we have:
+    \[a=q_{0}b+r_{1},\quad\text{with}\quad r_{1}=0\quad\text{or}\quad\varphi(r_{1})<\varphi(b);\]
+    \[b=q_{1}r_{1}+r_{2},\quad\text{with}\quad r_{2}=0\quad\text{or}\quad\varphi(r_{2})<\varphi(1);\]
+    \[r_{1}=q_{2}r_{2}+r_{3},\quad\text{with}\quad r_{3}=0\quad\text{or}\quad\varphi(r_{3})<\varphi(2);\]
+    \[\vdots\]
+    \[r_{k}=q_{k+1}r_{k+1}+r_{k+2},\quad\text{with}\quad r_{k+2}=0\quad\text{or}\quad\varphi(r_{k+2})<\varphi(k+1);\]
+    \[\vdots\]
+    Let $r_{0}=b$ and let $n$ be the least integer such that $r_{n+1}=0$ (such an $n$ exists since the $\varphi(r_{k})$ form a strictly decreasing squence of nonnegative integers). Show that $r_{n}$ is the greatest common divisor $a$ and $b$.
+\end{ex}
