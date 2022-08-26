@@ -3,11 +3,39 @@
     A nonzero ideal in a principle ideal domain is maximal if and only if it is prime.
 \end{ex}
 
+\begin{answer}
+    For PID $R$, $R^{2}=R$ so every maximal ideal is prime. If $I=(p)\neq 0$ is prime in $R$, then $p$ is prime so $p$ is irreducible and $(p)$ is maximal.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     An integral domain $R$ is unique factorization domain if and only if every non zero prime ideal in $R$ contains a nonzero principle ideal that is prime.
 \end{ex}
+
+\begin{answer}
+    Suppose $R$ is a unique factorization domain and $P\neq 0$ is a prime ideal. Let $x\in P$ be a nonzero nonunit. Then $x$ can be factored into $x=p_{1}p_{2}\cdots p_{n}$ a product of prime elements. Then $x\in P$ implies $p_{i}\in P$ for some $i$, so $(p_{i})\subset P$.
+
+    Conversely, assume that each nonzero prime ideal of $R$ contains a principle prime ideal.
+
+    \begin{lemma}
+        Let $R$ be a commutative ring and $S\subset R\backslash \{0\}$ a multiplicatively closed subset containing $1_{R}$. Let $\mathcal{I}_{S}$ be the set of ideals of $R$ which are disjoint from $S$. Then
+        \begin{enumerate}[(a)]
+            \item $\mathcal{I}_{S}$ is nonempty.
+            \item Every element of $\mathcal{I}_{S}$ is contained in a maximal element oof $\mathcal{I}_{S}$.
+            \item Every maximal element of $\mathcal{I}_{S}$ is prime.
+        \end{enumerate}
+    \end{lemma}
+    
+    Here's the proof of the lemma:
+    \begin{enumerate}[(a)]
+        \item Trivial.
+        \item Let $I\in \mathcal{I}_{S}$. Consider the subposet $P_{I}$ of $\mathcal{I}_{S}$ consisting of ideals which contain $I$. Since $I\in P_{I}$, $P_{I}$ is nonempty; moreover, any chain in $P_{I}$ has an upper bound,namely the union of all of its elements. Therefore by Zorn's lemma, $P_{I}$ has a maximal element of $\mathcal{I}_{S}$, which is clearly also a maximal element of $\mathcal{I}_{S}$. 
+        \item Let $I$ be a maximal element of $\mathcal{I}_{S}$; suppose that $x,y\in R$ are such that $xy\in I$. If $x$ is not in $I$, then $\left\langle I,x\right\rangle\supsetneq I$ and therefore contains an element $s_{1}$ of $S$, say \[s_{1}=i_{1}+ax\] Similarly, if $y$ is not in $I$, then we get an element $s_{2}$ of $S$ of the form \[s_{2}=i_{2}+by\] But then \[s_{1}s_{2}=i_{1}i_{2}+(by)i_{1}+(ax)i_{2}+(ab)xy\in I\cap S\] a contradiction! 
+    \end{enumerate}
+
+    A multiplicative subset $S$ is saturated if for all $x\in S$ and $y\in R$, if $y\mid x$ then $y\in S$. We define the saturation $\bar{S}$ of a multiplicatively closed subset $S$ to be the intersection of all saturated multiplicatively closed subsets containing $S$. Let  $S$ be the set of units of $R$ together with all product of prime elements. One checks easily that $S$ is saturated multiplicative subset. We should show that $S=\frac{R} \backslash\{0\}$. Suppose then for a contradiction that there exists a nonzero nonunit $x\in R\backslash S$. Then saturation of $S$ implies that $S\cap (x)=\varnothing$, and then there exists a prime ideal $P$ contains $x$ and disjoint from $S$. But by the hypothesis, $P$ contains a prime element $p$, contradictting its disjointness from $S$.
+\end{answer}
 
 $$ $$
 
@@ -21,11 +49,27 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item Assume $u=a_{1}+b_{1}\sqrt{10}$, $v=a_{2}+b_{2}\sqrt{10}$.\[\begin{aligned}
+            N(uv)&=N(a_{1}a_{2}+10b_{1}b_{2}+(a_{1}b_{2}+a_{2}b_{1})\sqrt{10})\\&=(a_{1}a_{1}+10b_{1}b_{2})^{2}-10(a_{1}b_{2}+a_{2}b_{1})^{2}\\&=a_{1}^{2}a_{2}^{2}+100b_{1}^{2}b_{2}^{2}-10a_{1}^{2}b_{2}^{2}-10a_{2}^{2}b_{1}^{2}
+        \end{aligned}\]
+        \[N(u)N(v)=(a_{1}^{2}-10b_{1}^{2})(a_{2}^{2}-10b_{2}^{2})=N(uv)\]
+        \item If $u$ is a unit of $R$, $N(uu^{-1})=N(1)=N(u)N(u^{-1})=1$. $N(u)$ and $ N(u^{-1})\in \mathbf{Z}$ so $N(u)=\pm 1$.
+        \item Suppose $4+\sqrt{10}=(a_{1}+b_{1}\sqrt{10})(a_{2}+b_{2}\sqrt{10})$ where $N(a_{1}+b_{1}\sqrt{10})$, $N(a_{2}+b_{2}\sqrt{10})\neq \pm 1$. $N(4+\sqrt{10})=6=N(a_{1}+b_{1}\sqrt{10})N(a_{2}+b_{2}\sqrt{10})$ so $N(a_{1}+b_{1}\sqrt{10})=\pm 2$ and $N(a_{2}+b_{2}\sqrt{10})=\pm 3$. WLOG, assume $N(a_{1}+b_{1}\sqrt{10})=2$ and $N(a_{2}+b_{2}\sqrt{10})=3$. \[a_{1}^{2}=10b_{1}^{2}+2\Rightarrow a_{1}^{2}\equiv 2\mod 10\]\[a_{2}^{2}=10b_{2}^{2}+3\Rightarrow a_{2}^{2}\equiv 3\mod 10\] This can't be true! So $4+\sqrt{10}$ is irreducible. Similarly, 2,3,$4-\sqrt{10}$ is irreducible.
+        \item $3\cdot 2=(4+\sqrt{10})(4-\sqrt{10})-6$, But none of these four numbers divide another.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Show that in the integral domain of \textbf{Exercise 3.3.3} every element can be factored into a product of irreducibles, but this factorization need not be unique.
 \end{ex}
+
+\begin{answer}
+    Suppose $a$ can be factored into $a_{1}a_{2}\cdots a_{n}\cdots$ which may not be finite. We only need to prove there are finite $a_{i}$ are irreducible. $N(a)=N(a_{1})N(a_{2})\cdots N(a_{n})\cdots=k\in\mathbf{Z}$. Assume $k=k_{1}k_{2}\cdots k_{m}$ and for irreducible $a_{i}$, $N(a_{i})\neq \pm 1$, so there are at most $m$ $a_{i}$ irreducible. Thus $a$ can be factored into a product of irreducibles.
+\end{answer}
 
 $$ $$
 
@@ -39,6 +83,17 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item For any ideal $(a)$, $a$ can be factored into irreducible product $a_{1}a_{2}\cdots a_{n}$. $(a_{i})$ are maximal in $R$ and $(a)=(a_{1})(a_{2})\cdots(a_{n})$.
+        \item If $P=(p^{n})$. For any $ab\in P$, $ab=p^{n}x$ for some $x\in R$ and $n\in\mathbf{Z}$. $R$ is a UFD so $p\mid a$ or $p\mid b$ so $b^{n}\in P$. Conversely, $\forall P=(k)$ we prove $k=p^{t}$ for some prime $p$ and $t\in \mathbf{Z}$. For any $ab=kx$, assume $a=a_{1}^{1}\cdots a_{m}^{p_{m}}$, $b=a_{1}^{q_{1}}\cdots a_{m}^{q_{m}}$ and $k=a_{1}^{s_{1}}\cdots a_{m}^{s_{m}}$, $p_{i}$, $q_{i}$, $s_{i}$ are all nonnegative integers. We prove that for all but one $i$, $s_{i}=0$. Take $p_{i}=0$ for $i=1,2,\dots, m-1$, $p_{m}=s_{m}$, $q_{i}=s_{i}$ for $i=1,2,\dots,m-1$, $q_{m}=0$, then $ab=k\in (k)$ but $a$, $a^{n}$, $b$, $b^{n}\notin (k)$ for all $n\in \mathbf{Z}$. So $k=a_{i}^{s_{i}}$ for some $s_{i}\in \mathbf{Z}$, $(k)=(a_{i}^{s_{i}})$, $a_{i}$ prime.
+        \item $P_{1}P_{2}\cdots P_{n}\subset P_{1}\cap P_{2}\cap \cdots\cap P_{n}$ is trivial.
+        
+        For any $a\in P_{1}\cap \cdots\cap P_{n}$, $p_{i}^{n_{i}}|a$, $\forall i=1,2,\dots, n$. $p_{i}^{n_{i}}\neq p_{j}^{n_{j}}$ so $a=p_{1}^{n_{1}}x_{1}\Rightarrow p_{2}^{n_{2}}|x_{2}\Rightarrow a=p_{1}^{n_{1}}p_{2}^{n_{2}}x_{2}\cdots\Rightarrow a=p_{1}^{n_{1}}p_{2}^{n_{2}}\cdots p_{n}^{n_{n}}x_{n}\in P_{1}P_{2}\cdots P_{n}$. So $P_{1}P_{2}\cdots P_{n}\subset P_{1}\cap P_{2}\cap \cdots\cap P_{n}$, $P_{1}\cdots P_{n}=P_{1}\cap\cdots\cap P_{n}$.
+        \item For any ideal $(a)\subset R$, $(a)=P_{1}P_{2}\cdots P_{n}$ which is the product of maximal ideals. So we can express $(a)$ as the product of $p_{i}'=(p_{i}^{s_{i}})$ since $n$ is finite. $(a)=P_{1}'P_{2}'\cdots P_{m}'=P_{1}'\cap P_{2}'\cap \cdots\cap P_{m}'$.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
@@ -48,11 +103,25 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item Trivial.
+        \item For $a_{1}+b_{1}i$, $a_{2}+b_{2}i\in \mathbf{Z}[i]$ \[\begin{aligned}
+            \varphi(a_{1}+b_{1}i)(a_{2}+b_{2}i)&=\varphi((a_{1}a_{2}-b_{1}b_{2})+(a_{1}b_{2}+a_{2}b_{1})i)\\&=(a_{1}a_{2}-b_{1}b_{2})^{2}+(a_{1}b_{2}+a_{2}b_{1})^{2}\\&=(a_{1}a_{2})^{2}+(b_{1}b_{2})^{2}+(a_{1}b_{2})^{2}+(a_{2}b_{1})^{2}\\&=(a_{1}^{2}+b_{1}^{2})(a_{2}^{2}+b_{2}^{2})\\&=\varphi(a_{1}+b_{1}i)\varphi(a_{2}+b_{2}i)
+        \end{aligned}\]
+        For any $x\in\mathbf{Z}$, and $y=a+bi\in\mathbf{Z}[i]$, from (a) $a=q_{1}x+r_{1}$, $b=q_{2}x+r_{2}$ with $\left| r_{1} \right| \leq \frac{x}{2}$, $\left| r_{2} \right| \leq \frac{x}{2}$. Let $q=q_{1}+q_{2}i$, $r=r_{1}+r_{2}i$, then $y=qx+r$ with $r=0$ or $\varphi(r)=r_{1}^{2}+r_{2}^{2}<\varphi(x)$. $\forall x=c+di\neq 0$, take $\bar{x}=c-di$, then there are $q$, $r_{0}\in\mathbf{Z}[i]$ such that $y\bar{x}=qx\bar{x}+r_{0}$ with $r_{0}=0$ or $\varphi(r_{0})<\varphi(x\bar{x})$. Let $r=y-qx$, then $y=qx+r$ and $r=0$ or $\varphi(r)<\varphi(x)$.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     What are the units in the ring of Gaussian integers $\mathbf{Z}[i]$?
 \end{ex}
+
+\begin{answer}
+    From \textbf{Exercise 3.3.6}, we proved that $\varphi(a+bi)=a^{2}+b^{2}$ satisfies that $\forall u,v\in \mathbf{Z}[i]$, $\varphi(uv)=\varphi(u)\varphi(v)$. So if there exist $u^{-1}=c+di$ such that $uu^{-1}=1$, then $\varphi(u)\varphi(u^{-1})=1$ which means $(a^{2}+b^{2})(c^{2}+d^{2})=1$. So $u=\pm 1$ or $\pm i$.
+\end{answer}
 
 $$ $$
 
@@ -60,11 +129,33 @@ $$ $$
     Let $R$ be the following subring of the complex numbers: $R=\{a+b(1+\sqrt{19}i) /2|a,b\in \mathbf{Z}\}$. The $R$ is a principle ideal domain that is not a Euclidean domain.
 \end{ex}
 
+\begin{answer}
+    Take $\varphi(a+b(1+\sqrt{19}i) /2)=a^{2}+ab+5b^{p2}$. Denote $\tilde{R}$ as the collection of units in $R$ together with 0. An element $u\in R-\tilde{R}$ is called a universal side divisor if for every $x\in R$ there is some $z\in \tilde{R}$ such that $u$ divides $x-z$ in $R$.
+    
+    Let $R$ be an integral domain that is not a field, if $R$ is a Euclidean domain then there are universal side divisors in $R$. Since $\varphi(R)\subset \mathbf{N}$ has a lower bound, we can choose $u\in R-\tilde{R}$ such that $\varphi(u)$ minimizes. Then $\forall x=qu+r$, $r=0$ or $\varphi(r)<\varphi(u)$ so $r\in \tilde{R}$. Hence $u$ is a universal side divisor in $R$. Now we prove $R=\mathbf{Z}[(1+\sqrt{19}i) /2]$ is not a Euclidean domain by showing $R$ contains no universal side divisor. The units in $R$ are only $\pm 1$ so $\tilde{R}=\{\pm 1,0\}$. $\forall a+b(1+\sqrt{19}i) /2\in \mathbf{Z}[(1+\sqrt{19}i) /2]\backslash \mathbf{Z}$, $\varphi(a+b(1+\sqrt{19}i) /2)=a^{2}+ab+5b^{2}\geq 5$. So the smallest nonzero value of $\varphi(x)$ is 1 and 4. Take $x=2$ in the definition of universal side divisor, $u$ must divide $2$ or $3$. If $2=ab$, then $4=\varphi(a)\varphi(b)$ so the only divisor of $2$ are $\pm 1$, $\pm 2$. Similarly the only divisor of $2$ are $\pm 1$, $\pm 3$. So the value of $u$ should be $\pm 2$ or $\pm 3$. Take $x=(1+\sqrt{19}i) /2$ and it's easy to check that none of $x$, $x\pm 1$ are divisible by $\pm 2$, $\pm 3$. Thus none of these is a universal side divisor.
+
+    Next we prove $R$ is a principle ideal domain. Define $\varphi'$ to be a Dedekind-Hasse norm if $\varphi'$ is a positive norm and for every nonzero $a,b\in R$ either $a\in (b)$ or there exist $s,t\in R$ with $0<\varphi'(sa-tb)<\varphi'(b)$. 
+    
+    For any principle ideal domain $R$, $R$ has a Dedekind-Hasse norm. Let $I$ be an nonzero ideal in $R$ and $b$ be a nonzero element of $I$ with $\varphi'(b)$ minimal. Suppose $a$ is any nonzero elements in $I$, so the ideal $(a,b)$ is contained in $I$. Then the Dedekind-Hasse condition on $\varphi'$ and the minimality of $b$ implies that $a\in (b)$, so $I=(b)$ is principle.
+
+    We prove $R=\mathbf{Z}[(1+\sqrt{19}i) /2]$ has a Dedekind-Hasse norm $\varphi$. Suppose $\alpha, \beta$ are nonzero elements of $R$ and $a /\beta\notin R$. We should show that there are elements $s,t\in R$ with $0<\varphi(s\alpha-t\beta)<\varphi(\beta)$, which is equivalent to $0<\varphi(\frac{\alpha}{\beta}s-t)<1$. Assume $\frac{\alpha}{\beta}=\frac{a+b\sqrt{19}i}{c}\in\mathbf{Q}[\sqrt{19}i]$ with integers $a,b,c$ having no common divisor and with $c>1$. Since $a,b,c$ have no common divisor there are integers $x,y,z$ with $ax+by+ca=1$. Write $ay-19bx=cq+r$ for some quatient $q$ and remainder $r$ with $\left| r  \right|\leq c/2 $ and let $s=y+x\sqrt{19}i$ and $t=q-z\sqrt{19}i$. Then \[0<\varphi(\frac{\alpha}{\beta}s-t)=\frac{(ay-19bx-cq)^{2}+19(ax+by+cz)^{2}}{c^{2}}<\frac{1}{4}+\frac{19}{c^{2}}\] so when $c\geq 5$ then condition is satisfied.
+    
+    Suppose $c=2$. Then one of $a,b$ is even and the other is odd, and then $s=1$ and $t=\frac{(a-1)+b\sqrt{19}i}{2}$ are elements of $R$ satisfying the condition.
+    
+    Suppose $c=3$. The integer $a^{2}+19b^{2}$ is not divisible by 3. Assume $a^{2}+19b^{2}=3q+r$ with $r=1$ or $r=2$. Then $s=a-b\sqrt{19}i$ and $t=q$ satisfies the condition.
+
+    Suppose $c=4$ so $a$ and $b$ are not both even. If one of $a,b$ is even and the other is odd, then $a^{2}+19b^{2}$ is odd, so we can write $a^{2}+19b^{2}=4q+r$ for some $q,r\in \mathbf{Z}$ and $0<r<4$. Then $s=a-b\sqrt{19}i$ and $t=q$ satisfies the condition. If $a$ and $b$ are both odd, then $a^{2}+19b^{2}\equiv 4\mod 8$, so we have $a^{2}+19b^{2}=8q+4$ for some $q\in\mathbf{Z}$. Then $s=(a-b\sqrt{19}i) /2$ and $t=q$ are elements in $R$ satisfying the condition.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Let $R$ be a unique factorization domain and $d$ a nonzero element of $R$. There are only a finite number of distinct principle ideals that contain the ideal $(d)$.
 \end{ex}
+
+\begin{answer}
+    Assume $d=p_{1}^{s_{1}}p_{2}^{s_{2}}\cdots p_{n}^{s_{n}}$. For some $k$ satisfies that $(d)\subset (k)$, we have $k\mid d$. So $kx=p_{1}^{s_{1}}p_{2}^{s_{2}}\cdots p_{n}^{s_{n}}$ for $x\in\mathbf{R}$. Thus $k=p_{1}^{t_{1}}\cdots p_{n}^{t_{n}}$, where $t_{i}\leq s_{i}$, whence the choices of $k$ are finite.
+\end{answer}
 
 $$ $$
 
@@ -72,17 +163,31 @@ $$ $$
     If $R$ is a unique factorization domain and $a,b\in R$ are relatively prime and $a\mid bc$, then $a\mid c$.
 \end{ex}
 
+\begin{answer}
+    Assume $d=p_{1}^{s_{1}}p_{2}^{s_{2}}\cdots p_{n}^{s_{n}}$, $a|bc\Rightarrow ax=bc$ for some $x\in R$. $a,b$ are relatively prime so for any prime ideal $(p_{i})$, $p_{i}\nmid b$, $c\in (p_{i})$. Assume $p_{i}c_{1}=c$, $p_{i}a_{1}=a$, then $c_{1}b=a_{1}x$. Similarly, $c\in (p_{i})$, we can continue this step so $c\in (p_{i}^{s_{i}})$. $c\in (a)=(p_{1}^{s_{1}})(p_{2}^{s_{2}})\cdots(p_{n}^{s_{n}})$.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Let $R$ be a Euclidean ring and $a\in R$. Then $a$ is a unit in $R$ if and only if $\varphi(a)=\varphi(1_{R})$.
 \end{ex}
 
+\begin{answer}
+    If $a$ is a unit, then $\exists a^{-1}\in R$, $aa^{-1}=1_{R}$. $a=a\cdot 1_{R}$ so $\varphi(1_{R})<\varphi(a\cdot 1_{R})=\varphi(a)$, $\varphi(a)\leq \varphi(aa^{-1})=\varphi(1_{R})$ so $\varphi(a)=\varphi(1_{R})$.
+
+    If $\varphi(a)=\varphi(1_{R})$, $\forall x\in R\backslash \{0\}$, $x=x\cdot 1_{R}$ so $\varphi(x)\geq \varphi(1_{R})$. Assume $1_{R}=qa+r$, $\varphi(r)\geq \varphi(a)$ for all $r\in R\backslash\{0\}$. So $r=0$, $1_{R}=qa$, $a$ is a unit.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Every nonempty set of elements (possibly infinite) in a commutative principle ideal ring with identity has a greatest common divisor.
 \end{ex}
+
+\begin{answer}
+    Denote $S=\{(a)|\bigcup\limits_{i\in I}(a_{i})\subset (a)\}$. $S$ is nonempty since $R\in S$. For finite $I$, the conclusion is trivial. For infinite $I$. Assume $(d)= \bigcap\limits_{A\in S}A$ which is a well defined ideal. $\bigcap\limits_{i\in I}(a_{i})\subset(d)$ so $(a_{i})\subset (d)\Rightarrow d\mid a_{i}$ for all $i\in I$. And $\forall c\mid a_{i}$ for all $i\in I$, $(c)\subset S$ so $(d)\subset (c)$, $c\mid d$. $d$ is the greatest common divisor of $\{a_{i}|i\in I\}$.
+\end{answer}
 
 $$ $$
 
@@ -96,3 +201,7 @@ $$ $$
     \[\vdots\]
     Let $r_{0}=b$ and let $n$ be the least integer such that $r_{n+1}=0$ (such an $n$ exists since the $\varphi(r_{k})$ form a strictly decreasing squence of nonnegative integers). Show that $r_{n}$ is the greatest common divisor $a$ and $b$.
 \end{ex}
+
+\begin{answer}
+    $r_{n}$exists since $\varphi(r_{i})$ decreases. $r_{n}\mid a$ and $r_{n}\mid b$ is simple. We prove $(a)+(b)=(r_{n})$. $r_{n}\mid a$, $r_{n}\mid b$ so $(a)\subset (r_{n})$, $(b)\subset (r_{n})\Rightarrow (a)+(b)\subset (r_{n})$. We use induction to prove $(r_{n})\subset (a)+(b)$: 1. For $i=1$, $a=q_{0}b+r\Rightarrow r_{1}=a-q_{0}b\in (a)+(b)$. 2. Assume for $i\leq m$, $(r_{i})\subset (a)+(b)$, $r_{m-1}=q_{m}r_{m}+r_{m-1}\Rightarrow r_{m+1}=r_{m-1}-q_{m}r_{m}\in (r_{m})+(r_{m-1})\subset (a)+(b)$. So $(r_{n})\subset (a)+(b)$. $r_{n}$ is the greatest common divisor of $a$ and $b$.
+\end{answer}
