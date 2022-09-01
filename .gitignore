@@ -279,3 +279,5 @@ TSWLatexianTemp*
 
 ##vscode## 
 *.code-workspace
+
+latex.out/
