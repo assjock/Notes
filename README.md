@@ -1,6 +1,19 @@
 # Notes
 Notes of Mathematics
 ---
+
+To build the LaTeX program, use
+
+```makefile
+make
+```
+or
+
+```ps
+latexmk
+```
+
+需要perl以及latexmk
 ## Mathematical Analysis
 V.A.Zorich(习题做不动了)
 
