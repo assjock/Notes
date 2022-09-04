@@ -1,0 +1,88 @@
+\section{Rings of polynomials and formal power series}
+\begin{ex}
+    \begin{enumerate}[(a)]
+        \item If $\varphi:R\to S$ is a homomorphism of rings, then the map $\bar{\varphi}:R[[x]]\to S[[x]]$ given by $\bar{\varphi}(\sum a_{i}x^{i})=\sum \varphi(a_{i})x^{i}$ is a homomorphism of rings such that $\bar{\varphi}(R[x])\subset S[x]$.
+        \item $\bar{\varphi}$ is a monomorphism if and only if $u\varphi$ is. In this case $\bar{\varphi}:R[x]\to S[x]$ is also a monomorphism.
+        \item Extend the results of (a) and (b) to the polynomial rings $R[x_{1},\dots, x_{n}]$, $S[x_{1},\dots,x_{n}]$.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $\mathrm{Mat}_{n}R$ be the ring of $n\times n$ matrices over a ring $R$. Then for each $n\geq 1$:
+    \begin{enumerate}[(a)]
+        \item $(\mathrm{Mat}_{n}R)[x]\cong \mathrm{Mat}_{n}R[x]$.
+        \item $(\mathrm{Mat}_{n}R)[[x]]\cong \mathrm{Mat}_{n}R[[x]]$.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ be a ring and $G$ an infinte multiplicative cyclic group with generator denoted $x$. Is the group ring $R(G)$ isomorphic to the polynomial ring in one indeterminate over $R$?
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    \begin{enumerate}[(a)]
+        \item Let $S$ be a nonempty set and let $\mathrm{N}^{S}$ be the set of all functions $\varphi:S\to \mathbf{N}$ such that $\varphi(s)\neq 0$ for at most a finite number of elements $s\in S$. Then $\mathbf{N}^{S}$ is a multiplicative abelian monoid with prooduct defined by \[(\varphi \psi)(s)=\varphi(s)+\psi(s)\, (\varphi,\psi\in \mathbf{N}^{S};s\in S)\]The identity element in $\mathbf{N}^{S}$ is the zero function.
+        \item For each $x\in S$ and $i\in \mathbf{N}$ let $x^{i}\in \mathbf{N}^{S}$ be defined by $x^{i}(x)=i$ and $x^{i}(s)=0$ for $s\neq x$. If $\varphi\in\mathbf{N}^{S}$ and $x_{1},\dots,x_{n}$ are the only elements of $S$ such that $\varphi(x_{i})\neq 0$, then in $\mathbf{N}^{S}$, $\varphi=x_{1}^{i_{1}}x_{2}^{i_{2}}\cdots x_{n}^{i_{n}}$, where $i_{j}=\varphi(x_{j})$.
+        \item If $R$ is a ring with identity let $R[S]$ be the set of all functions $f:\mathbf{N}^{S}\to R$ such that $f(\varphi)\neq 0$ for at most a finite number of $\varphi\in \mathbf{N}^{S}$. Then $R[S]$ is a ring with identity, where addition and multiplication are defined as follows:\[(f+g)(\varphi)=f(\varphi)+g(\varphi)\,(f,g\in R[S];\varphi\in \mathbf{N}^{S})\]\[(fg)(\varphi)=\sum f(\theta)g(\zeta)\,(f,g\in R[S]; \theta,\zeta,\varphi\in \mathbf{N}^{S})\] where teh sum is over all pairs $(\theta,\zeta)$ such that $\theta \zeta=\varphi$. $R[S]$ is called the ring of polynomials in $S$ over $R$.
+        \item For each $\varphi=x_{1}^{i_{1}}\cdots x_{n}^{i_{n}}\in \mathbf{N}^{S}$ and each $r\in R$ we denote by $rx_{1}^{i_{1}}\cdots x_{n}^{i_{n}}$ the function $\mathbf{N}^{S}\to R$ which is $r$ at $\varphi$ and 0 elsewhere. Then every nonzero element $f$ of $R[S]$ can be written in the form $\int =\sum\limits_{i=0}^{m}r_{i}x_{1}^{k_{i1}}x_{2}^{k_{i2}}\\\cdots x_{n}^{k_{in}}$ with the $r_{i}\in R$, $x_{i}\in S$ and $k_{ij}\in\mathbf{N}$ all uniquely determined.
+        \item If $S$ is finite of cardinality $n$, then $R[S]\cong R[x_{1},\dots,x_{n}]$.
+        \item State and prove an analogue of Theorem 5.5 for $R[S]$.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ and $S$ be rings with identity, $\varphi:R\to S$ a homomorphism of rings with $\varphi(1_{R})=1_{S}$, and $s_{1},s_{2},\dots,s_{n}\in S$ such that $s_{i}s_{j}=s_{j}s_{i}$ for all $i,j$ and $\varphi(r)s_{i}=s_{i}\varphi(r)$ for all $r\in R$ and all $i$. Then there is a unique homomorphism $\bar{\varphi}:R[x_{1},\dots,x_{n}]\to S$ such that $\bar{\varphi}|R=\varphi$ and $\bar{\varphi(x_{i})}=s_{i}$. This property completely determines $R[x_{1},\dots,x_{n}]$ up to isomorphism.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    \begin{enumerate}[(a)]
+        \item If $R$ is the ring of all $2\times 2$ matrices over $\mathbf{Z}$, then for any $A\in R$,\[(x+A)(x-A)=x^{2}-A^{2}\in R[x]\]
+        \item There exist $C,A\in R$ such that $(C+A)(C-A)\neq C^{2}-A^{2}$. Therefore, Corollary 5.6 is false if the rings involved are not commutative.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    If $R$ is a commutative ring with identity and $f=a_{n}x^{n}+\cdots+a_{0}$ is a zero divisor in $R[x]$, then there exists a nonzero $b\in R$ such that $ba_{n}=ba_{n-1}=\cdots=ba_{0}=0$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    \begin{enumerate}[(a)]
+        \item The polynomial $x+1$ is a unit in the power series ring $\mathbf{Z}[[x]]$, but is not a unit in $\mathbf{Z}[x]$.
+        \item $x^{2}+3x+2$ is irreducible in $\mathbf{Z}[[x]]$, but not in $\mathbf{Z}[x]$.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    If $F$ is a field, then $(x)$ is a maximal ideal in $F[x]$, but it is not the only maximal ideal.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    \begin{enumerate}[(a)]
+        \item If $F$ is a field then every nonzero element of $F[[x]]$ is of the form $x^{k}u$ with $u\in F[[x]]$ a unit.
+        \item $F[[x]]$ is a principle ideal domain whose only ideals are 0, $F[[x]]=(1_{F})=(x^{0})$ and $(x^{k})$ for each $k\geq 1$.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $\mathcal{C}$ be the category with objects all commutative rings with identity and morphisms all ring homomorphism $f:R\to S$ such that $f(1_{R})=1_{S}$. Then the polynomial ring $\mathbf{Z}[x_{1},\dots,x_{n}]$ is a free object on the set $\{x_{1},\dots,x_{n}\}$ in the category $\mathcal{C}$.
+\end{ex}
