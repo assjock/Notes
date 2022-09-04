@@ -3,11 +3,27 @@
     Determine the complete ring of quotients of the ring $Z_{n}$ for each $n\geq 2$.
 \end{ex}
 
+\begin{answer}
+    For the complete multiplicative subset $S$ of $Z_{n}$, $S=\{\bar{x}|(x,n)=1\}$ so the complete ring of quotient is $S^{-1}Z_{n}$.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Let $S$ be a multiplicative subset of a commutative ring $R$ with identity and let $T$ be a multiplicative subset of the ring $S^{-1}R$. Let $S_{*}=\{r\in R|r /s\in T \text{ for some }s\in S\}$. Then $S_{*}$ is a multiplicative subset of $R$ and there is a ring isomorphism $S_{*}^{-1}R\cong T^{-1}(S^{-1}R)$.
 \end{ex}
+
+\begin{answer}
+    For any $r_{1} /s_{1}$ , $r_{2} /s_{2}\in T$. $r_{1}r_{2} /s_{1}s_{2}\in T$. And there exists a monomorphism $\varphi: S_{*}\to T$ given by $\varphi:r\mapsto r /s$ for some $s\in S$ by the definition of $S_{*}$. So $\forall r_{1},r_{2}\in S_{*}$, $\exists \varphi(r_{1})\varphi(r_{2})=r_{1}r_{2} /s_{1}s_{2}\in T$, thus $r_{1}r_{2}\in S_{*}$. $S_{*}$ is a multiplicative subset.
+
+    Next we prove $S_{*}^{-1}R\cong T^{-1}(S^{-1}R)$. $\forall s\in S_{*}$ and $r\in R$, $sr\in S_{*}$ since if there exists some $s'\in S$, $s /s'\in T$ then $sr /s'r=s/s'\in T$. For any $(r /s) /(r' /s')\in T^{-1}(S^{-1}R)$ where $r\in R$ and $s\in S$, $r' /s'\in T$, we construct a map $\varphi:T^{-1}(S^{-1}R)\to S_{*}^{-1}R$ given by $\varphi :(r /s) /(r'/s')\mapsto rs'/sr'$. $\varphi$ is well defined since $rs'\in R$ and $sr'\in S_{*}$. Now we check $\varphi$ is an isomorphism. $\forall (r_{1} /s_{1}) /(r_{1}' /s_{1}'), (r_{2} /s_{2}) /(r_{2}' /s_{2}')\in T^{-1}(S^{-1}R)$
+    \[\begin{aligned}
+        &\varphi((r_{1} /s_{1}) /(r_{1}' /s_{1}')+(r_{2} /s_{2}) /(r_{2}' /s_{2}'))\\=&\varphi(((r_{1} /s_{1})(r_{2}'/ s_{2}')+(r_{2} /s_{2})(r_{1}'/s_{1}')) /((r_{1}'/s_{1}')/(r_{2}'/s_{2'})))\\=&\varphi((r_{1}r_{2}'/s_{1}s_{2}'+r_{2}r_{1}'/s_{2}s_{1}') /(r_{1}'r_{2}'/s_{1}'s_{2}'))\\=&\varphi(((r_{1}r_{2}'s_{2}s_{1}'+r_{2}r_{1}'s_{1}s_{2}') /s_{1}s_{2}s_{1}'s_{2}') /(r_{1}'r_{2}'/s_{1}'s_{2}'))\\=&(((r_{1}r_{2}'s_{2}s_{1}'+r_{2}r_{1}'s_{1}s_{2}')s_{1}'s_{2}') /s_{1}s_{2}s_{1}'s_{2}'r_{1}'r_{2}')\\=&((r_{1}r_{2}'s_{2}s_{1}'+r_{2}r_{1}'s_{1}s_{2}') /s_{1}s_{2}r_{1}'r_{2}')\\=&(r_{1}s_{1}') /(r_{1}'s_{1})+(r_{2}s_{2}') /(r_{2}'s_{2})\\=&\varphi((r_{1} /s_{1})/(r_{1}' /s_{1}/))+\varphi((r_{2} /s_{2}) /(r_{1}'/s_{2}'))
+    \end{aligned}\]
+    The conservation of multiplication is trivial. $\varphi$ is a homomorphism and $\varphi$ is obviously injective, so $\left| T^{-1}(S^{-1}R) \right|\leq \left| S^{-1}R \right| $.
+
+    Take $\tau: S_{*}^{-1}R\to T^{-1}(S^{-1}R)$ given by $\tau:r /s\mapsto (r /s') /(s /s')$. Similarly, $\tau$ is injective so $\left| S_{*}R \right| \leq \left| T^{-1}(S^{-1}R) \right| $. $\varphi$ is isomorphism and $S_{*}^{-1}R\cong T^{-1}(S^{-1}R)$.
+\end{answer}
 
 $$ $$
 
@@ -18,11 +34,24 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item Trivial.
+        \item Assume the primes $p\in \mathbf{Z}$ forms a set $P$. For any multiplicative subset $S$ and $x\in S$ then $\{x^{n}|n\in\mathbf{Z}\}\subset S$. If $\forall p\in P$, $\exists x\in S$ such that $p\mid x$, we prove $S^{-1}\mathbf{Z}$ forms the field of rationals. For any $p /q\in \mathbf{Q}$, $q=q_{1}^{t_{1}}q_{2}^{t_{2}}\cdots q_{n}^{t_{n}}$ and for any $q_{i}$ there exists $x_{1}\in S$, $x_{1}=a_{i}q_{i}$. Take $x=a_{1}^{t_{1}}q_{1}^{t_{1}}\cdots a_{n}^{t_{n}}q_{n}^{t_{n}}$ and $y=a_{1}^{t_{1}}\cdots a_{n}^{t_{n}}p$. Then $y /x=p /q$, $y /x\in S^{-1}\mathbf{Z}$. So $S^{-1}\mathbf{Z}$ forms the field of rationals.
+         
+        For any other multiplicative subset $S$, assume $p\in P$ and $\forall x\in S$, $p\nmid x$ then $\forall y /x\in S^{-1}\mathbf{Z}$, $yp-x\neq 0$ so $1 /p\notin S^{-1}\mathbf{Z}$, $S^{-1}\mathbf{Z}$ isn't the rational field.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     If $S=\{2,4\}$ and $R=Z_{6}$, then $S^{-1}R$ is isomorphic to the field $Z_{3}$. Consequently, the converse of Theorem 4.3(ii) is false.
 \end{ex}
+
+\begin{answer}
+    $S^{-1}Z_{6}=\{1 /3, 2/3, 3 /3\}$ so $S^{-1}Z_{6}\cong Z_{3}$ is a integral domain. However, $Z_{6}$ has no zero divisor.
+\end{answer}
 
 $$ $$
 
@@ -30,17 +59,29 @@ $$ $$
     Let $R$ be an integral domain with quotient field $F$. If $T$ is an integral domain such that $R\subset T\subset F$, then $F$ is (isomorphic to) the quotient field of $T$.
 \end{ex}
 
+\begin{answer}
+    Consider $T_{i}$ which is a PID satisfying $R\subset T_{i}\subset F$, $T_{i}$ forms a category with the inclusion map as morphisms. $T_{i}'$ is the quotient field of $T_{i}$ so $R\subset T_{i}'\Rightarrow R\subset F\subset T_{i}'$ (up to isomorphic). $R\subset T_{j}\subset F\subset T_{i}'$ for all $i,j$ thus $T_{i}'\subset T_{j}'$. Similarly $T_{j}'\subset T_{i}'$ so all the $T_{i}'$ are universal under the inclusion map. Thus $F$ is isomorphic to the quotient field of $T$.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Let $S$ be a multiplicative subset of an integral domain $R$ such that $0\notin S$. If $R$ is a principle ideal domain, then so is $S^{-1}R$.
 \end{ex}
 
+\begin{answer}
+    Actually this is true if and only if $1_{R}\in S$. For any ideal $J\subset S^{-1}R$, there exists ideal $I\subset R$ and $\varphi_{S}(I)=J$, $J=S^{-1}I=S^{-1}(a)$ for some $a\in R$. Since $1_{R}\in S$, $a /1_{R}\in S^{-1}(a)$. So $\forall s\in S$, $1_{R} /s$ is a unit of $S^{-1}(a)$, so $S^{-1}(a)=(a /1_{R})$ is a principle ideal. Thus the multiplicative subset of $R$ is a principle ideal domain.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Let $R_{1}$ and $R_{2}$ be integral domains with quotient fields $F_{1}$ and $F_{2}$ respectively. If $f:R_{1}\to R_{2}$ is an isomorphism, then $f$ extends to an isomorphism $F_{1}\cong F_{2}$.
 \end{ex}
+
+\begin{answer}
+    For $f:R_{1}\to R_{2}$, and the inclusion map $\subset R_{2}\to F_{2}$, $\subset\circ f=R_{1}\to F_{2}$ so there exists $\bar{\subset\circ f}:F_{1}\to F_{2}$ which is a well defined homomorphism of rings. $\bar{\subset\circ f}|R_{1}=f$, $\bar{\subset\circ f}$ is a monomorphism so $\left| F_{1} \right| \leq \left| F_{2} \right| $. Similarly, $\left| F_{2} \right| \leq \left| F_{1} \right| $ so $\bar{\subset\circ f}$ is an isomorphism and $F_{1}\cong F_{2}$.
+\end{answer}
 
 $$ $$
 
@@ -53,11 +94,27 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item For any $a,b\in S$, $\pi(a)=a+I$, $\pi(b)=b+I$, $\pi(a)\pi(b)=ab+I=\pi(ab)\in \pi S$, so $\pi S$ is a multiplicative subset of $R /I$.
+        \item If $r_{1}/s_{1}=r_{2} /s_{2}$ then $x(r_{1}s_{2}-r_{2}s_{1})=0$ for some $x\in S$.\[\theta(r_{1} /s_{1})=\pi(r_{1}) / \pi(s_{1})=(r_{1}+I) /(s_{1}+I)\]\[\theta(r_{2} /s_{2})=\pi(r_{2}) /\pi(s_{2})=(r_{2}+I) /(s_{2}+I)\]\[\begin{aligned}
+            &(x+I)((r_{1}+I)(s_{2}+I)-(r_{2}+I)(s_{1}+I))\\=&(xr_{1}s_{2}+I)-(xr_{2}s_{1}+I)\\=&x(r_{1}s_{2}-r_{2}s_{1})+I\\=&I
+        \end{aligned}\] so $\theta(r_{1} /s_{1})=\theta(r_{2} /s_{2})$, $\theta$ is well-defined.
+        \item $\pi$ is a homomorphism and so is $\theta$. $\theta$ is obviously an epimorphism and $\forall r /s\in S^{-1}I$, $\theta(r /s)=\pi(r) /\pi(s)$. $\pi(r)= I$ so $\theta(r /s)\in (\pi S)^{-1}I$, $S^{-1}I\subset \mathrm{Ker}\theta$. For any $r /s\notin S^{-1}I$, $\theta(r /s)=(r+I) /(s+I)\neq I$, so $\mathrm{Ker}\theta\subset S^{-1}I$. $\mathrm{Ker}\theta=S^{-1}I$, $S^{-1}R /\mathrm{Ker}\theta\cong \mathrm{Im}\theta\Rightarrow S^{-1}R /S^{-1}I\cong (\pi S)^{-1}(R /I)$.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Let $S$ be a multiplicative subset of a commutative ring $R$ with identity. If $I$ is an ideal in $R$, then $S^{-1}(\mathrm{Rad}I)=\mathrm{Rad}(S^{-1}I)$.
 \end{ex}
+
+\begin{answer}
+    $\mathrm{Rad}I=\{r|r^{n}\in I \text{ for some }n\}$. For any $r /s\in S^{-1}\mathrm{Rad}I$, $(r /s)^{n}=r^{n} /s^{n}\in S^{-1}I$ so $S^{-1}\mathrm{Rad}I\subset \mathrm{Rad}(S^{-1}I)$.
+
+    For any $a /b\in \mathrm{Rad}(S^{-1}I)$, $b\in S$ then $a^{n}b'-b^{n}a'=0$ with $a'\in I$ and $b'\in S$. $(ab')^{n}=(b')^{n-1}b^{n}a'\in I$ so $a /b=ab'/bb'\in S^{-1}(\mathrm{Rad}I)$. Thus $S^{-1}(\mathrm{Rad}I)\subset \mathrm{Rad}(S^{-1}I)$. So $S^{-1}(\mathrm{Rad}I)=\mathrm{Rad}(S^{-1}I)$.
+\end{answer}
 
 $$ $$
 
@@ -65,11 +122,21 @@ $$ $$
     Let $R$ be an integral domain and for each maximal ideal $M$, consider $R_{M}$ as a subring of the quotient field of $R$. Show that $\cap R_{M}=R$, where the intersection is taken over all maximal ideals $M$ of $R$.
 \end{ex}
 
+\begin{answer}
+    $M$ is maximal so $1_{R}\in R-M$, which means $R\subset R_{M}$ for any $M$. So $R\subset\cap R_{M}$.
+
+    Denote $R'$ as the quotient field of $R$. For any $M$ maximal, $R_{M}\subset R'$. For any $x\in R'-R$, we prove there exists $M$ maximal and $x\notin R_{M}$. Take $A=\{a|ax\in R\}$, $A$ is an ideal of $R$. So $\exists A\subset M$ with $M$ maximal. If $x\in R-M$, $x=r /s$, so $xs=r\in R$, $s\in I\subset M$. That's contradictory! Thus $\cap R_{M}\subset R$, $R=\cap R_{M}$.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Let $p$ be a prime in $\mathbf{Z}$l then $(p)$ is a prime ideal. What can be said about the relationship of $Z_{p}$ and the localization $Z_{(p)}$?
 \end{ex}
+
+\begin{answer}
+    $Z_{p}$ can be embedded into $\mathbf{Z}_{(p)}$ since $Z_{p}\subset \mathbf{Z}\subset (p)_{(p)}\subset \mathbf{Z}_{(p)}$.
+\end{answer}
 
 $$ $$
 
@@ -77,11 +144,21 @@ $$ $$
     A commutative ring with identity is local if and only if for all $r,s\in R$, $r+s=1_{R}$ implies $r$ or $s$ is a unit.
 \end{ex}
 
+\begin{answer}
+    If $R$ is local, $r+s=1_{R}\Rightarrow(r)+(s)=R$. $R$ has unique maximal ideal $M$ so $(r)\subset M$, $(s)\subset M$, $(r)+(s)=R\subset M$. That's contradictory! So $(r)=R$ or $(s)=R$, $r$ or $s$ is a unit.
+
+    Conversely, if there exist $M_{1}$, $M_{2}$ are maximal ideals. $M_{1}+M_{2}=R$ so $\exists r\in M$, $s\in M_{2}$ such that $r+s=1_{R}$. WLOG assume $r$ is unit, $R=(r)\subset M_{1}$, that's contradictory! So $R$ is local.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     The ring $R$ consisting of all rational numbers with denominators not divisible by some (fixed) prime $p$ is a local ring.
 \end{ex}
+
+\begin{answer}
+    Denote the set of primes in the question as $P$. Then $(P)$ is a prime ideal in $\mathbf{Z}$. So $S=\mathbf{Z}=(P)$ is multiplicative subset. We prove $R=\mathbf{Z}_{(P)}$. $\forall r /s\in \mathbf{Z}_{(p)}$, $r\in\mathbf{Z}$ and $s\notin (P)$ so $r /s\in R$. Thus $\mathbf{Z}_{(P)}\subset R$. Conversely, $\forall r /s \in R$, suppose $s=p_{1}^{t_{1}}p_{2}^{t_{2}}\cdots p_{n}^{t_{n}}$, $\forall p\in P$, $p\nmid s$ so $(p_{i})\not\subset$ for all $i=1,2,\dots,n$. Thus $(p_{i})\subset S$ so $s\in S$, $r /s\in \mathbf{Z}_{(P)}$. $\mathbf{Z}_{(P)}=R$ is a lcoal ring.
+\end{answer}
 
 $$ $$
 
@@ -89,14 +166,41 @@ $$ $$
     If $M$ is a maximal ideal in a commutative ring $R$ with identity and $n$ is a positive integer, then the ring $R /M^{n}$ has a unique prime ideal and therefore is local.
 \end{ex}
 
+\begin{answer}
+    Consider the homomorphism $f:R\to R /M^{n}$. For any prime ideal $I\subset R /M^{n}$, $J=f^{-1}(I)$ is a prime ideal contains $M^{n}$. $M^{n}\subset P\Rightarrow M\subset P$, since $M$ is maximal, $P=M$ so the only prime ideal in $R /M^{n}$ is $R /M$.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     In a commutative ring $R$ with identity the following conditionns are equivalent: (i) $R$ has a unique prime ideal; (ii) every nonunit is nilpotent; (iii) $R$ has a minimal prime ideal which contains all zero divisors, and all nonunits of $R$ are zero divisors.
 \end{ex}
 
+\begin{answer}
+    We first prove a lemma:
+    \begin{lemma}
+        For an ideal $I\subset R$, $\mathrm{Rad}I=\bigcap\limits_{I\subset P_{i}}P_{i}$ where $P_{i}$ are prime ideals.
+    \end{lemma}
+
+    Proof of the lemma: $\forall a\in \mathrm{Rad} I$, $a^{n}\in I$ for some $n$, so $\forall I\subset P_{i}$ with $P_{i}$ prime. $a^{n}\in P_{i}\Rightarrow a\in P_{i}$ so $\mathrm{Rad}I\subset \bigcap\limits_{I\subset P_{i}}P_{i}$.
+    
+    Conversely $\forall a\notin \mathrm{Rad}I$, we only need to find $I\subset P_{i}$ and $a\notin P_{i}$. Take $A=\{J|a^{n}\in J\, \forall n\in \mathbf{N}\}$. $A$ has maximal element under $\subset$ by Zorn's lemma. Denote the maximal element as $P$. $\forall x,y\in R$ and $x\notin P$, $y\notin P$. Then $\exists m,n\in\mathbf{N}$, $a^{n}\in (x)+P$, $a^{m}\in (y)+P$, so $a^{m+n}\in(xy)+P\Rightarrow xy\notin P$. Thus $P$ is prime. That's contradictory! So $\bigcap\limits_{I\in P_{i}}P_{i}\subset \mathrm{Rad}I$. The lemma has been proved.
+
+    (i)$\Rightarrow$(ii): $0\in P$ where $P$ is the unique prime ideal, so $P=\{a|a^{n}=0 \text{ for some } n\}$. For any nonunit $a$, $(a)\subset M=P$ so $a\in P$, there exists $n\in\mathbf{N}$ such that $a^{n}=0$.
+
+    (ii)$\Rightarrow$(i): Denote $N$ as the ideal contains all the nilpotent elements. Take $\varphi:R\to R /N$. For any unit $u$, $\varphi(u)$ is also a unit. So $R /N$ is a field, $N$ is maximal in $R$. For any prime ideal $P$, $N\subset P$ from the lemma. Thus $N$ is the only prime ideal.
+
+    (ii)$\Rightarrow$(iii): Denote $N$ as the ideal contains all the nilpotent elements. All nilpotent elements are zero divisors by the definition. $N$ is prime and minimal is the direct corollary of the lemma.
+
+    (iii)$\Rightarrow$(ii): Denote $I$ as the minimal prime ideal and $N$ as the ideal contains all the nilpotent elements. Then $N\subset I$. Since all then nonunits are zero divisors, we have $N$ itself a prime ideal. So $N=I$.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Every nonzero homomorphic image of a local ring is local.
 \end{ex}
+
+\begin{answer}
+    Suppse $L$ is a local ring and $\varphi:L\to R$ is a ring of rings. Then $\varphi$ is an one-to-one correspondence between ideals in $L$ and ideals in $R$. For the maximal ideal $M$ in $L$, $\varphi(M)\subseteq R$, so $\varphi(M)$ contains all the proper ideals in $R$. $R$ is a local ring.
+\end{answer}
