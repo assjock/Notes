@@ -1,0 +1,130 @@
+\section{Factorization in polynomial rings}
+\begin{ex}
+    \begin{enumerate}[(a)]
+        \item If $D$ is an integral domain and $c$ is an irreducible element in $D$, then $D[x]$ is not a principle ideal domain.
+        \item $\mathbf{Z}[x]$ is not a principle ideal domain.
+        \item If $F$ is a field and $n\geq 2$, then $F[x_{1},\dots,x_{n}]$ is not a principle ideal domain.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    If $F$ is a field and $f,g\in F[x]$ with $\deg n\geq 1$, then there exist unique polynomials $f_{0}, f_{1},\dots, f_{r}\in F[x]$ such that $\deg f_{i}<deg g$ for all $i$ and \[f=f_{0}+f_{1}g+f_{2}g^{2}+\cdots+f_{r}g^{r}\]
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $f$ be a field of positive degree over an integral domain $D$.
+    \begin{enumerate}[(a)]
+        \item If $\mathrm{char} D=0$, then $f'\neq 0$.
+        \item If $\mathrm{char} D=p\neq 0$, then $f'=0$ if and only if $f$ is a polynomial in $x^{p}$(that is, $f=a_{0}+a_{p}x^{p}+a_{2p}x^{2p}+\cdots+a_{jp}x^{jp}$).
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    If $D$ is a unique factorization domain, $a\in D$ and $f\in D[x]$, then $C(af)$ and $aC(f)$ are associates in $D$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ be a commutative ring with identity and $f=\sum\limits_{i=0}^{n}a_{i}x^{i}\in R[x]$. Then $f$ is a unit in $R[x]$ if and only if $a_{0}$ is a unit in $R$ and $a_{1},\dots,a_{n}$ are nilpotent elements of $R$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $p\in \mathbf{Z}$ be prime; let $F$ be a field and let $c\in F$. Then $x^{p}-c$ is irreducible in $F[x]$ if and only if $x^{p}-c$ has no root in $F$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    If $f=\sum a_{i}x^{i}\in \mathbf{Z}[x]$ and $p$ prime, let $\bar{f}=\sum \bar{a_{i}}x^{i}\in Z_{p}[x]$, where $\bar{a}$ is the image of $a$ under the canonical epimorphism $\mathbf{Z}\to Z_{p}$.
+    \begin{enumerate}[(a)]
+        \item If $f$ is monic and $\bar{f}$ is irreducible in $Z_{p}[x]$ for some $p$, then $f$ is irreducible in $\mathbf{Z}[x]$.
+        \item Given an example to show that (a) may be false if $f$ is not monic.
+        \item Extend (a) to polynomials over a unique factorization domain.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    \begin{enumerate}[(a)]
+        \item Let $c\in F$, where $F$ is a field of characteristic $p$ ($p$ prime). Then $x^{p}-x-c$ is irreducible in $F[x]$ if and only if $x^{p}-x-c$ has no root in $F$.
+        \item If $\mathrm{char}F=0$, part (a) is false.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $f=\sum\limits_{i=0}a_{i}x^{i}\in \mathbf{Z}[x]$ have degree $n$. Suppose that for some $k$($0<k<n$) and some prime $p$: $p\nmid a_{n}$; $p\nmid a_{k}$; $p\mid a_{i}$ for all $0\leq i\leq k-1$; and $p^{2}\nmid a_{0}$. Show that $f$ has a factor $g$ of degree at least $k$ that is irreducible in $\mathbf{Z}[x]$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    \begin{enumerate}[(a)]
+        \item Let $D$ be an integral domain and $c\in D$. Let $f(x)=\sum\limits_{i=0}^{n}a_{i}x^{2}\in D[x]$ and $f(x-c)=\sum\limits_{i=0}^{n}a_{i}(x-c)^{i}\in D[x]$. Then $f(x)$ is irreducible in $D[x]$ if and only if $f(x-c)$ is irreducible.
+        \item For each prime $p$, the \textbf{cyclotomic polynomial} $f=x^{p-1}+x^{p-2}+\cdots+x+1$ is irreducible in $\mathbf{Z}[x]$.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    If $c_{0}, c_{1},\dots, c_{n}$ are distinct elements of an integral domain $D$ and $d_{0},\dots,d_{n}$ are any elements of $D$, then there is at most one polynomial $f$ of degree $\leq n$ in $D[x]$ such that $f(c_{i})=d_{i}$ for $i=0,1,\dots,n$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    \emph{Lagrange's Interpolation Formula}. If $F$ is a field, $a_{0}$, $a_{1}$,$\dots$, $a_{n}$ are distinct elements of $F$ and $c_{0}, c_{1},\dots,c_{n}$ are any elements of $F$, then \[f(x)=\sum_{i=0}^{n}\frac{(x-a_{0})\cdots(x-a_{i-1})(x-a_{i+1})\cdots(x-a_{n})}{(a_{i}-a_{n})\cdots(a_{i}-a_{i-1})(a_{i}-a_{i+1})\cdots(a_{i}-a_{n})}c_{i}\] is the unique polynomial of degree $\leq n$ in $F[x]$ such that $f(a_{i})=c_{i}$ for all $i$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $D$ be a unique factorization domain with a finite number of units and quotient field $F$. If $f\in D[x]$ has degree $n$ and $c_{0},c_{1},\dots,c_{n}$ are $n+1$ distinct elements of $D$, then $f$ is completely determined by $f(c_{0}), f(c_{1}),\dots, f(c_{n})$ according to \textbf{Exercise 3.6.11}. Here is \textbf{Kronecker's Method} for finding all the irreducible factors of $f$ in $D[x]$.
+    \begin{enumerate}[(a)]
+        \item It suffices to find only those factors $g$ of degree at most $n /2$.
+        \item If $g$ is a factor of $f$, then $g(c)$ is a factor of $f(c)$ for all $c\in D$.
+        \item Let $m$ be the largest integer $\leq n /2$ and choose distinct elements $c_{0}$, $c_{1}$, $\dots$, $c_{m}\in D$. Choose $d_{0}$, $d_{i}$, $\dots$, $d_{m}\in D$ such that $d_{i}$ is a factor of $f(c_{i})$ in $D$ for all $i$. Use \textbf{Exercise 3.6.12} to construct a polynomial $g\in F[x]$ such that $g(c_{i})=d$ for all $i$; it is unique by \textbf{Exercise 3.6.11}.
+        \item Check to see if the polynomial $g$ of part (c) is a factor of $f$ in $F[x]$. If not, make a new choise of $d_{0}, \dots, d_{m}$ and repeat part (c).
+        \item After a finite number of steps, all the (irreducible) factors of $f$ in $F[x]$ will have been found. If $g\in F[x]$ is such a factor (of positive degree) then choose $r\in D$ such that $rg\in D[x]$. Then $rg=C(rg)g_{1}$ with $g_{1}\in D[x]$ primitive and irreducible in $F[x]$. By Lemma 6.13, $g_{1}$ is an irreducible factor of $f$ in $D[x]$. Proceed in this manner to obtain all the nonconstant irreducible factors of $f$; the constants are then easily found.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ be a commutative ring with identity and $c,b\in R$ with $c$ a unit.
+    \begin{enumerate}[(a)]
+        \item Show that the assignment $x\mapsto cx+b$ induces a unique automorphism of $R[x]$ that is the identity of $R$. What is its inverse?
+        \item If $D$ is an integral domain, then show that every automorphism of $D[x]$ that is the identity on $D$ is of the type described in (a).
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    If $F$ is a field, then $x$ and $y$ are relatively prime in the polynomial domain $F[x,y]$, but $F[x,y]=(1_{F})\supsetneqq (x)+(y)$.
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $f=a_{n}x^{n}+\cdots+a_{0}$ be a polynomial over the field $\mathbf{R}$ of real numbers and let $\varphi=\left| a_{n} \right| x^{n}+\cdots+\left| a_{0} \right| \in\mathbf{R}[x]$.
+    \begin{enumerate}[(a)]
+        \item IF $\left| u \right| \leq d$, then $\left| f(u) \right| \leq \varphi(d)$.
+        \item Given $a,c\in \mathbf{R}$ with $c>0$ there exists $M\in\mathbf{R}$ such that\\ $\left| f(a+h)-f(a) \right| \leq M\left| h \right|  $ for all $h\in \mathbf{R}$ with $\left| h \right| \leq c$.
+        \item (Intermediate Value Theorem) If $a<b$ and $f(a)<d<f(b)$, then there exists $c\in \mathbf{R}$ such that $a<c<b$ and $f(c)=d$.
+        \item Every polynomial $g$ of odd degree in $\mathbf{R}[x]$ has a real root.
+    \end{enumerate}
+\end{ex}
