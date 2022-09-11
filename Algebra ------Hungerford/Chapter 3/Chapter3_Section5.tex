@@ -7,6 +7,18 @@
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item It's easy to show $\bar{\varphi}(\sum a_{i}x^{i})\bar{\varphi}(\sum b_{i}x^{i})=\bar{\varphi}(\sum c_{i})x^{i}$, $c_{n}=\sum\limits_{j=0}^{n}a_{j}b_{n-j}$ and $\bar{\varphi}(\sum a_{i}x^{i})+\bar{\varphi}(\sum b_{i}x^{i})=\bar{\varphi}(\sum (a_{i}+b_{b})x^{i})$. $\forall f(x)=\sum\limits_{i=0}^{n}a_{i}x^{i}\in R[x]$, $\bar{\varphi}(f(x))=\bar{\varphi}(\sum\limits_{i=0}^{n}a_{i}x^{i})=\sum\limits_{i=0}^{n}\varphi(a_{i})x^{i}\in S[x]$. So $\bar{\varphi}(R[x])\\\subset S[x]$.
+        \item If $\varphi$ is monomorphism [epimorphism], it's easy to show that $\bar{\varphi}$ is also monomorphism [epimorphism].
+        
+        Conversely, if $\bar{\varphi}$ is monomorphism, take $a_{i}\in R[[x]]$, then $\bar{\varphi}(a_{i})=\varphi(a_{i})$, $\varphi$ is also a monomorphism.
+
+        Similarly, $\varphi$ is epimorphism if $\bar{\varphi}$ is.
+        \item It's trivial to since $R[x]\subset R[[x]]$, $S[x]\subset S[[x]]$.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
@@ -17,11 +29,40 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item Take $x=(p_{ij}(x))\in\mathrm{Mat}_{n}R[x]$, $p_{ij}(x)=\sum\limits_{k=0}^{n_{ij}}a_{ijk}x^{k}$. Take $n=\max\limits_{0<i,j\leq n}n_{ij}$, and for those $n\geq k>n_{ij}$, take $a_{ijk}=0$. Denote $X_{k}=(a_{ijk})$, $x'=\sum\limits_{i=0}^{n}X_{i}x^{i}\in (\mathrm{Mat}_{n}R)[x]$. We prove $\varphi:x\mapsto x'$ is an isomorphism between rings.
+        
+        For $x,x'\in\mathrm{Mat}_{n}R[x]$, $x=(p_{ij}(x))$, $x'=(p_{ij}'(x))$, $p_{ij}(x)=\sum\limits_{k=0}^{n_{ij}}a_{ijk}x^{k}$, $p_{ij}'(x)=\sum\limits_{k=0}^{n_{ij}}a_{ijk}'x^{k}$.\[\begin{aligned}
+            \varphi(x+x')&=\varphi(p_{ij}(x)+p_{ij}'(x))\\&=\begin{pmatrix}
+                a_{110}+a_{110}'&\cdots & \\\vdots &\ddots& \\ & & a_{nn0}+a_{nn0}'
+            \end{pmatrix}\\&+\begin{pmatrix}
+                a_{111}+a_{111}'&\cdots & \\\vdots &\ddots& \\ & & a_{nn1}+a_{nn1}'
+            \end{pmatrix}x+\cdots\\&=\varphi(x)+\varphi(x')
+        \end{aligned}\]
+        \[\varphi(x x')=\varphi((p_{ij}(x))(p_{ij}'(x)))=\varphi((\sum_{k=1}^{n}p_{ik}(x)p_{kj}'(x)))\]
+        \[\begin{aligned}
+            \sum_{k=1}^{n}p_{ik}(x)p_{kj}'(x)&=\sum_{k=1}^{n}(\sum_{m=0}^{n_{ik}}a_{ikm}x^{m})(\sum_{m=0}^{n_{kj}'}a_{kjm}'x^{m})\\&=\sum_{w}\sum_{k=1}^{n}\sum_{m=1}^{w}a_{ikm}a_{kj(w-m)}'x^{w}
+        \end{aligned}\]
+        so \[\begin{aligned}
+            \varphi(xx')&=\varphi((\sum_{w}\sum_{k=1}^{n}\sum_{m=1}^{w}a_{ikm}a_{kj(w-m)}'x^{w}))\\&=\sum_{w}(\sum_{k=1}^{n}\sum_{m=1}^{w}a_{ikm}a_{kj(w-m)})x^{w}
+        \end{aligned}\]
+        \[\begin{aligned}
+            \varphi(x)\varphi(x')&=(\sum_{w}(a_{ijw})x^{w})(\sum_{w}(a_{ijw}')x^{w})\\&=\sum_{w}(\sum_{k=1}^{n}\sum_{m=1}^{w}a_{ikm}a_{kj(w-m)})x^{w}
+        \end{aligned}\]
+        so $\varphi(xx')=\varphi(x)\varphi(x')$, $\varphi$ is a well defined homomorphism. $\mathrm{Ker}\varphi=0$ so $\varphi$ is a monomorphism. For any $\sum\limits_{w}(a_{ijw})x^{w}\in\mathrm{Mar}_{n}R[x]$, $\exists (\sum\limits_{w}a_{ijw}x^{w})\in(\mathrm{Mat}_{n}R)[x]$ s.t. $\varphi(\sum\limits_{w}a_{ijw}x^{w}=\sum\limits_{w}(a_{ijw})x^{w})$. So $\varphi$ is an epimorphism.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Let $R$ be a ring and $G$ an infinte multiplicative cyclic group with generator denoted $x$. Is the group ring $R(G)$ isomorphic to the polynomial ring in one indeterminate over $R$?
 \end{ex}
+
+\begin{answer}
+    $R(G)$ is not isomorphic to $R[x]$ since there's no isomorphic image of $rx^{-1}\in R(G)$ in $R[x]$.
+\end{answer}
 
 $$ $$
 
@@ -36,11 +77,32 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item $\varphi\psi=\varphi+\psi:S\to \mathbf{N}$ so $\varphi\psi\in\mathbf{N}^{S}$. For any $\varphi\in\mathbf{N}^{S}$, $\varphi 0=0\varphi=\varphi+0=0+\varphi=\varphi$. So $\mathbf{N}^{S}$ is a monoid.
+        \item For any $\varphi\in\mathbf{N}^{S}$, $x_{1},x_{2},\dots,x_{n}$ are the only element s.t. $\varphi(x_{i})\neq 0$. We prove it has the form $\varphi=x_{1}^{i_{1}}\cdots x_{n}^{i_{n}}$. Suppose $\varphi(x_{j})=i_{j}$. Take $\varphi_{1}=\varphi-x_{n}$ then $x_{1},x_{2},\dots,x_{n-1}$ are the only element s.t. $\varphi_{1}(x_{i})\neq 0$. Continue this step, we can have $\varphi_{n-1}=x_{i}^{i_{1}}$ and $\varphi_{n}=0$. Thus $\varphi=x_{1}^{i_{1}}+\cdots +x_{n}^{i_{n}}=x_{1}^{i_{1}}\cdots x_{n}^{i_{n}}$.
+        \item $f+g(\varphi)=f(\varphi)+g(\varphi)$, $f+g:\mathbf{N}^{S}\to R$ and for at most finite $\varphi\in\mathbf{N}^{S}$, $f(\varphi)\neq 0$, so $f+g\in\mathbf{N}^{S}$.
+        
+        $(fg)(\varphi)=\sum f(\theta)g(\zeta)$, so $fg\mathbf{N}^{S}\to R$. Suppose $\mathbf{N}_{f}^{S}$, $\mathbf{N}_{g}^{S}$ are the set such that $f(\mathbf{N}_{f}^{S})=0$, $g(\mathbf{N}_{g}^{S})=0$. Take $\mathbf{N}_{fg}^{S}=\mathbf{N}_{f}^{S}\cup \mathbf{N}_{g}^{S}$, then $\mathbf{N}_{fg}^{S}$ is also finite. For all $\theta, \zeta\notin \mathbf{N}_{fg}^{S}$, $(fg)(\varphi)=0$. So $fg\in R[S]$.
+
+        Take the 0 element of $f$ in $R[S]$ as $0(\varphi)=0_{R}$ for any $\varphi\in \mathbf{N}^{S}$ and the inverse element of $f$ in $R[S]$ as $f^{-1}(\varphi)=-f(\varphi)$ for any $\varphi\in \mathbf{N}^{S}$. Thus $R[S]$ is a ring.
+        \item The proof is similar to (b).
+        \item First we prove $\mathbf{N}^{S}\cong \mathbf{N}^{n}$. Assume $S=\{x_{1},x_{2},\dots,x_{n}\}$. We can write every $\varphi\in\mathbf{N}^{S}$ into $x_{n_{1}}^{i_{n_{1}}}\cdots x_{n_{m}}^{i_{n_{m}}}$ and extend it to $x_{1}^{i_{1}}x_{2}^{i_{2}}\cdots x_{n}^{i_{n}}$ by taking $i_{j}=0$ if $j\neq n_{1},n_{2},\dots,n_{m}$. Then the map $\sigma:\mathbf{N}^{S}\to \mathbf{N}^{n}$ given by $\sigma:x_{1}^{i_{1}}x_{2}^{i_{2}}\cdots x_{n}^{i_{n}}\mapsto (i_{1},i_{2},\dots, i_{n})$ is a well defined isomorphism so $\mathbf{N}^{S}\cong \mathbf{N}^{n}$.
+        
+        For any $f\in R[x_{1},x_{2},\dots,x_{n}]$. $f$ can be expressed as \\$f=\sum a_{k_{1}k_{2}\cdots k_{n}}x_{1}^{k_{1}}\cdots x_{n}^{k_{n}}$. Take $\tau:R[x_{1},x_{2},\dots,x_{n}]\to R[S]$ given by $\tau:f\mapsto \sum a_{k_{1}\cdots k_{n}}\sigma^{-1}(k_{1},k_{2},\dots,k_{n})$. It's easy to show that $\tau$ is an isomorphism.
+        \item Let $R$ and $X$ be commutative rings with identity and $\varphi:R\to X$ a homomorphism of rings such that $\varphi(1_{R})=1_{X}$. If $x_{1},x_{2},\dots,x_{n}\in S$, there is a unique homomorphism of rings $\bar{\varphi}:R[S]\to X$ such that $\bar{\varphi}|R=\varphi$, $\left| S \right| =n$ and $\varphi(s_{i})=x_{i}$ for $i=1,2,\dots,n$. The proof is quite simple since there exists $\tau:R[x_{1},\dots,x_{n}]\to R[S]$ an isomorphism.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Let $R$ and $S$ be rings with identity, $\varphi:R\to S$ a homomorphism of rings with $\varphi(1_{R})=1_{S}$, and $s_{1},s_{2},\dots,s_{n}\in S$ such that $s_{i}s_{j}=s_{j}s_{i}$ for all $i,j$ and $\varphi(r)s_{i}=s_{i}\varphi(r)$ for all $r\in R$ and all $i$. Then there is a unique homomorphism $\bar{\varphi}:R[x_{1},\dots,x_{n}]\to S$ such that $\bar{\varphi}|R=\varphi$ and $\bar{\varphi(x_{i})}=s_{i}$. This property completely determines $R[x_{1},\dots,x_{n}]$ up to isomorphism.
 \end{ex}
+
+\begin{answer}
+    $S'=\left\langle\varphi(R)\cup\{s_{1},s_{2},\dots,s_{n}\}\right\rangle$ is a commutative ring. So applying Theorem 5.5. on $S'$, we can get the unique homomorphism $\bar{\varphi}:R[xt_{1},x_{2},\dots,x_{n}]\to S'$, so $\bar{\varphi}:R[x_{1},\dots,x_{n}]\to S$ is also a homomorphism. The proof of the second statement is exactly the same as Theorem 5.5.
+\end{answer}
 
 $$ $$
 
@@ -51,11 +113,30 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item For any $A\in R$, $x+A$, $x-A$, $(x+A)(x-A)$, $x^{2}-A^{2}\in R[x]$. $(x+A)(x-A)=x^{2}+Ax-xA+A^{2}$. Since $Ax=xA$, $(x+A)(A+x)=x^{2}-A^{2}$.
+        \item Take $A=\begin{pmatrix}
+            1&1\\1&1
+        \end{pmatrix}$, $C=\begin{pmatrix}
+            1&0\\2&1
+        \end{pmatrix}$, then $CA=\begin{pmatrix}
+            1&1\\3&3
+        \end{pmatrix}$, $AC=\begin{pmatrix}
+            3&1\\3&1
+        \end{pmatrix}$. So $AC\neq CA$, $(C+A)(C-A)\neq C^{2}-A^{2}$. Corollary 5.6 is false in $R$.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     If $R$ is a commutative ring with identity and $f=a_{n}x^{n}+\cdots+a_{0}$ is a zero divisor in $R[x]$, then there exists a nonzero $b\in R$ such that $ba_{n}=ba_{n-1}=\cdots=ba_{0}=0$.
 \end{ex}
+
+\begin{answer}
+    Assume $g=b_{m}x^{m}+\cdots+b_{0}$ and $fg=0$, $fg=a_{n}b_{m}x^{m+n}+(a_{n}b_{m-1}+a_{n-1}b_{m})x^{m+n-1}+\cdots+a_{0}b_{0}=0$. So for any $k=0,1,\dots,m+n$, $\sum\limits_{i+j=k}a_{i}b_{j}=0$. Take $b_{1}'=b_{n}$, and then $a_{n}b_{1}'=0$, $a_{n}b_{m-1}+a_{n-1}b_{m}=0\Rightarrow a_{n}b_{m-1}b_{1}'+a_{n-1}b_{m}b_{1}'=0$. Take $b_{2}=b_{m}b_{1}'$, we have $a_{n}b_{2}'=a_{n-1}b_{2}'=0$. $a_{n}b_{m-2}+a_{n-1}b_{m-1}+a_{n-2}b_{m}=0$, take $b_{3}'=b_{m}b_{1}'$, we have $a_{m}b_{3}'=a_{n-1}b_{3}'=a_{n}b_{3}'=0$. Continue this step and we have $a_{n}b_{n}'=a_{n-1}b_{n}'=\cdots= a_{0}b_{n}'=0$. That's the $b$ we want.
+\end{answer}
 
 $$ $$
 
@@ -66,11 +147,24 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item Take $(x+1)^{-1}=1-x+x^{2}-x^{3}+\cdots\in \mathbf{Z}[[x]]$. $(1-x+x^{2}-x^{3}+\cdots)(x+1)=(x+1)(1-x+x^{2}-x^{3}+\cdots)=(1-x+x^{2}-x^{3}+\cdots)+(x-x^{2}+x^{3}-\cdots)=1$. So $x+1$ is a unit in $\mathbf{Z}[[x]]$. For any $f=\sum\limits_{i=0}^{n}a_{i}x^{i}\in\mathbf{Z}[x]$, $(x+1)f=a_{n}x^{n+1}+\sum\limits_{i=1}^{n}(a_{i}+a_{i-1})x^{i}+a_{0}$, $a_{n}\neq 0$ so $(x+1)f\neq 1$. $x+1$ is not a unit.
+        \item $x^{2}+3x+2=(x+2)(x+1)$ and $x+2$, $x+1\in \mathbf{Z}[x]$, so $x^{2}+3x+2$ is not irreducible in $\mathbf{Z}[x]$. $x^{2}+3x+2$ itself is a unit in $\mathbf{Z}[x]$ so if $x^{2}+3x+2=ab$, $a$,$b$ must be units. Thus $x^{2}+3x+2$ is irreducible in $\mathbf{Z}[[x]]$.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     If $F$ is a field, then $(x)$ is a maximal ideal in $F[x]$, but it is not the only maximal ideal.
 \end{ex}
+
+\begin{answer}
+    Suppose not. $(x)\subset I\subset F[x]$ with $I\neq F[x]$. $(x)$ contains all polynomials which have zero constant term. For any $p(x)=\sum\limits_{i=0}^{n}a_{i}x^{i}\in I$, $a_{0}\neq 0$, $p(x)\notin (x)$. There exists $q(x)=\sum\limits_{i=0}^{n}a_{i}'x_{i}$ with $a_{i}'=a_{i}$ for $i=1,2,\dots,n$ and $a_{0}=0$, $q(x)\in (x)\subset I$. Thus $a_{0}=p(x)-q(x)\in I$, $a_{0}$ is a unit so $I=F$. That's contradictory! $(x)$ is a maximal ideal.
+    
+    Consider $(x+1)\subset F[x]$. $F[x]$ is a UFD since $F$ is. For any $f\in (x+1)$, $f=(x+1)g$. For any $h\in F[x]\backslash(x+1)$, $h=(x+1)k+r$, where $\deg r<\deg (x+1)=1$. So $r$ is a unit in $F[x]$, which means $(h)+(x+1)=F[x]$. $(x+1)$ is maximal in $F[x]$.
+\end{answer}
 
 $$ $$
 
@@ -81,8 +175,19 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item For any nonzero element $f$ in $F[[x]]$, $f=(a_{0},a_{1},\dots)$, we can find the minimal $k$ such that $a_{k}\neq 0$. $f=\sum\limits_{i=0}^{\infty}a_{i}x^{i}=x^{k}g$, $g=\sum\limits_{i=0}^{\infty}a_{i+k}x^{i}$ which has nonzero constant term thus a unit. So $f=x^{k}g$.
+        \item For any ideal $I\subset F[[x]]$ and $a\in I$, $a=x^{k}u$, $u$ a unit, we construct $\varphi:I\to \mathbf{N}$ given by $\varphi(a)=k$, $\varphi(I)\subset \mathbf{N}$, take $a\in I$ minimize $\varphi(a)$. Assume $a=x^{k}u$, then $(a)=(x^{k})\subset I$. For any $a'=x^{k'}u'\in I$, $k'>k$, $a'=x^{k}(x^{k'-k}u')\in (x^{k})$. So $I\subset (x^{k})$. This also shows that the only ideals are $(x^{k})$ for $k\in\mathbf{N}$.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Let $\mathcal{C}$ be the category with objects all commutative rings with identity and morphisms all ring homomorphism $f:R\to S$ such that $f(1_{R})=1_{S}$. Then the polynomial ring $\mathbf{Z}[x_{1},\dots,x_{n}]$ is a free object on the set $\{x_{1},\dots,x_{n}\}$ in the category $\mathcal{C}$.
 \end{ex}
+
+\begin{answer}
+    Denote $X=\{x_{1},x_{2},\dots,x_{n}\}$. For any object $R$ in $\mathcal{C}$, there exists a map $f:\mathbf{Z}\to R$ given by $f:n\mapsto n\cdot 1_{R}$ is a homomorphism of rings. If there exist $i:X\to R$ given by $i(x_{i})=r_{i}\in R$. Applying Theorem 5.5 there exists $\bar{f}:\mathbf{Z}[x_{1},x_{2},\dots,x_{n}]\to R$ and $\bar{f}|\mathbf{Z}=f$, $\bar{f}(x_{i})=r_{i}$ so $\bar{f}i=f$. Thus $\mathbf{Z}[x_{1},x_{2},\dots,x_{n}]$ is free over $X$.
+\end{answer}
