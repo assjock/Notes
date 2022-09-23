@@ -214,6 +214,41 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    Denote all the homomorphisms as following.
+    \begin{figure}[H]\centering
+        \begin{tikzpicture}
+            \node [above] at (0,0) {$B_{1}$};
+            \node [above] at (1,0) {$B_{2}$};
+            \node [above] at (2,0) {$B_{3}$};
+            \node [above] at (3,0) {$B_{4}$};
+            \node [above] at (4,0) {$B_{5}$};
+            \node [above] at (0,1.5) {$A_{1}$};
+            \node [above] at (1,1.5) {$A_{2}$};
+            \node [above] at (2,1.5) {$A_{3}$};
+            \node [above] at (3,1.5) {$A_{4}$};
+            \node [above] at (4,1.5) {$A_{5}$};
+            \draw [->] (0.3,0.25)-- node [above, pos=0.5]{$g_{1}$} (0.7,0.25);
+            \draw [->] (1.3,0.25)-- node [above, pos=0.5]{$g_{2}$} (1.7,0.25);
+            \draw [->] (2.3,0.25)-- node [above, pos=0.5]{$g_{3}$} (2.7,0.25);
+            \draw [->] (3.3,0.25)-- node [above, pos=0.5]{$g_{4}$} (3.7,0.25);
+            \draw [->] (0.3,1.75)-- node [above, pos=0.5]{$f_{1}$} (0.7,1.75);
+            \draw [->] (1.3,1.75)-- node [above, pos=0.5]{$f_{2}$} (1.7,1.75);
+            \draw [->] (2.3,1.75)-- node [above, pos=0.5]{$f_{3}$} (2.7,1.75);
+            \draw [->] (3.3,1.75)-- node [above, pos=0.5]{$f_{4}$} (3.7,1.75);
+            \draw [->] (0,1.5)-- node [left, pos=0.5]{$\alpha_{1}$} (0,0.6);
+            \draw [->] (1,1.5)-- node [left, pos=0.5]{$\alpha_{2}$} (1,0.6);
+            \draw [->] (2,1.5)-- node [left, pos=0.5]{$\alpha_{3}$} (2,0.6);
+            \draw [->] (3,1.5)-- node [left, pos=0.5]{$\alpha_{4}$} (3,0.6);
+            \draw [->] (4,1.5)-- node [left, pos=0.5]{$\alpha_{5}$} (4,0.6);
+        \end{tikzpicture}
+    \end{figure}
+    \begin{enumerate}[(a)]
+        \item For any $a\in A_{3}$, $\alpha_{3}(a)=0$, we need to show that $a=0$. $g_{3}\alpha_{3}(a)=\alpha_{4}f_{3}(a)=0$, since $\alpha_{4}$ is monomorphism, $f_{3}(a)=0$. So $a\in \mathrm{Ker}f_{3}\Rightarrow a\in \mathrm{Im}f_{2}$. There's $a'\in A_{2}$, $f_{2}(a')=a$, $\alpha_{3}f_{2}(a')=0=g_{2}\alpha_{2}(a')$. So $\alpha_{2}(a')\in \mathrm{Ker}g_{2}=\mathrm{Im}g_{1}$. There is $b''\in B_{1}$, $g_{1}(b'')=\alpha_{2}(a')$. $\alpha_{1}$ is epimorphism so $\exists a''\in A_{1}$, $b''=\alpha_{1}(a'')$, so $g_{1}\alpha_{1}(a'')=\alpha_{2}f_{1}(a'')=\alpha_{2}(a')$. $\alpha_{2}$ is monomorphism so $f_{1}(a'')=a'\in \mathrm{Ker}f_{2}\Rightarrow a=f_{2}(a')=0$.
+        \item For any $b\in B_{3}$, we need to show that $b\in \mathrm{Im}\alpha_{3}$. $g_{3}(b)\in B_{4}$, $g_{3}(b)=\alpha_{4}(a')$ for $a'\in A_{4}$ since $\alpha_{4}$ is epimorphism. $g_{4}\alpha_{4}(a')=g_{4}g_{3}(b)=0=\alpha_{5}f_{4}(a')$. $f_{4}a'=0$ cince $\alpha_{5}$ is monomorphism. So there is $a\in A_{3}$, $f_{3}(a)=a'$, $\alpha_{4}f_{3}(a)=g_{3}\alpha_{3}(a)=\alpha_{4}(a')=g_{3}(b)$. $g_{3}(b-\alpha_{3}(a))=0\Rightarrow b-\alpha_{3}(a)\in\mathrm{Ker}g_{3}=\mathrm{Im}g_{2}$. There's $b'\in B_{2}$, $g_{2}(b')=-b+\alpha_{3}(a)$. $\alpha_{2}$ is epimorphism so $\exists a''\in A_{2}$, $\alpha_{2}(a'')=b'$. Consider $\alpha_{3}(a-f_{2}(a''))=\alpha_{3}(a)-\alpha_{3}f_{2}(a'')=-g_{2}\alpha_{2}(a'')+\alpha_{3}(a'')=b$. Thus $b\in \mathrm{Im}\alpha_{3}$, whence $\alpha_{3}$ is epimorphism.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
@@ -223,11 +258,221 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item The commutative diagram
+        \begin{figure}[H]\centering
+            \begin{tikzpicture}
+                \node [above] at (0,0) {$0$};
+                \node [above] at (1,0) {$A$};
+                \node [above] at (2,0) {$B$};
+                \node [above] at (4,0) {$D$};
+                \node [above] at (5,0) {$E$};
+                \node [above] at (6,0) {$0$};
+                \node [below] at (3,1) {$C$};
+                \draw [->] (0.2,0.25) to (0.8,0.25);
+                \draw [->] (1.2,0.25)-- node [above, pos=0.5] {$k$} (1.8,0.25);
+                \draw [->] (4.2,0.25)-- node [above, pos=0.5] {$l$} (4.8,0.25);
+                \draw [->] (5.2,0.25) to (5.8,0.25);
+                \draw [->] (2.2,0.25)-- node [below, pos=0.5] {$gf$} (3.8,0.25);
+                \draw [->] (2.2,0.35)-- node [above, pos=0.5, sloped] {$f$} (2.8,0.7);
+                \draw [->] (3.2,0.7)-- node [above, pos=0.5, sloped] {$g$} (3.8,0.35);
+            \end{tikzpicture}
+        \end{figure}
+        For any $a\in A$, $k(a)\in \mathrm{Ker}f\Rightarrow fk(a)=0$. $g$ is monomorphism so $\mathrm{Ker}g=0$. Since $gfk(a)=0$, $\mathrm{Im}k\subset \mathrm{Ker}gf$. $\mathrm{Ker}g=0\Rightarrow gf(a)=0$ if and only if $f(a)=0$. $\mathrm{Ker}gf\subset \mathrm{Im}k$. $\mathrm{Im}gf=\mathrm{Im}g$ since $f$ is epimorphism. So $\mathrm{Im}gf=\mathrm{Ker}l$. $0\to A\to B\xrightarrow{gf}D\to E\to 0$ is an exact sequence.
+        \item For any finite exact sequence $A_{1}\xrightarrow{f_{1}}A_{2}\xrightarrow{f_{2}}\cdots \xrightarrow{f_{n-1}}A_{n}$. We can add head and tail into it and form
+        \[0\to \mathrm{Coker}f_{1}\to A_{1}\xrightarrow{f_{1}}\to A_{2}\xrightarrow{f_{2}}\cdots\xrightarrow{f_{n-1}}A_{n}\to \mathrm{Coim}f_{n-1}\to 0\]
+        For any exact sequence which has fragment
+        \[A\xrightarrow{f}B\xrightarrow{g}C\xrightarrow{h}D\]
+        Consider
+        \begin{figure}[H]\centering
+            \begin{tikzpicture}
+                \node [above] at (0,0) {$A$};
+                \node [above] at (1.2,0) {$B$};
+                \node [above] at (2.8,0) {$C$};
+                \node [above] at (4,0) {$D$};
+                \node [above] at (2,1) {$\mathrm{Im}g$};
+                \draw [->] (0.2,0.25)-- node [above, pos=0.5] {$f$} (1,0.25);
+                \draw [->] (1.4,0.25)-- node [above, pos=0.5] {$g$} (2.6,0.25);
+                \draw [->] (3,0.25)-- node [above, pos=0.5] {$h$} (3.8,0.25);
+                \draw [->] (1.2,0.5)-- node [above, pos=0.5, sloped] {$g$} (1.8,1.05);
+                \draw [->] (2.2,1.05)-- node [above, pos=0.5, sloped] {$\subset$} (2.8,0.5);
+            \end{tikzpicture}
+        \end{figure}
+        $\subset$ is the inclusion map. We can split into $A\xrightarrow{f}B\xrightarrow{g}\mathrm{Im}g\to 0$ and $0\to \mathrm{Im}g\xrightarrow{\subset}C\xrightarrow{h}D$. This provides us a way to split an exact sequence into short exact sequences.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
-    Show that isomorphism of short exact sequences in an equivalence relation.
+    Show that isomorphism of short exact sequences is an equivalence relation.
 \end{ex}
+
+\begin{answer}
+    We check isomorphism of short exact sequence is equivalence relation. $a=0\to A_{1}\to B_{1}\to C_{1}\to 0$, $b=0\to A_{2}\to B_{2}\to C_{2}\to 0$ and $c=0\to A_{3}\to B_{3}\to C_{3}\to 0$.
+    \begin{enumerate}
+        \item The commutative diagram
+        \begin{figure}[H]\centering
+            \begin{tikzpicture}
+                \node [above] at (0,0) {$0$};
+                \node [above] at (1,0) {$A_{1}$};
+                \node [above] at (2,0) {$B_{1}$};
+                \node [above] at (3,0) {$C_{1}$};
+                \node [above] at (4,0) {$0$};
+                \node [above] at (0,1.5) {$0$};
+                \node [above] at (1,1.5) {$A_{1}$};
+                \node [above] at (2,1.5) {$B_{1}$};
+                \node [above] at (3,1.5) {$C_{1}$};
+                \node [above] at (4,1.5) {$0$};
+                \draw [->] (0.3,0.25) to (0.7,0.25);
+                \draw [->] (1.3,0.25) to (1.7,0.25);
+                \draw [->] (2.3,0.25) to (2.7,0.25);
+                \draw [->] (3.3,0.25) to (3.7,0.25);
+                \draw [->] (0.3,1.75) to (0.7,1.75);
+                \draw [->] (1.3,1.75) to (1.7,1.75);
+                \draw [->] (2.3,1.75) to (2.7,1.75);
+                \draw [->] (3.3,1.75) to (3.7,1.75);
+                \draw [->] (1,1.5)-- node [left, pos=0.5]{$1_{A_{1}}$} (1,0.6);
+                \draw [->] (2,1.5)-- node [left, pos=0.5]{$1_{B_{1}}$} (2,0.6);
+                \draw [->] (3,1.5)-- node [left, pos=0.5]{$1_{C_{1}}$} (3,0.6);
+            \end{tikzpicture}
+        \end{figure}
+        shows that $a\sim a$ since $1_{A_{1}}$, $1_{B_{1}}$ and $1_{C_{1}}$ are isomorphisms.
+        \item If
+        \begin{figure}[H]\centering
+            \begin{tikzpicture}
+                \node [above] at (0,0) {$0$};
+                \node [above] at (1,0) {$A_{2}$};
+                \node [above] at (2,0) {$B_{2}$};
+                \node [above] at (3,0) {$C_{2}$};
+                \node [above] at (4,0) {$0$};
+                \node [above] at (0,1.5) {$0$};
+                \node [above] at (1,1.5) {$A_{1}$};
+                \node [above] at (2,1.5) {$B_{1}$};
+                \node [above] at (3,1.5) {$C_{1}$};
+                \node [above] at (4,1.5) {$0$};
+                \draw [->] (0.3,0.25) to (0.7,0.25);
+                \draw [->] (1.3,0.25) to (1.7,0.25);
+                \draw [->] (2.3,0.25) to (2.7,0.25);
+                \draw [->] (3.3,0.25) to (3.7,0.25);
+                \draw [->] (0.3,1.75) to (0.7,1.75);
+                \draw [->] (1.3,1.75) to (1.7,1.75);
+                \draw [->] (2.3,1.75) to (2.7,1.75);
+                \draw [->] (3.3,1.75) to (3.7,1.75);
+                \draw [->] (1,1.5)-- node [left, pos=0.5]{$f$} (1,0.6);
+                \draw [->] (2,1.5)-- node [left, pos=0.5]{$g$} (2,0.6);
+                \draw [->] (3,1.5)-- node [left, pos=0.5]{$h$} (3,0.6);
+            \end{tikzpicture}
+        \end{figure}
+        then we have
+        \begin{figure}[H]\centering
+            \begin{tikzpicture}
+                \node [above] at (0,0) {$0$};
+                \node [above] at (1,0) {$A_{2}$};
+                \node [above] at (2,0) {$B_{2}$};
+                \node [above] at (3,0) {$C_{2}$};
+                \node [above] at (4,0) {$0$};
+                \node [above] at (0,1.5) {$0$};
+                \node [above] at (1,1.5) {$A_{1}$};
+                \node [above] at (2,1.5) {$B_{1}$};
+                \node [above] at (3,1.5) {$C_{1}$};
+                \node [above] at (4,1.5) {$0$};
+                \draw [->] (0.3,0.25) to (0.7,0.25);
+                \draw [->] (1.3,0.25) to (1.7,0.25);
+                \draw [->] (2.3,0.25) to (2.7,0.25);
+                \draw [->] (3.3,0.25) to (3.7,0.25);
+                \draw [->] (0.3,1.75) to (0.7,1.75);
+                \draw [->] (1.3,1.75) to (1.7,1.75);
+                \draw [->] (2.3,1.75) to (2.7,1.75);
+                \draw [->] (3.3,1.75) to (3.7,1.75);
+                \draw [->] (1,1.5)-- node [left, pos=0.5]{$f^{-1}$} (1,0.6);
+                \draw [->] (2,1.5)-- node [left, pos=0.5]{$g^{-1}$} (2,0.6);
+                \draw [->] (3,1.5)-- node [left, pos=0.5]{$h^{-1}$} (3,0.6);
+            \end{tikzpicture}
+        \end{figure}
+        is also commutative. So $a\sim b\Leftrightarrow b\sim a$.
+        \item If
+        \begin{figure}[H]\centering
+            \begin{tikzpicture}
+                \node [above] at (0,0) {$0$};
+                \node [above] at (1,0) {$A_{2}$};
+                \node [above] at (2,0) {$B_{2}$};
+                \node [above] at (3,0) {$C_{2}$};
+                \node [above] at (4,0) {$0$};
+                \node [above] at (0,1.5) {$0$};
+                \node [above] at (1,1.5) {$A_{1}$};
+                \node [above] at (2,1.5) {$B_{1}$};
+                \node [above] at (3,1.5) {$C_{1}$};
+                \node [above] at (4,1.5) {$0$};
+                \draw [->] (0.3,0.25) to (0.7,0.25);
+                \draw [->] (1.3,0.25) to (1.7,0.25);
+                \draw [->] (2.3,0.25) to (2.7,0.25);
+                \draw [->] (3.3,0.25) to (3.7,0.25);
+                \draw [->] (0.3,1.75) to (0.7,1.75);
+                \draw [->] (1.3,1.75) to (1.7,1.75);
+                \draw [->] (2.3,1.75) to (2.7,1.75);
+                \draw [->] (3.3,1.75) to (3.7,1.75);
+                \draw [->] (1,1.5)-- node [left, pos=0.5]{$f_{1}$} (1,0.6);
+                \draw [->] (2,1.5)-- node [left, pos=0.5]{$g_{1}$} (2,0.6);
+                \draw [->] (3,1.5)-- node [left, pos=0.5]{$h_{1}$} (3,0.6);
+            \end{tikzpicture}
+        \end{figure}
+        and
+        \begin{figure}[H]\centering
+            \begin{tikzpicture}
+                \node [above] at (0,0) {$0$};
+                \node [above] at (1,0) {$A_{3}$};
+                \node [above] at (2,0) {$B_{3}$};
+                \node [above] at (3,0) {$C_{3}$};
+                \node [above] at (4,0) {$0$};
+                \node [above] at (0,1.5) {$0$};
+                \node [above] at (1,1.5) {$A_{2}$};
+                \node [above] at (2,1.5) {$B_{2}$};
+                \node [above] at (3,1.5) {$C_{2}$};
+                \node [above] at (4,1.5) {$0$};
+                \draw [->] (0.3,0.25) to (0.7,0.25);
+                \draw [->] (1.3,0.25) to (1.7,0.25);
+                \draw [->] (2.3,0.25) to (2.7,0.25);
+                \draw [->] (3.3,0.25) to (3.7,0.25);
+                \draw [->] (0.3,1.75) to (0.7,1.75);
+                \draw [->] (1.3,1.75) to (1.7,1.75);
+                \draw [->] (2.3,1.75) to (2.7,1.75);
+                \draw [->] (3.3,1.75) to (3.7,1.75);
+                \draw [->] (1,1.5)-- node [left, pos=0.5]{$f_{2}$} (1,0.6);
+                \draw [->] (2,1.5)-- node [left, pos=0.5]{$g_{2}$} (2,0.6);
+                \draw [->] (3,1.5)-- node [left, pos=0.5]{$h_{2}$} (3,0.6);
+            \end{tikzpicture}
+        \end{figure}
+        are commutative. Then
+        \begin{figure}[H]\centering
+            \begin{tikzpicture}
+                \node [above] at (0,0) {$0$};
+                \node [above] at (1,0) {$A_{3}$};
+                \node [above] at (2,0) {$B_{3}$};
+                \node [above] at (3,0) {$C_{3}$};
+                \node [above] at (4,0) {$0$};
+                \node [above] at (0,1.5) {$0$};
+                \node [above] at (1,1.5) {$A_{1}$};
+                \node [above] at (2,1.5) {$B_{1}$};
+                \node [above] at (3,1.5) {$C_{1}$};
+                \node [above] at (4,1.5) {$0$};
+                \draw [->] (0.3,0.25) to (0.7,0.25);
+                \draw [->] (1.3,0.25) to (1.7,0.25);
+                \draw [->] (2.3,0.25) to (2.7,0.25);
+                \draw [->] (3.3,0.25) to (3.7,0.25);
+                \draw [->] (0.3,1.75) to (0.7,1.75);
+                \draw [->] (1.3,1.75) to (1.7,1.75);
+                \draw [->] (2.3,1.75) to (2.7,1.75);
+                \draw [->] (3.3,1.75) to (3.7,1.75);
+                \draw [->] (1,1.5)-- node [left, pos=0.5]{\small{$f_{2}f_{1}$}} (1,0.6);
+                \draw [->] (2,1.5)-- node [left, pos=0.5]{\small{$g_{2}g_{1}$}} (2,0.6);
+                \draw [->] (3,1.5)-- node [left, pos=0.5]{\small{$h_{2}h_{1}$}} (3,0.6);
+            \end{tikzpicture}
+        \end{figure}
+        is also commutative. So $a\sim b, b\sim c\Rightarrow a\sim c$.
+    \end{enumerate}
+\end{answer}
 
 $$ $$
 
@@ -235,11 +480,19 @@ $$ $$
     If $f:A\to B$ and $g:B\to A$ are $R$-module homomorphisms such that $gf=1_{A}$, then $B=\mathrm{Im}f\oplus \mathrm{Ker}g$.
 \end{ex}
 
+\begin{answer}
+    $gf=1_{A}$ so $f$ is monomorphism and $g$ is epimorphism. So $B /\mathrm{Ker}g\cong \mathrm{Im}g=A\cong A /{0}\cong \mathrm{Im}f$. $\mathrm{Ker}g\cap \mathrm{Im}0=\{0\}$ since $g(\mathrm{Im}f)=A$. Thus $B=\mathrm{Ker}g\oplus\mathrm{Im}f$.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
     Let $R$ be a ring and $R^{op}$ its opposite ring. If $A$ is a left $R$-module, then $A$ is a right $R^{op}$-module such that $ra=ar$ for all $a\in A, 4\in R, r\in R^{op}$.
 \end{ex}
+
+\begin{answer}
+    Trivial.
+\end{answer}
 
 $$ $$
 
@@ -251,6 +504,16 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item Let $B=\{1_{R}a|a\in A\}$, $C=\{a\in A|1_{R}a=0\}$. Then $B$ is unitary since $1_{R}(1_{R}a)=1_{R}a$. $RC=0$ since $ra=(r1_{R})a=r(1_{R}a)=0 \forall a\in C$. And $\forall a\in A$, $1_{R}(a-1_{R}a)=0\Rightarrow a-1_{R}a\in C$. So $A=\subset B\oplus C$. Obviously $B\oplus C\subset A$, $A=B\oplus C$.
+        \item For any $x=b_{1}+c_{1}\in A_{1}$, $1_{R}x=1_{R}(b_{1}+c_{1})=1_{R}b_{1}$, $B_{1}$ is the maximal unitary submodule and $B_{1}$ contains all unitary elements. $f(B)$ is also unitary since $f(b)=f(1_{R}b)=1_{R}f(b)$ for any $b\in B$. $f(B)\subset B_{1}$.
+        
+        $C_{1}$ contains all elements $x\in A_{1}$ s.t. $Rx=0$. Since $Rf(c)=f(Rc)=0$ for all $c\in C$, we have $f(C)\subset C_{1}$.
+        \item For any $b'\in B'$, we have $f(x)=b'$ since $f$ is epimorphism. Assume $x=b+c$ with $b\in B$ and $c\in C$. $f(x)=f(1_{R}(b+c))=f(1_{R}b)=1_{R}f(b)=f(b)$. So $\exists b\in B$, $f(b)=b'$. $f|B$ is epimorphism. For any $c'\in C$, we have $f(y)=c$. Assume $y=a+d$ with $a\in B$ and $d\in C$. $f(y)=f(1_{R}(a+d))=f(1_{R}a)=0$, so $1_{R}f(a)=0\Rightarrow a=0$. Thus $\exists y=d\in C$, $f(d)=c'$. $f|C$ is epimorphism.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
@@ -260,3 +523,10 @@ $$ $$
         \item If $A$ is an $R$-module and $a\in A$, show that there is a unique $R$-module homomorphism $f:S\to A$ such that $f(1_{S})=a$.
     \end{enumerate}
 \end{ex}
+
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item Trivial since $S=R\times \mathbf{Z}$.
+        \item $S=R1_{S}\oplus\mathbf{Z}1_{S}$. Let $f(r1_{S}+n1_{S})=ra+na$, then $f(1_{S})=a$ and $f$ is a well defined homomorphism of modules. If there exists another $g$ s.t. $g(1_{S})=a$, $\forall r1_{S}+n1_{S}\in S$, $g(r1_{S}+n1_{S})=rg(1_{S})+ng(1_{S})=ra+na=f(r1_{S}+n1_{S})$. So $g=f$.
+    \end{enumerate}
+\end{answer}
