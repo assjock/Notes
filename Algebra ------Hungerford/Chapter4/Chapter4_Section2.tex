@@ -1,0 +1,18 @@
+\section{Free modules and vector spaces}
+\begin{ex}
+    \begin{enumerate}[(a)]
+        \item A set of vectors $\{x_{1},\cdots x_{n}\}$ in a vector space $V$ over a division ring $R$ is linearly dependent if and only if some $x_{k}$ is a linear combination of the preceding $x_{i}$.
+        \item If $\{x_{1},x_{2},x_{3}\}$ is a linearly independent subset of $V$, then the set $\{x_{1}+x_{2},x_{2}+x_{3},x_{3}+x_{1}\}$ is linearly independent if and only if $\mathrm{Char}R\neq 2$.
+    \end{enumerate}
+\end{ex}
+
+$$ $$
+
+\begin{ex}
+    Let $R$ be any ring (possibly without identity) and $X$ a nonempty set. In this exercise an $R$-module $F$ is called a \textbf{free module on $X$} if $F$ is a free object on $X$ in the category of all left $R$-modules. Thus by Definition I.7.7m $F$ is the free module on $X$ if there is a function $\tau:X\to F$ such that for any left $R$-module $A$ and function $f:X\to A$ there is a unique $R$-module homomorphism $\bar{f}:F\to A$ with $\bar{f}\tau=f$.
+    \begin{enumerate}[(a)]
+        \item Let $\{X_{i}|i\in I\}$ be a collection of mutually disjoint sets and for each $i\in I$, suppose $F_{i}$ is a free module on $X_{i}$, with $\tau_{i}:X_{i}\to F_{i}$. Let $X=\bigcup\limits_{i\in I}X_{i}$ and $F=\sum\limits_{i\in I}F_{i}$, with $\phi_{i}:F_{i}\to F$ the canonical injection. Define $\tau:X\to F$ by $\tau(x)=\phi_{i}\tau_{i}(x)$ for $x\in X_{i}$. Prove that $F$ is a free module on $X$.
+        \item Assume $R$ has an identity. Let the abelian group $\mathbf{Z}$ be given trivial $R$-module structure ($rm=0$ for all $r\in R, m\in\mathbf{Z}$), so that $R\oplus\mathbf{Z}$ is an $R$-module with $r(r',m)=(rr',0)$ for all $r,r'\in R$, $m\in \mathbf{Z}$. If $X$ is any one element set, $X=\{t\}$, let $\tau:X\to R\oplus\mathbf{Z}$ be given by $\tau(t)=(1_{R},1)$. Prove that $R\oplus\mathbf{Z}$ is a free module on $X$.
+        \item If $R$ is an arbitrary ring and $X$ is any set, then there exists a free module on $X$.
+    \end{enumerate}
+\end{ex}
