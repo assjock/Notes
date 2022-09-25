@@ -168,16 +168,16 @@ $$ $$
 
 \begin{ex}
     \begin{enumerate}[(a)]
-        \item Show that $\mathbf{Z}$ is a principle ideal ring.
-        \item Every homomorphic image of a principle ideal ring is also a principle ideal ring.
-        \item $Z_{m}$ is a principle ideal ring for every $m>0$.
+        \item Show that $\mathbf{Z}$ is a principal ideal ring.
+        \item Every homomorphic image of a principal ideal ring is also a principal ideal ring.
+        \item $Z_{m}$ is a principal ideal ring for every $m>0$.
     \end{enumerate}
 \end{ex}
 
 \begin{answer}
     \begin{enumerate}[(a)]
-        \item For any ideal $I$ in $\mathbf{Z}$, $I$ is a subring so $I=m\mathbf{Z}$ where $m\in \mathbf{Z}$. $m\mathbf{Z}=(m)$ is a principle ideal so $\mathbf{Z}$ is a PID.
-        \item For $f:R\to S$ with $f(r)=s$ and $R$ is a principle ideal ring. Consider $f:R\to \mathrm{Im}f\subset S$. For any ideal $J\subset \mathrm{Im}f$, $f^{-1}(J)$ is an ideal since $\forall a\in f^{-1}(J)$ and $r\in R$, $f(ar)=f(a)f(r)\in J\Rightarrow ar\in f^{-1}(J)$. $f^{-1}(J)$ is a principle ideal, assume $f^{-1}(J)=(a)$. Then $\forall r\in R$, $ar\in (a)$, $ra\in (a)$. $f(ar)=f(a)f(r)\in J$ and $f(ra)=f(r)f(a)\in J$ since $f(a)\in J$ and $f(r)\in S$. So $(f(a))\subset J$. $J=f((a))=\{f(ra+as+na+\sum\limits_{i=1}^{m}r_{i}as_{i})| r, s, r_{i}, s_{i}\in R, n\in \mathbf{Z}\}=\{f(r)f(a)+f(a)f(s)+nf(a)+\sum\limits_{i=1}^{m}f(r_{i})f(a_{i})f(s_{i})| r, s, r_{i}, s_{i}\in R, n\in \mathbf{Z}\}\subset (f(a))$. So $J=(f(a))$ is a principle ideal. The image of a principle ideal ring is also a principle ideal ring.
+        \item For any ideal $I$ in $\mathbf{Z}$, $I$ is a subring so $I=m\mathbf{Z}$ where $m\in \mathbf{Z}$. $m\mathbf{Z}=(m)$ is a principal ideal so $\mathbf{Z}$ is a PID.
+        \item For $f:R\to S$ with $f(r)=s$ and $R$ is a principal ideal ring. Consider $f:R\to \mathrm{Im}f\subset S$. For any ideal $J\subset \mathrm{Im}f$, $f^{-1}(J)$ is an ideal since $\forall a\in f^{-1}(J)$ and $r\in R$, $f(ar)=f(a)f(r)\in J\Rightarrow ar\in f^{-1}(J)$. $f^{-1}(J)$ is a principal ideal, assume $f^{-1}(J)=(a)$. Then $\forall r\in R$, $ar\in (a)$, $ra\in (a)$. $f(ar)=f(a)f(r)\in J$ and $f(ra)=f(r)f(a)\in J$ since $f(a)\in J$ and $f(r)\in S$. So $(f(a))\subset J$. $J=f((a))=\{f(ra+as+na+\sum\limits_{i=1}^{m}r_{i}as_{i})| r, s, r_{i}, s_{i}\in R, n\in \mathbf{Z}\}=\{f(r)f(a)+f(a)f(s)+nf(a)+\sum\limits_{i=1}^{m}f(r_{i})f(a_{i})f(s_{i})| r, s, r_{i}, s_{i}\in R, n\in \mathbf{Z}\}\subset (f(a))$. So $J=(f(a))$ is a principal ideal. The image of a principal ideal ring is also a principal ideal ring.
     \end{enumerate}
 \end{answer}
 
@@ -236,7 +236,7 @@ $$ $$
     \begin{enumerate}[(a)]
         \item $P$ is a prime ideal.
         \item If $r,s\in R$ are such that $rRs\subset R$, then $r\in P$ or $s\in P$.
-        \item If $(r)$ and $(s)$ are principle ideals of $R$ such that $(r)(s)\subset P$, then $r\in P$ or $s\in P$.
+        \item If $(r)$ and $(s)$ are principal ideals of $R$ such that $(r)(s)\subset P$, then $r\in P$ or $s\in P$.
         \item If $U$ and $V$ are right ideals in $R$ such that $UV\subset R$, then $U\subset R$ or $V\subset R$.
         \item If $U$ and $V$ are left ideals in $R$ such that $UV\subset R$, then $U\subset R$ or $V\subset R$.
     \end{enumerate}

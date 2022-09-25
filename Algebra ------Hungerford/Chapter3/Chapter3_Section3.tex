@@ -1,6 +1,6 @@
 \section{Factorization in commutative rings}
 \begin{ex}
-    A nonzero ideal in a principle ideal domain is maximal if and only if it is prime.
+    A nonzero ideal in a principal ideal domain is maximal if and only if it is prime.
 \end{ex}
 
 \begin{answer}
@@ -10,13 +10,13 @@
 $$ $$
 
 \begin{ex}
-    An integral domain $R$ is unique factorization domain if and only if every non zero prime ideal in $R$ contains a nonzero principle ideal that is prime.
+    An integral domain $R$ is unique factorization domain if and only if every non zero prime ideal in $R$ contains a nonzero principal ideal that is prime.
 \end{ex}
 
 \begin{answer}
     Suppose $R$ is a unique factorization domain and $P\neq 0$ is a prime ideal. Let $x\in P$ be a nonzero nonunit. Then $x$ can be factored into $x=p_{1}p_{2}\cdots p_{n}$ a product of prime elements. Then $x\in P$ implies $p_{i}\in P$ for some $i$, so $(p_{i})\subset P$.
 
-    Conversely, assume that each nonzero prime ideal of $R$ contains a principle prime ideal.
+    Conversely, assume that each nonzero prime ideal of $R$ contains a principal prime ideal.
 
     \begin{lemma}
         Let $R$ be a commutative ring and $S\subset R\backslash \{0\}$ a multiplicatively closed subset containing $1_{R}$. Let $\mathcal{I}_{S}$ be the set of ideals of $R$ which are disjoint from $S$. Then
@@ -74,7 +74,7 @@ $$ $$
 $$ $$
 
 \begin{ex}
-    Let $R$ be a principle ideal domain.
+    Let $R$ be a principal ideal domain.
     \begin{enumerate}[(a)]
         \item Every proper ideal is a product $P_{1}P_{2}\cdots P_{n}$ of maximal ideals, which are unique ly determined up to order.
         \item An ideal $P$ in $R$ is said to be primary if $ab\in P$ and $a\notin P$ imply $b^{n}\in P$ for some $n$. Show that $P$ is primary if and only if for some $n$, $P=(p^{n})$ where $p\in R$ is prime or $p=0$.
@@ -126,7 +126,7 @@ $$ $$
 $$ $$
 
 \begin{ex}
-    Let $R$ be the following subring of the complex numbers: $R=\{a+b(1+\sqrt{19}i) /2|a,b\in \mathbf{Z}\}$. The $R$ is a principle ideal domain that is not a Euclidean domain.
+    Let $R$ be the following subring of the complex numbers: $R=\{a+b(1+\sqrt{19}i) /2|a,b\in \mathbf{Z}\}$. The $R$ is a principal ideal domain that is not a Euclidean domain.
 \end{ex}
 
 \begin{answer}
@@ -134,9 +134,9 @@ $$ $$
     
     Let $R$ be an integral domain that is not a field, if $R$ is a Euclidean domain then there are universal side divisors in $R$. Since $\varphi(R)\subset \mathbf{N}$ has a lower bound, we can choose $u\in R-\tilde{R}$ such that $\varphi(u)$ minimizes. Then $\forall x=qu+r$, $r=0$ or $\varphi(r)<\varphi(u)$ so $r\in \tilde{R}$. Hence $u$ is a universal side divisor in $R$. Now we prove $R=\mathbf{Z}[(1+\sqrt{19}i) /2]$ is not a Euclidean domain by showing $R$ contains no universal side divisor. The units in $R$ are only $\pm 1$ so $\tilde{R}=\{\pm 1,0\}$. $\forall a+b(1+\sqrt{19}i) /2\in \mathbf{Z}[(1+\sqrt{19}i) /2]\backslash \mathbf{Z}$, $\varphi(a+b(1+\sqrt{19}i) /2)=a^{2}+ab+5b^{2}\geq 5$. So the smallest nonzero value of $\varphi(x)$ is 1 and 4. Take $x=2$ in the definition of universal side divisor, $u$ must divide $2$ or $3$. If $2=ab$, then $4=\varphi(a)\varphi(b)$ so the only divisor of $2$ are $\pm 1$, $\pm 2$. Similarly the only divisor of $2$ are $\pm 1$, $\pm 3$. So the value of $u$ should be $\pm 2$ or $\pm 3$. Take $x=(1+\sqrt{19}i) /2$ and it's easy to check that none of $x$, $x\pm 1$ are divisible by $\pm 2$, $\pm 3$. Thus none of these is a universal side divisor.
 
-    Next we prove $R$ is a principle ideal domain. Define $\varphi'$ to be a Dedekind-Hasse norm if $\varphi'$ is a positive norm and for every nonzero $a,b\in R$ either $a\in (b)$ or there exist $s,t\in R$ with $0<\varphi'(sa-tb)<\varphi'(b)$. 
+    Next we prove $R$ is a principal ideal domain. Define $\varphi'$ to be a Dedekind-Hasse norm if $\varphi'$ is a positive norm and for every nonzero $a,b\in R$ either $a\in (b)$ or there exist $s,t\in R$ with $0<\varphi'(sa-tb)<\varphi'(b)$. 
     
-    For any principle ideal domain $R$, $R$ has a Dedekind-Hasse norm. Let $I$ be an nonzero ideal in $R$ and $b$ be a nonzero element of $I$ with $\varphi'(b)$ minimal. Suppose $a$ is any nonzero elements in $I$, so the ideal $(a,b)$ is contained in $I$. Then the Dedekind-Hasse condition on $\varphi'$ and the minimality of $b$ implies that $a\in (b)$, so $I=(b)$ is principle.
+    For any principal ideal domain $R$, $R$ has a Dedekind-Hasse norm. Let $I$ be an nonzero ideal in $R$ and $b$ be a nonzero element of $I$ with $\varphi'(b)$ minimal. Suppose $a$ is any nonzero elements in $I$, so the ideal $(a,b)$ is contained in $I$. Then the Dedekind-Hasse condition on $\varphi'$ and the minimality of $b$ implies that $a\in (b)$, so $I=(b)$ is principal.
 
     We prove $R=\mathbf{Z}[(1+\sqrt{19}i) /2]$ has a Dedekind-Hasse norm $\varphi$. Suppose $\alpha, \beta$ are nonzero elements of $R$ and $a /\beta\notin R$. We should show that there are elements $s,t\in R$ with $0<\varphi(s\alpha-t\beta)<\varphi(\beta)$, which is equivalent to $0<\varphi(\frac{\alpha}{\beta}s-t)<1$. Assume $\frac{\alpha}{\beta}=\frac{a+b\sqrt{19}i}{c}\in\mathbf{Q}[\sqrt{19}i]$ with integers $a,b,c$ having no common divisor and with $c>1$. Since $a,b,c$ have no common divisor there are integers $x,y,z$ with $ax+by+ca=1$. Write $ay-19bx=cq+r$ for some quatient $q$ and remainder $r$ with $\left| r  \right|\leq c/2 $ and let $s=y+x\sqrt{19}i$ and $t=q-z\sqrt{19}i$. Then \[0<\varphi(\frac{\alpha}{\beta}s-t)=\frac{(ay-19bx-cq)^{2}+19(ax+by+cz)^{2}}{c^{2}}<\frac{1}{4}+\frac{19}{c^{2}}\] so when $c\geq 5$ then condition is satisfied.
     
@@ -150,7 +150,7 @@ $$ $$
 $$ $$
 
 \begin{ex}
-    Let $R$ be a unique factorization domain and $d$ a nonzero element of $R$. There are only a finite number of distinct principle ideals that contain the ideal $(d)$.
+    Let $R$ be a unique factorization domain and $d$ a nonzero element of $R$. There are only a finite number of distinct principal ideals that contain the ideal $(d)$.
 \end{ex}
 
 \begin{answer}
@@ -182,7 +182,7 @@ $$ $$
 $$ $$
 
 \begin{ex}
-    Every nonempty set of elements (possibly infinite) in a commutative principle ideal ring with identity has a greatest common divisor.
+    Every nonempty set of elements (possibly infinite) in a commutative principal ideal ring with identity has a greatest common divisor.
 \end{ex}
 
 \begin{answer}
