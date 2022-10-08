@@ -6,6 +6,17 @@
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item If $x_{k}$ is a linear combination of preceding $x_{i}$, then $x_{k}=r_{1}x_{1}+\cdots+r_{k-1}x_{k-1}+r_{k+1}x_{k+1}+\cdots+ r_{n}x_{n}$ with some $r_{i}\neq 0$, so $r_{1}x_{1}+\cdots+r_{k-1}x_{k-1}-x_{k}+r_{k+1}x_{k+1}+\cdots +r_{n}x_{n}=0$. So $\{x_{1},\cdots,x_{n}\}$ is linearly dependent.
+        
+        Conversely, $r_{1}x_{1}+\cdots+r_{n}x_{n}=0$ for some non-trivial $r_{i}$. WLOG, assume $r_{1}\neq 0$, then $x_{1}=(-\frac{r_{2}}{r_{1}})x_{2}+(-\frac{r_{3}}{r_{1}})x_{3}+\cdots+(-\frac{r_{n}}{r_{1}})x_{n}$ is a linear combination.
+        \item If $\mathrm{char} R\neq 2$, $r_{1}(x_{1}+x_{2})+r_{2}(x_{2}+x_{3})+r_{3}(x_{1}+x_{3})=(r_{1}+r_{3})x_{1}+(r_{1}+r_{2})x_{2}+(r_{2}+r_{3})x_{3}=0$. $\{x_{1},x_{2},x_{3}\}$ is linearly independent, so $r_{1}+r_{3}=r_{1}+r_{2}=r_{2}+r_{3}=0$, $2r_{1}+r_{2}+r_{3}=2r_{1}=0$, we have $r_{1}=0$. Similarly, $r_{2}=r_{3}=0$, $\{x_{1}+x_{2},x_{2}+x_{3},x_{1}+x_{3}\}$ is linearly independent.
+        
+        Conversely, suppose $\mathrm{char}R=2$, $\exists r_{1},r_{2},r_{3}\in R$, $2r_{1}=2r_{2}=2r_{3}=0$. We have $(r_{1}+r_{2}-r_{3})(x_{1}+x_{2})+(r_{1}+r_{3}-r_{2})(x_{1}+x_{3})+(r_{3}+r_{2}-r_{1})(x_{3}+x_{2})=2r_{1}x_{1}+2r_{2}x_{2}+2r_{3}x_{3}=0$, but $r_{1}+r_{2}-r_{3}$, $r_{1}+r_{3}-r_{2}$, $r_{3}+r_{2}-r_{1}$ is not necessary to be 0.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
@@ -16,6 +27,8 @@ $$ $$
         \item If $R$ is an arbitrary ring and $X$ is any set, then there exists a free module on $X$.
     \end{enumerate}
 \end{ex}
+
+$$ $$
 
 \begin{ex}
     Let $R$ be any ring (possibly without indentity) and $F$ a free $R$-module on the set $X$, with $\tau X:\to F$, as in \textbf{Exercise 4.2.2}. Show that $\tau(X)$ is a set of generators of the $R$-module $F$.
@@ -50,7 +63,7 @@ $$ $$
     Let $\mathbf{R}$ and $\mathbf{C}$ be the fields of real and complex numbers respetively.
     \begin{enumerate}[(a)]
         \item $\mathrm{dim}_{\mathbf{R}}\mathbf{C}$ and $\mathrm{dim}_{\mathbf{R}}\mathbf{R}=1$.
-        \item There is no field $K$ such that $\mathbf{R}\subset K\mathbf{C}$.
+        \item There is no field $K$ such that $\mathbf{R}\subset K\subset\mathbf{C}$.
     \end{enumerate}
 \end{ex}
 
