@@ -9,3 +9,7 @@ Exercise 22
 ~~Exercise 2~~
 ## Chapter3 Section6
 Whole!!!
+## Chapter4 Section2
+Exercise 10(b)
+Exercise 11
+Exercise 12

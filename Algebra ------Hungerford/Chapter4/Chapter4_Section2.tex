@@ -181,6 +181,12 @@ $$ $$
     \end{enumerate}
 \end{ex}
 
+\begin{answer}
+    \begin{enumerate}[(a)]
+        \item If $K,L\neq 0$ and $l\in L$, for some $k\in K$ and $l\in L$, $\exists a,b\in R$ with $ak+bl=0$, so $K\cap L\neq 0$. $K+L$ can't be the direct sum.
+    \end{enumerate}
+\end{answer}
+
 $$ $$
 
 \begin{ex}
@@ -199,14 +205,30 @@ $$ $$
     Let $K$ be a ring with identity and $F$ a free $K$-module with an infinite demumerable basis $\{e_{1},e_{2},\dots\}$. Then $R=\mathrm{Hom}_{K}(F,F)$ is a ring by \textbf{Exercise 4.1.7}. If $n$ is any positive integer, then the free left $R$-module $R$ has a basis of $n$ elementsl that is,  as an $R$-module, $R\cong R\oplus\cdots\oplus R$ for any finite number of summands.
 \end{ex}
 
+\begin{answer}
+    We prove for any $m\in \mathbf{N}$, we have $R\cong \sum\limits_{i=1}^{m}R$. Consider $B=\{f_{1}, f_{2}, \dot, f_{m}\}$, where $f_{i}:e_{km+i}\mapsto e_{k}$ and $f_{i}:e_{km+j}\mapsto 0$, $j\in \{1,2,\dots,m\}$, $j\neq i$. We show that $B$ is linearly independent and $R<\left\langle B\right\rangle$. Consider $f=\alpha_{1}f_{1}+\cdots+\alpha_{m}f_{m}$. Consider $f=0$, $f(e_{km+i})=\alpha_{i}f_{i}(e_{km+i})=\alpha_{i}e_{k}=0$ so $\alpha_{i}=0$ for all $i$, $B$ is linearly independent. For any $g\in R$, we first show that $g$ is uniquely determined by $g(\{e_{1},e_{2},\dots\})$. For any $x\in F$, WLOG, assume $x=\beta_{1}e_{1}+\beta_{2}e_{2}+\cdots+\beta_{k}e_{k}$ for some $e_{i}$. Then $g(x)=\beta_{1}g(e_{1})+\beta_{2}g(e_{2})+\cdots+\beta_{k}g(e_{k})$ is determined by $g(e_{1}), g(e_{2}),\dots, g(e_{k})\in g(\{e_{1},e_{2},\dots\})$. Then take $g_{i}$ as $g_{i}:e_{k}\mapsto g(e_{km+i})$. $g'=g_{1}f_{1}+\cdots+g_{m}f_{m}$. $g'(e_{k})=g(e_{k})$ for any $k$. Thus $g'=g$, $g\in \left\langle B\right\rangle$. $R\cong \bigoplus\limits_{f_{i}\in B}Rf_{i}$.
+\end{answer}
+
 $$ $$
 
 \begin{ex}
-    Let $f:V\to V'$ be a linear transformation of finite dimensional vector space $V$ and $V'$ such that $\mathrm{dim}V=\mathrm{dim}V'$. Then the following conditions are equivalent: (i) $f$ is an isomorphism; (ii) $f$ is an epimorphisml $f$ is a monomorphism.
+    Let $f:V\to V'$ be a linear transformation of finite dimensional vector space $V$ and $V'$ such that $\mathrm{dim}V=\mathrm{dim}V'$. Then the following conditions are equivalent: (i) $f$ is an isomorphism; (ii) $f$ is an epimorphism $f$ is a monomorphism.
 \end{ex}
+
+\begin{answer}
+    We only need to check (ii) and (iii) are equivalent.
+
+    (ii)$\Rightarrow$(iii): Consider a basis $B'$ of $V'$. $B'=\{f(e_{1},f(e_{2}),\dots, f(e_{n}))\}$, take $B=\{e_{1},e_{2},\dots, e_{n}\}$. It's not difficult to prove $B$ is linearly independent. $\left| B \right|=\left| B' \right| =\dim V\Rightarrow \left\langle B\right\rangle=V$. For any $x,y\in V$, $x=\alpha_{1}e_{1}+\cdots+\alpha_{n}e_{n}$, $y=\beta_{1}e_{1}+\cdots+\beta_{n}e_{n}$, $f(x)=f(y)\Rightarrow (\alpha_{1}-\beta_{1})f(e_{1})+\cdots+(\alpha_{n}-\beta_{n})f(e_{n})=0$. $B'$ is linearly independent hence $\alpha_{i}=\beta_{i}$, $i=1,\dots$, which means $x=y$, $f$ is monomorphism.
+
+    (iii)$\Rightarrow$(ii): Consider a basis $B$ of $V$. Similarly, we can prove $B'=f(B)$ is a basis of $V'$ since $f$ is monomorphism. $V'=\left\langle f(B)\right\rangle=f(\left\langle B\right\rangle)$. $f$ is epimorphism.
+\end{answer}
 
 $$ $$
 
 \begin{ex}
     Let $R$ be a ring with identity. Show that $R$ is not a free module on any set in the category of all $R$-modules.
 \end{ex}
+
+\begin{answer}
+    Consider a nonzero abelian group $A$ with $ra=0$ for all $r\in R$ and $a\in A$. $A$ is an $R$-module. Suppose $R$ is free on $X$ with $\tau:X\to R$, take any $f:X\to A$, we have $\bar{f}:R\to A$ such that $\bar{f}\tau=f$. However, $\bar{f}:R\to A$ must be the 0 map. That's contradictory!
+\end{answer}
