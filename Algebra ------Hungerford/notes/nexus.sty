@@ -1,0 +1,772 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{nexus}[2016/10/30 version 1.1]
+
+\RequirePackage{amsmath}
+\RequirePackage[absolute]{textpos}
+\RequirePackage{tikz}
+\RequirePackage{fancyhdr}
+\RequirePackage{xkeyval}
+\RequirePackage{alphalph}
+\RequirePackage{ifthen}
+\RequirePackage{appendix}
+\RequirePackage{titletoc}
+\RequirePackage{etoolbox}
+\RequirePackage{colormap}
+\RequirePackage{amsthm}
+\RequirePackage{framed}
+\AtBeginEnvironment{appendices}{%
+  \addtocontents{toc}{\protect\gdef\protect\@chapapp{\protect\appendixname}}%\appendixname
+}
+\RequirePackage{assoccnt}
+\RequirePackage{totcount}
+\newtotcounter{totalchapters}
+\regtotcounter{chapter}
+\DeclareAssociatedCounters{chapter}{totalchapters} % Associate the driven counter `totalchapters` to the master counter `chapter`
+
+%%Definitions in xeboiboites
+\usetikzlibrary{decorations.pathmorphing,calc}
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+\pgfmathsetseed{1} % To have predictable results
+
+%Width of the rectangles in the footer
+\newlength{\reclength}
+
+
+%Chosing the colormap
+\DeclareOptionX{palette}{%
+  \def\my@palette{\csname palette@#1\endcsname}}
+\DeclareOptionX{reclength}{%
+  \setlength{\reclength}{#1}}
+\ExecuteOptionsX{reclength=.086\paperwidth}
+\ExecuteOptionsX{palette=ebis}
+\ProcessOptionsX
+
+\setlength{\TPHorizModule}{\paperwidth}
+\setlength{\TPVertModule}{\paperheight}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\palette@blank
+
+%Chosing the colormap
+\my@palette
+
+%Current color is stored in \ch@p
+\global\newcommand{\ch@p}{chapa}
+
+%Command to change the current color
+\global\newcommand{\ch@ngecolors}[1]{%
+    %Select the color corresponding to #1 (current chapter) by redefining \ch@p
+    \ifthenelse{#1=0}{\gdef\ch@p{chapa}}{}%
+    \ifthenelse{#1=1}{\gdef\ch@p{chapb}}{}%
+    \ifthenelse{#1=2}{\gdef\ch@p{chapc}}{}%
+    \ifthenelse{#1=3}{\gdef\ch@p{chapd}}{}%
+    \ifthenelse{#1=4}{\gdef\ch@p{chape}}{}%
+    \ifthenelse{#1=5}{\gdef\ch@p{chapf}}{}%
+    \ifthenelse{#1=6}{\gdef\ch@p{chapg}}{}%
+    \ifthenelse{#1=7}{\gdef\ch@p{chaph}}{}%
+    \ifthenelse{#1=8}{\gdef\ch@p{chapi}}{}%
+    \ifthenelse{#1=9}{\gdef\ch@p{chapj}}{}%
+    \ifthenelse{#1=10}{\gdef\ch@p{chapk}}{}%
+    \ifthenelse{#1=11}{\gdef\ch@p{chapl}}{}%
+    \ifthenelse{#1=12}{\gdef\ch@p{chapm}}{}%
+    \ifthenelse{#1=13}{\gdef\ch@p{chapn}}{}%
+    \ifthenelse{#1=14}{\gdef\ch@p{chapo}}{}%
+    \ifthenelse{#1=15}{\gdef\ch@p{chapp}}{}%
+    \ifthenelse{#1=16}{\gdef\ch@p{chapq}}{}%
+    \ifthenelse{#1=17}{\gdef\ch@p{chapr}}{}%
+    \ifthenelse{#1=18}{\gdef\ch@p{chaps}}{}%
+    \ifthenelse{#1=19}{\gdef\ch@p{chapt}}{}%
+    \ifthenelse{#1=20}{\gdef\ch@p{chapu}}{}%
+    \ifthenelse{#1=21}{\gdef\ch@p{chapv}}{}%
+    \ifthenelse{#1=22}{\gdef\ch@p{chapw}}{}%
+    \ifthenelse{#1=23}{\gdef\ch@p{chapx}}{}%
+    \ifthenelse{#1=24}{\gdef\ch@p{chapy}}{}%
+    \ifthenelse{#1=25}{\gdef\ch@p{chapz}}{}%
+}
+
+%%%%%    Style of the decorations     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tikzset{small rectangle/.style={fill=\ch@p, rounded corners=2pt}}                                                                           %
+\tikzset{rectangle for page numbering/.style={rounded corners=2pt,color=\ch@p,text=black}}                                                   %
+\tikzset{big rectangle/.style={color=black,fill=white,rounded corners=5pt, line width=4pt}}                                                  %
+\tikzset{title color/.style={color=white}}                                                                                                   %
+\tikzset{footer style/.style={color=\ch@p,fill=\ch@p}}                                                                                       %
+\tikzset{header style/.style={color=\ch@p,fill=\ch@p}}                                                                                       %
+\tikzset{toc rectangle/.style={color=\ch@p,fill=\ch@p}}                                                                                      %
+%% Note to self:                                                                                                                             %
+% small rectangle : style of the rectangles with the chapters numbers at the bottom of the page                                              %
+% big rectangle : style of the rectangle that is a little bit higher than the other ones (current chapter) at the bottom of the page         %
+% title color : font color of the title in the header of the page                                                                            %
+% header style : style of the rectangle in the header                                                                                        %
+% footer style : style of the rectangle in the footer                                                                                        %
+% toc rectangle : style of the rectangle in the TOC                                                                                          %
+
+                           
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PAGE STYLE
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{15pt}
+\setlength{\footskip}{50pt}
+
+%%%%%%% Macro to draw the footer/header
+
+\newcommand{\draw@emptyfooter}{%
+    \begin{textblock}{1}(0,0.927)
+        \begin{tikzpicture}[x=1.0cm,y=1.0cm]%
+            \clip(0,0) rectangle (\TPHorizModule,.119\TPHorizModule);
+            \draw[black] (0,0) rectangle (\TPHorizModule,.0714\TPHorizModule); %Large rectangle spanning over the page width
+        \end{tikzpicture}
+    \end{textblock}
+    }
+
+\newcommand{\draw@emptyheader}[1]{%
+    \begin{textblock}{1}(0,0)      
+        \begin{tikzpicture}[x=1cm,y=1cm]
+            \draw[black] (0,.0333\TPHorizModule) rectangle (\TPHorizModule,.105\TPHorizModule);
+            \node[black, right] at  (.2\TPHorizModule,.07\TPHorizModule) {\LARGE \bf #1};
+        \end{tikzpicture}
+    \end{textblock}
+    }
+
+\newcommand{\draw@chapteremptyheader}[1]{%
+    \begin{textblock}{1}(0,0)
+      \begin{tikzpicture}[x=1.0cm,y=1.0cm]%
+        \clip(0,0) rectangle (\TPHorizModule,.105\TPHorizModule);
+        \draw[black] (0,.0333\TPHorizModule) rectangle (\TPHorizModule,.105\TPHorizModule);
+        \draw[black] (.854\TPHorizModule,0.1) rectangle (.998\TPHorizModule,.126\TPHorizModule);
+        \node[scale=5]  at (.926\TPHorizModule,.055\TPHorizModule) {\thechapter};
+        \node[black] at (.2\TPHorizModule,.07\TPHorizModule) {\LARGE \bf #1};
+      \end{tikzpicture}
+    \end{textblock}
+    }    
+
+\newcommand{\draw@chaptersemptyheader}[1]{%
+    \begin{textblock}{1}(0,0)
+      \begin{tikzpicture}[x=1.0cm,y=1.0cm]%
+        \clip(0,0) rectangle (\TPHorizModule,.105\TPHorizModule);
+        \draw[black] (0,.0333\TPHorizModule) rectangle (\TPHorizModule,.105\TPHorizModule);
+        \node[black] at (.2\TPHorizModule,.07\TPHorizModule) {\LARGE \bf #1};
+      \end{tikzpicture}
+    \end{textblock}
+    }      
+    
+\newcommand{\draw@footer}{%
+    \begin{textblock}{1}(0,0.927)
+        \begin{tikzpicture}[x=1.0cm,y=1.0cm]%
+            \ch@ngecolors{\thetotalchapters} %Select the color corresponding to the current chapter
+            \clip(0,0) rectangle (\TPHorizModule,.119\TPHorizModule);
+            \draw[footer style] (0,0) rectangle (\TPHorizModule,.0714\TPHorizModule); %Large rectangle spanning over the page width
+            %\foreach[evaluate=\y using \x-1,evaluate=\z using \x-.5] \x in {1,...,\totvalue{totalchapters}} {
+            %    \ch@ngecolors{\x}
+                % Draw the rectangles in the footer : if \x is current chapter, draw a big rectangle, otherwise draw a small one
+            %    \ifthenelse{\equal{\thetotalchapters}{\x}}{%
+            %         \draw[small rectangle] (\y\reclength,-.03\TPHorizModule) rectangle (\x\reclength,.1\TPHorizModule);
+                     %Check whether current chapter is an appendinx or not and write accordingly a letter or a number in the big rectangle
+            %         \ifthenelse{\(\x>\totvalue{chapter}\)\and\(\totvalue{totalchapters}>\totvalue{chapter}\)}{%
+            %                        \node[scale=2]  at (\z\reclength,.05\TPHorizModule) {\textcolor{white}{\AlphAlph{\numexpr\x-\totvalue{chapter}}}};
+            %                   }%
+                               {%
+            %                        \node[scale=2]  at (\z\reclength,.05\TPHorizModule) {\textcolor{white}{\x}};
+                               }%
+            %         \node at (\z\reclength,.05\TPHorizModule) {\hyperlink{chapter \x}{\XeTeXLinkBox{\phantom{\rule{\reclength}{1.145\reclength}}}}}; %Hidden hyperlink
+            %    }{%
+            %      \draw[small rectangle] (\y\reclength,.0714\TPHorizModule) rectangle (\x\reclength,0\TPHorizModule);
+                  %When drawing a small rectangle, check whether it is an appendix or not and write the corresponding counter in the rectangle.
+            %      \ifthenelse{\(\x>\totvalue{chapter}\)\and\(\totvalue{totalchapters}>\totvalue{chapter}\)}{%
+            %                        \node[scale=2]  at (\z\reclength,.04\TPHorizModule) {\textcolor{white}{\AlphAlph{\numexpr\x-\totvalue{chapter}}}};
+            %                   }%
+                               {%
+            %                        \node[scale=2]  at (\z\reclength,.04\TPHorizModule) {\textcolor{white}{\x}};
+            %                   }%
+            %    \node at (\z\reclength,.036\TPHorizModule) {\hyperlink{chapter \x}{\XeTeXLinkBox{\phantom{\rule{\reclength}{.85\reclength}}}}}; %Hidden hyperlink
+                }
+            %}
+          %Page number at the bottom right of the page
+          \clip(0,0) rectangle (\TPHorizModule,.119\TPHorizModule); 
+          \ch@ngecolors{\thetotalchapters}
+          \draw[rectangle for page numbering] (.93\TPHorizModule,.0714\TPHorizModule) rectangle (\TPHorizModule,.1\TPHorizModule); %rounded corners rectangle
+          \node at (.965\TPHorizModule,.0857\TPHorizModule) {{\thepage}}; %page number
+        \end{tikzpicture}
+    \end{textblock}
+    }
+
+\newcommand{\draw@header}[1]{%
+    \begin{textblock}{1}(0,0)      
+        \begin{tikzpicture}[x=1cm,y=1cm]
+            \ch@ngecolors{\thetotalchapters}
+            \draw[header style] (0,.0333\TPHorizModule) rectangle (\TPHorizModule,.105\TPHorizModule);
+            \node[title color,right] at  (.05\TPHorizModule,.07\TPHorizModule) {\LARGE \bf \leftmark};
+        \end{tikzpicture}
+    \end{textblock}
+    }
+    
+\newcommand{\draw@chapterheader}[1]{%
+    \begin{textblock}{1}(0,0)
+      \begin{tikzpicture}[x=1.0cm,y=1.0cm]%
+        \clip(0,0) rectangle (\TPHorizModule,.105\TPHorizModule);
+        \ch@ngecolors{\thetotalchapters}
+        \draw[header style] (0,.0333\TPHorizModule) rectangle (\TPHorizModule,.105\TPHorizModule);
+        \draw[big rectangle] (.854\TPHorizModule,0.1) rectangle (.998\TPHorizModule,.126\TPHorizModule);
+        \node[scale=5]  at (.926\TPHorizModule,.055\TPHorizModule) {\textcolor{\ch@p}{\thechapter}};
+        \node[title color,right] at (.05\TPHorizModule,.07\TPHorizModule) {\LARGE \bf #1};
+      \end{tikzpicture}
+    \end{textblock}
+    }
+    
+\newcommand{\draw@chaptersheader}[1]{%
+    \begin{textblock}{1}(0,0)
+    \begin{tikzpicture}[x=1.0cm,y=1.0cm]%
+        \clip(0,0) rectangle (\TPHorizModule,.105\TPHorizModule);
+        \ch@ngecolors{0}
+        \draw[header style] (0,.0333\TPHorizModule) rectangle (\TPHorizModule,.105\TPHorizModule);
+        \node[title color,right] at (.05\TPHorizModule,.07\TPHorizModule) {\LARGE \bf #1};
+    \end{tikzpicture}
+    \end{textblock}
+    }
+
+\newcommand{\draw@chaptersfooter}{%
+        \begin{textblock}{1}(0,0.927)
+        \begin{tikzpicture}[x=1.0cm,y=1.0cm]%
+            \ch@ngecolors{\thetotalchapters} %Select the color corresponding to the current chapter
+            \clip(0,0) rectangle (\TPHorizModule,.119\TPHorizModule);
+            \draw[footer style] (0,0) rectangle (\TPHorizModule,.0714\TPHorizModule); %Large rectangle spanning over the page width
+            \foreach[evaluate=\y using \x-1,evaluate=\z using \x-.5] \x in {1,...,\totvalue{totalchapters}} {
+                \ch@ngecolors{\x}
+                % Draw the rectangles in the footer : if \x is current chapter, draw a big rectangle, otherwise draw a small one
+                \ifthenelse{\equal{\thetotalchapters}{\x}}{%
+                     \draw[small rectangle] (\y\reclength,-.03\TPHorizModule) rectangle (\x\reclength,.1\TPHorizModule);
+                     %Check whether current chapter is an appendinx or not and write accordingly a letter or a number in the big rectangle
+                     \ifthenelse{\(\x>\totvalue{chapter}\)\and\(\totvalue{totalchapters}>\totvalue{chapter}\)}{%
+                                    \node[scale=2]  at (\z\reclength,.05\TPHorizModule) {\textcolor{white}{\AlphAlph{\numexpr\x-\totvalue{chapter}}}};
+                               }%
+                               {%
+                                    \node[scale=2]  at (\z\reclength,.05\TPHorizModule) {\textcolor{white}{\x}};
+                               }%
+%                 \node at (\z\reclength,.036\TPHorizModule) {\hyperlink{chapter \x}{\XeTeXLinkBox{\phantom{\rule{\reclength}{.85\reclength}}}}}; %Hidden hyperlink                     
+                     \node[scale=2] at (\z\reclength,.05\TPHorizModule) {\textcolor{white}{\thechapter}}; %Write chapter number in the rectangle
+                     \node at (\z\reclength,.05\TPHorizModule) {\hyperlink{chapter \x}{\XeTeXLinkBox{\phantom{\rule{\reclength}{1.145\reclength}}}}}; %Hidden hyperlink
+                }{%
+                  \draw[small rectangle] (\y\reclength,.0714\TPHorizModule) rectangle (\x\reclength,0\TPHorizModule);
+                  %When drawing a small rectangle, check whether it is an appendix or not and write the corresponding counter in the rectangle.
+                  \ifthenelse{\(\x>\totvalue{chapter}\)\and\(\totvalue{totalchapters}>\totvalue{chapter}\)}{%
+                                    \node[scale=2]  at (\z\reclength,.04\TPHorizModule) {\textcolor{white}{\AlphAlph{\numexpr\x-\totvalue{chapter}}}};
+                               }%
+                               {%
+                                    \node[scale=2]  at (\z\reclength,.04\TPHorizModule) {\textcolor{white}{\x}};
+                               }%
+                \node at (\z\reclength,.036\TPHorizModule) {\hyperlink{chapter \x}{\XeTeXLinkBox{\phantom{\rule{\reclength}{.85\reclength}}}}}; %Hidden hyperlink
+                }
+            }
+        \end{tikzpicture}
+    \end{textblock}
+    }
+
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Nexus page style %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fancypagestyle{plain}{\fancyhf{}}
+% \renewcommand\chaptermark[1]{bla\markboth{\textcolor{white}{#1}}{}}
+\@ifundefinedcolor{chapa}{%
+    \fancypagestyle{nexus}{%
+        \fancyfoot{\draw@emptyfooter}%
+        \fancyhead{\draw@emptyheader}{\leftmark}%
+    }%
+}%
+{%
+    \fancypagestyle{nexus}{%
+        \fancyfoot{\draw@footer}%
+        \fancyhead{\draw@header}%
+    }%
+}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER HEAD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\@ifundefinedcolor{chapa}{%
+    \def\@makechapterhead#1{%
+        \parindent 0pt%
+        \draw@chapteremptyheader{#1}%
+        \draw@emptyfooter%
+    }%
+}%
+{%
+    \def\@makechapterhead#1{%
+        \hypertarget{chapter \thetotalchapters}{}%
+        \parindent 0pt%
+        \draw@chapterheader{#1}%
+        \draw@footer%
+    }%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER HEAD - STARRED VERSION (TOC) %%%%%%%%%%%%%%%%%%%%%%%
+\@ifundefinedcolor{chapa}{%
+    \def\@makeschapterhead#1{%
+        \parindent 0pt%
+        \draw@chaptersemptyheader{#1}%
+        \draw@emptyfooter%
+        }%
+}%
+{%
+    \def\@makeschapterhead#1{%
+        \parindent 0pt%
+        \draw@chaptersheader{#1}%
+        %\draw@chaptersfooter%
+        }%
+}
+
+\pagestyle{nexus}
+
+%%%%%%%%%%%%%%%%% TOC
+
+
+
+\renewcommand\chaptermark[1]{\markboth{\textcolor{white}{#1}}{}}
+
+\renewcommand{\@pnumwidth}{3em}% To avoid a badbox for documents with more than 100 pages
+\contentsmargin{-1.5cm}%
+
+
+\@ifundefinedcolor{chapa}{% if colormap doesn't exist : fast compilation enabled
+% Chapter style in the TOC
+\titlecontents{chapter}[4pc]
+{\addvspace{30pt}%
+\begin{tikzpicture}[remember picture, overlay]%
+    \draw[black] (-4.2,-.1) rectangle (-.8,.5);%
+    \pgftext[left,x=-3.5cm,y=0.2cm]{\color{black}\large\bfseries\sc\ \thecontentslabel};%
+\end{tikzpicture}%
+}%
+{}
+{}
+{\;\titlerule\;\large\bfseries Page 
+\thecontentspage
+\begin{tikzpicture}[remember picture, overlay]
+    \draw[black] (2pt,0) rectangle (6,0.1pt);
+\end{tikzpicture}%
+}%
+[\addvspace{.2cm}]%
+% Section style in the TOC
+\titlecontents{section}[0pc]
+{\addvspace{5pt}}
+{
+\contentslabel[\thecontentslabel]{2pc}\color{black}}
+{}
+{\hfill\small\thecontentspage\color{black}}
+[\addvspace{3pt}]
+% Subsection style in the TOC
+\titlecontents*{subsection}[1pc]
+{\addvspace{-1pt}\small\contentsmargin{-1cm}\normalfont\sffamily\footnotesize}
+{}
+{}
+{}
+[~{-}\ ][]
+}{% If colormap exists (fast compilation disabled)
+% Counter to build the TOC with the appropriate colors. Useless after TOC creation.
+\newcounter{charpitre}%
+% Chapter style in the TOC
+\titlecontents{chapter}[4pc]
+{\addvspace{30pt}%
+\stepcounter{charpitre}
+\ch@ngecolors{\thecharpitre}%
+\begin{tikzpicture}[remember picture, overlay]%
+    \draw[toc rectangle] (-4.2,-.1) rectangle (-.8,.5);%
+    \node at (-2.5,0.2) {\hyperlink{chapter \thecharpitre}{\XeTeXLinkBox{\phantom{\rule{3.4cm}{.6cm}}}}}; %Hidden hyperlink    
+%     \hyperlink{chapter \thecharpitre}{\tikz\draw[toc rectangle] (-4.2,-.1) rectangle (-.8,.5);}
+    \pgftext[left,x=-3.5cm,y=0.2cm]{\color{white}\large\bfseries\sc\@chapapp\ %
+    \thecontentslabel};%
+\end{tikzpicture}%
+\large\bfseries\color{\ch@p!80!black}}%
+{}
+{}
+{\;\titlerule\;\large\bfseries Page 
+\thecontentspage
+\begin{tikzpicture}[remember picture, overlay]
+    \draw[toc rectangle] (2pt,0) rectangle (6,0.1pt);
+\end{tikzpicture}%
+}%
+[\addvspace{.2cm}]%
+
+
+% Section style in the TOC
+\titlecontents{section}[0pc]
+{\addvspace{5pt}}
+{%
+\ch@ngecolors{\thecharpitre}%
+\color{\ch@p!80!black}\contentslabel[\thecontentslabel]{2pc}\color{black}}
+{}
+{\hfill\small\color{\ch@p!80!black}\thecontentspage\color{black}}
+[\addvspace{3pt}]
+
+
+% Subsection style in the TOC
+\titlecontents*{subsection}[1pc]
+{\addvspace{-1pt}\small\contentsmargin{-1cm}\normalfont\sffamily\footnotesize}
+{}
+{}
+{}
+[~{-}\ ][]
+}
+% Correct spacing between page header and TOC
+\renewcommand{\tableofcontents}{%
+\chapter*{\contentsname}%
+\markboth{\contentsname}{}
+% \def\@leftmark{\contentsname}%
+\vspace{-30pt}%
+\@starttoc{toc}}
+
+% \hyperlink{chapter \x}{\XeTeXLinkBox{\phantom{\rule{\reclength}{1.145\reclength}}}}
+
+
+%%Definitions in xeboiboites
+\define@key{boxedtheorem}{thcounter}{\def\thcounter{#1}}
+\define@key{boxedtheorem}{size}{\def\size{#1}}
+\define@key{boxedtheorem}{small box style}{\def\smallboxstyle{#1}}
+\define@key{boxedtheorem}{big box style}{\def\bigboxstyle{#1}}
+\define@key{boxedtheorem}{spanning style}{\def\spanningstyle{#1}}
+\define@key{boxedtheorem}{headfont}{\def\headfont{#1}}
+\define@key{boxedtheorem}{image}{\def\image{#1}}
+\define@key{boxedtheorem}{upshift}{\def\upshift{#1}}
+\define@key{boxedtheorem}{rightshift}{\def\rightshift{#1}}
+\define@key{boxedtheorem}{broken edges}{\def\tornstyle{#1}}
+\define@key{boxedtheorem}{other edges}{\def\otheredges{#1}}
+\presetkeys{boxedtheorem}{headfont=, image=logo-tex, thcounter=, small box style=,%
+                            big box style=, spanning style=, size = .9\textwidth,%
+                            broken edges=, other edges=,rightshift=-1.95cm,upshift=-.3cm}{}
+
+
+%To expand properly \smallboxstyle, \bigboxstyle and \spanningstyle in \tikset.
+\tikzset{
+  execute style/.style={#1},
+  execute macro/.style={execute style/.expand once=#1},
+}
+\newcommand{\couleurs}[1][]{%
+    \setkeys{boxedtheorem}{#1}
+    \tikzset{fancytitle/.style={draw=black, rectangle,right=10pt}}
+    \tikzset{fancytitle/.append style={execute macro=\smallboxstyle}}
+    \tikzset{mybox/.style={draw=black, rectangle, inner sep=10pt, inner ysep=20pt}}
+    \tikzset{mybox/.append style={execute macro=\bigboxstyle}}
+    \tikzset{formulabox/.style={draw=black, rectangle}}
+    \tikzset{formulabox/.append style={execute macro=\bigboxstyle}}
+    \tikzset{span/.style={black}}
+    \tikzset{span/.append style={execute macro=\spanningstyle}}
+    \tikzset{torn/.style={execute macro=\tornstyle}}
+    \tikzset{other edges/.style={execute macro=\otheredges}}
+}
+
+%Hand drawn style : http://tex.stackexchange.com/questions/39296/simulating-hand-drawn-lines
+\pgfdeclaredecoration{penciline}{initial}{%
+    \state{initial}[width=+\pgfdecoratedinputsegmentremainingdistance,auto corner on length=1mm,]{%
+        \pgfpathcurveto%
+        {% From
+            \pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}%
+                            {\pgfdecorationsegmentamplitude}%
+        }%
+        {%  Control 1
+        \pgfmathrand
+        \pgfpointadd{\pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}{0pt}}%
+                        {\pgfqpoint{-\pgfdecorationsegmentaspect\pgfdecoratedinputsegmentremainingdistance}%
+                                        {\pgfmathresult\pgfdecorationsegmentamplitude}%
+                        }%
+        }%
+        {% To 
+        \pgfpointadd{\pgfpointdecoratedinputsegmentlast}{\pgfpoint{1pt}{1pt}}%
+        }%
+    }%
+    \state{final}{}%
+}
+
+
+
+% To create a nice looking box 
+% http://www.texample.net/tikz/examples/boxes-with-text-and-math/
+\newsavebox{\boiboite}
+\newcommand{\titre}{Titre}
+\newenvironment{boite}[2][]%
+    {%
+    \renewcommand{\titre}{#2}
+    \couleurs[#1]
+    \begin{lrbox}{\boiboite}%
+     \begin{minipage}[!h]{\size}
+    }%
+    {%
+     \end{minipage}
+    \end{lrbox}
+    \begin{center}
+    \begin{tikzpicture}
+        \node[mybox] (box) {\usebox{\boiboite}};
+        \node[fancytitle] at (box.north west) {\titre};
+    \end{tikzpicture}
+    \end{center}
+    }
+
+
+\newcommand{\newboxedtheorem}[4][]{%
+    \couleurs[#1]
+    \@ifnotempty{#4}{%
+      \@ifundefined{the#4}{\@ifundefined{\thcounter}{\newcounter{#4}}{%
+      \newcounter{#4}[\thcounter ]}}{}%
+    }
+      \newenvironment{#2}[1][]{%
+      \@ifnotempty{#4}{\refstepcounter{#4}}
+      \begin{boite}[#1]{{\headfont#3\@ifnotempty{#4}{ \csname thesection\endcsname.\csname the#4\endcsname}}\@ifnotempty{##1}{ \headfont(##1)}}
+    }%
+    {%
+      \end{boite}
+    }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Boxes with no title
+
+\newsavebox{\boiboitedeux}
+\newenvironment{notitlebox}[1][]%
+    {%
+      \couleurs[#1]
+      \begin{lrbox}{\boiboitedeux}%
+      \begin{minipage}[!h]{\size}
+    }%
+    {%
+      \end{minipage}
+      \end{lrbox}
+      \begin{center}
+        \begin{tikzpicture}
+          \node [formulabox] (box){\usebox{\boiboitedeux}};
+        \end{tikzpicture}
+      \end{center}
+    }
+
+\newcommand{\newboxedequation}[2][]{%
+      \couleurs[#1]
+      \newenvironment{#2}[1][]{%
+      \begin{notitlebox}[#1]
+    }%
+    {%
+      \end{notitlebox}
+    }
+}    
+
+%%%%%%%%%%%%%%%%%%%%%% Spanning environment (line in the margin + image)
+% Macro to draw the shape behind the text, when it fits completly in the page
+
+\def\spanframe#1{%
+\tikz{%
+  \node[inner xsep=1.1em] (A) {#1};% Draw the text of the node
+  \begin{pgfonlayer}{background}% Draw the shape behind
+  \draw[span] (A.north west) -- (A.south west);%
+  \end{pgfonlayer}}}%
+
+% Macro to draw the shape, when the text will continue in next page
+\def\spanframetop#1{%
+\tikz{%
+  \node[inner xsep=1.1em] (A) {#1};%    % Draw the text of the node
+  \begin{pgfonlayer}{background}%    
+    \draw[span] (A.north west) -- (A.south west);%
+  \end{pgfonlayer}}}%
+
+% Macro to draw the shape, when the text continues from previous page
+\def\spanframebottom#1{%
+\tikz{%
+  \node[inner xsep=1.1em] (A) {#1};%   % Draw the text of the node
+  \begin{pgfonlayer}{background}%   
+  \draw[span] (A.north west) -- (A.south west);%
+  \end{pgfonlayer}}%
+  }%
+
+% Macro to draw the shape, when both the text continues from previous page
+% and it will continue in next page
+\def\spanframemiddle#1{%
+\tikz{%
+  \node[inner xsep=1.1em] (A) {#1};%   % Draw the text of the node
+  \begin{pgfonlayer}{background}%   
+  \draw[span] (A.north west) -- (A.south west);%
+  \end{pgfonlayer}}}%
+
+% Define the environment which puts the frame
+% In this case, the environment also accepts an argument with an optional
+% title (which defaults to ``Example'', which is typeset in a box overlaid
+% on the top border
+
+\newcommand{\newspanning}[4][]{%
+    \couleurs[#1]%
+    \@ifnotempty{#4}{%
+      \@ifundefined{the#4}{\@ifundefined{\thcounter}{\newcounter{#4}}{%
+      \newcounter{#4}[\thcounter ] }}{}%
+    }
+    \newenvironment{#2}[1][]{%
+    \couleurs[#1]
+    \@ifnotempty{#4}{\refstepcounter{#4}}
+    \def\FrameCommand{\spanframe}%
+    \def\FirstFrameCommand{\spanframetop}%
+    \def\LastFrameCommand{\spanframebottom}%
+    \def\MidFrameCommand{\spanframemiddle}%
+    \vskip 1.3\baselineskip%
+    \MakeFramed {\FrameRestore}%
+    \noindent\tikz\node[inner sep=1ex,,fill=white, %
+          anchor=west, overlay] at (-2em, 2em) {\headfont#3%
+          \@ifnotempty{#4}{ \csname the#4\endcsname}\@ifnotempty{##1}{ \headfont(##1)}};%
+    \tikz\node[anchor=west, overlay] at (\rightshift,\upshift)%
+        {\includegraphics[width=1cm]{\image}};%
+    \ignorespaces%    
+    }%
+    {%
+        \endMakeFramed%
+    }
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  Breakable boxes
+%%%%%%%%%%%%% http://www.texample.net/tikz/examples/framed-tikz/
+% Macro to draw the shape behind the text, when it fits completly in the page
+\def\someframe#1{
+\tikz{
+  \node[inner sep=8pt] (A) {#1};  % Draw the text of the node
+  \noindent
+  \begin{pgfonlayer}{background}  % Draw the shape behind
+  \draw[mybox, other edges]
+        (A.south east) -- (A.south west) -- (A.north west) -- (A.north east) -- cycle;      
+  \end{pgfonlayer}}}
+
+% Macro to draw the shape, when the text will continue in next page
+\def\someframetop#1{
+\tikz{
+  \node[inner sep=5pt] (A) {#1};    % Draw the text of the node
+  \begin{pgfonlayer}{background}    
+  \draw[mybox]              % Draw the ``complete shape'' behind
+        (A.south east) decorate[torn] {-- (A.south west)} 
+        decorate[other edges] {-- (A.north west) -- (A.north east) -- cycle};
+  \end{pgfonlayer}}}
+
+% Macro to draw the shape, when the text continues from previous page
+\def\someframebottom#1{
+\tikz{
+  \node[inner sep=5pt] (A) {#1};   % Draw the text of the node
+  \begin{pgfonlayer}{background}   
+  \draw[mybox]              % Draw the ``complete shape'' behind
+        decorate[other edges] {(A.south east) -- (A.south west) -- (A.north west)}
+        decorate[torn] {-- (A.north east)} decorate[other edges] {-- cycle};
+  \end{pgfonlayer}}}
+
+% Macro to draw the shape, when both the text continues from previous page
+% and it will continue in next page
+\def\someframemiddle#1{
+\tikz{
+  \node[inner sep=5pt] (A) {#1};   % Draw the text of the node
+  \begin{pgfonlayer}{background}   
+  \draw[mybox]              % Draw the ``complete shape'' behind
+        (A.south east) decorate[torn] {-- (A.south west)} 
+        decorate[other edges]{-- (A.north west)}
+        decorate[torn] {-- (A.north east)} 
+        decorate[other edges]{-- cycle};
+  \end{pgfonlayer}}}
+
+
+% Command to define a new environment that can span over multiple pages
+\newcommand{\newbreakabletheorem}[4][]{%
+    \couleurs[#1]%
+    \@ifnotempty{#4}{%
+      \@ifundefined{the#4}{\@ifundefined{\thcounter}{\newcounter{#4}}{%
+      \newcounter{#4}[\thcounter ] }}{}%
+    }
+    \newenvironment{#2}[1][]{%
+    \couleurs[#1]%
+    \@ifnotempty{#4}{\refstepcounter{#4}}
+    \def\FrameCommand{\someframe}%
+    \def\FirstFrameCommand{\someframetop}%
+    \def\LastFrameCommand{\someframebottom}%
+    \def\MidFrameCommand{\someframemiddle}%
+    \vskip 1.2\baselineskip
+    \MakeFramed{\hsize\size\FrameRestore}
+    \noindent  \tikz  \node[inner sep=1ex,anchor=west, overlay, fancytitle] at (0pt,6pt) %
+        {\headfont#3 \@ifnotempty{#4}{\csname thesection\endcsname.\csname the#4\endcsname}\@ifnotempty{##1}{ \headfont(##1)}}; \par \noindent
+    \ignorespaces%    
+    }%
+    {%
+        \endMakeFramed%
+    }
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  Parchment boxes
+%%%%%%%%%%%%% http://www.texample.net/tikz/examples/framed-tikz/
+% Macro to draw the shape behind the text, when it fits completly in the
+% page
+
+\def\parchmentframe#1{
+\tikz{
+  \node[inner sep=8pt] (A) {#1};  % Draw the text of the node
+  \noindent
+  \begin{pgfonlayer}{background}  % Draw the shape behind
+  \draw[mybox,other edges]
+        (A.south east) -- (A.south west) -- (A.north west) -- (A.north east) -- cycle;      
+  \end{pgfonlayer}}}
+
+% Macro to draw the shape, when the text will continue in next page
+\def\parchmentframetop#1{
+\tikz{
+  \node[inner sep=8pt] (A) {#1};    % Draw the text of the node
+  \begin{pgfonlayer}{background}
+  \draw[torn,overlay]               % Add the torn lower border
+        ($(A.south east)-(0,.3)$) -- ($(A.south west)-(0,.3)$) -- 
+        ($(A.south west)+(0,.4)$) -- ($(A.south east)+(0,.4)$);
+  \draw[mybox,overlay]              % Draw the ``complete shape'' behind
+        ($(A.south east)+(0,.1)$) decorate[torn] {-- ($(A.south west)+(0,.1)$)}
+        decorate[other edges] {-- (A.north west) -- (A.north east) -- cycle};
+  \end{pgfonlayer}}}
+
+% Macro to draw the shape, when the text continues from previous page
+\def\parchmentframebottom#1{
+\tikz{
+  \node[inner sep=8pt] (A) {#1};   % Draw the text of the node
+  \begin{pgfonlayer}{background}
+  \draw[torn,overlay]               % Add the torn upper border
+        ($(A.north east)-(0,.4)$) -- ($(A.north west)-(0,.4)$) -- 
+        ($(A.north west)+(0,.3)$) -- ($(A.north east)+(0,.3)$) -- cycle;
+  \draw[mybox,overlay]              % Draw the ``complete shape'' behind
+        (A.south east) decorate[other edges] {-- (A.south west) -- (A.north west) }
+        decorate[torn] {-- (A.north east)} decorate[other edges] {-- cycle};
+  \end{pgfonlayer}}}
+
+% Macro to draw the shape, when both the text continues from previous page
+% and it will continue in next page
+\def\parchmentframemiddle#1{
+\tikz{
+  \node[inner sep=8pt] (A) {#1};   % Draw the text of the node
+  \begin{pgfonlayer}{background}
+    \draw[torn,overlay]               % Add the torn upper border
+        ($(A.north east)-(0,.4)$) -- ($(A.north west)-(0,.4)$) -- 
+        ($(A.north west)+(0,.3)$) -- ($(A.north east)+(0,.3)$) -- cycle;
+    \draw[torn,overlay]               % Add the torn lower border
+        ($(A.south east)-(0,.3)$) -- ($(A.south west)-(0,.3)$) -- 
+        ($(A.south west)+(0,.4)$) -- ($(A.south east)+(0,.4)$);
+  \draw[mybox,overlay]              % Draw the ``complete shape'' behind
+        (A.south east) decorate[torn] { -- (A.south west)}
+        decorate[other edges]{-- (A.north west)}
+        decorate[torn] {-- (A.north east)} 
+        decorate[other edges]{-- cycle};
+  \end{pgfonlayer}}}
+
+
+% Command to define a new environment that can span over multiple pages
+\newcommand{\newparchment}[4][]{%
+    \couleurs[#1]%
+    \@ifnotempty{#4}{%
+      \@ifundefined{the#4}{\@ifundefined{\thcounter}{\newcounter{#4}}{%
+      \newcounter{#4}[\thcounter ] }}{}%
+    }
+    \newenvironment{#2}[1][]{%
+    \couleurs[#1]%
+    \@ifnotempty{#4}{\refstepcounter{#4}}
+    \def\FrameCommand{\parchmentframe}%
+    \def\FirstFrameCommand{\parchmentframetop}%
+    \def\LastFrameCommand{\parchmentframebottom}%
+    \def\MidFrameCommand{\parchmentframemiddle}%
+    \vskip 1.2\baselineskip
+    \MakeFramed{\hsize\size\FrameRestore}
+    \noindent  \tikz  \node[inner sep=1ex,anchor=west, overlay, fancytitle] at (0pt,10pt) %
+        {\headfont#3 \@ifnotempty{#4}{\csname the#4\endcsname}\@ifnotempty{##1}{ \headfont(##1)}}; \par \noindent
+    \ignorespaces%    
+    }%
+    {%
+        \endMakeFramed%
+    }
+}
