@@ -1,0 +1,60 @@
+\section{Semigroups, Monoind and Groups}
+\begin{definition}
+    A \textbf{semigroup} is a nonempty set $G$ with a binary operation on $G$ which is 
+    \begin{enumerate}[i]
+        \item associative: $a(bc)=(ab)c$ for all $a,b,c\in G$;\\ a \textbf{monoid} is a semigroup $G$ which contains a
+        \item (two-sided) identity element $e\in G$ such that $ae=ea=a$ for all $a\in G$.\\ A \textbf{group} is a monoid $G$ such that 
+        \item for every $a\in G$ there exists a (two-sided) inverse element $a^{-1}\in G$ such that $a^{-1}a=aa^{-1}=e$.\\ A semigroup $G$ is said to be \textbf{abelian} or \textbf{commutative} is its binary operation is 
+        \item commutative: $ab=ba$ for all $a,b\in G$.
+    \end{enumerate}
+    The order of group $G$ is the cardinal number $\left| G \right| $. $G$ is said to be finite if $\left| G \right| $ is finite.
+\end{definition}
+
+\begin{theorem}
+    If $G$ is a monoid, then the identity element $e$ is unique. If $G$ is a group, then
+    \begin{enumerate}[i]
+        \item $c\in G$ and $cc=c\Rightarrow c=e$;
+        \item for all $a,b,c\in G$, $ab=ac\Rightarrow b=c$ and $ba=ca\Rightarrow b=c$(left and right cancellation);
+        \item for each $a\in G$, the inverse element $a^{-1}$ is unique;
+        \item for each $a\in G$, $(a^{-1})^{-1}=a$;
+        \item for $a.b\in G$, $(ab)^{-1}=b^{-1}a^{-1}$;
+        \item for $a,b\in G$ the equations $ax=b$ and $ya=b$ have unique solutions in $G:x=a^{-1}b$ and $y=ba^{-1}$
+    \end{enumerate}
+\end{theorem}
+
+\begin{proposition}
+    Let $G$ be a semigroup. Then $G$ is a group if and only if the following conditions hold:
+    \begin{enumerate}
+        \item there exists an element $e\in G$ such that $ea = a$ for all $a \in G$ (left identity
+        element);
+        \item for each $a\in G$, there exists an element $a^{-1}\in G$ such that $a^{-1}a=e$(left inverse).
+    \end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+    Let $G$ be a semigroup. Then $G$ is a group if and only if for all $a,b\in G$, the equations $ax=b$ and $ya=b$ have solutions in $G$.
+\end{proposition}
+
+\begin{theorem}
+    Let $R(\sim)$ be an equivalence relation on a monoid $G$ such that $a_{1}\sim a_{2}$ and $b_{1}\sim b_{2}$ imply $a_{1}b_{1}\sim a_{2}b_{2}$ for all $a_{i},b_{i}\in G$. Then the set $G /R$ of all equivalence classes of $G$ under $R$ is a monoid under the binary operation defined by $(\bar{a})(\bar{b})=\bar{ab}$, where $\bar{x}$ denotes the equivalence class of $x\in G$. If $G$ is an [abelian] group, then so is $G /R$.
+\end{theorem}
+
+\begin{theorem}[Generalized Associative Law]
+    If $G$ is a semigroup and $a_{1},\dots,a_{n}\in G$, then any two meaningful products of $a_{1},\dots,a_{n}$ in this order are equal.
+\end{theorem}
+
+\begin{corollary}[Generalized Associative Law]
+    If $G$ is a commutative semigroup and $a_{1},\dots,a_{n}\in G$, then for any permutation $i_{1},\dots,i_{n}$ of $1,2,\dots,n$, $a_{1}a_{2}\cdots a_{n}=a_{i_{1}}a_{i_{2}}\cdots a_{i_{n}}$.
+\end{corollary}
+
+\begin{definition}
+    Let $G$ be a semigroup, $a\in G$ and $n\in \mathbf{N}^{*}$. The element $a^{n}\in G$ is defined to be the standard $n$ product $\prod_{i=1}^{n}a_{i}$ with $a_{i}=a$ for $1\leq i\leq n$. If $G$ is a monoid, $a^{0}$ is defined to be the identity element $e$. If $G$ is a group, then for each $n\in \mathbf{N}^{*}$, $a^{-n}$ is defined to be $(a^{-1})^{n}\in G$.
+\end{definition}
+
+\begin{theorem}
+    If $G$ is a group [resp. semigroup, monoid] and $a\in G$, then for all $m,n\in\mathbf{Z}$[resp. $\mathbf{N}^{*}$, $\mathbf{N}$]:
+    \begin{enumerate}[i]
+        \item $a^{m}a^{n}=a^{m+n}$(additive notation: $ma+na=(m+n)a$);
+        \item $(a^{m})^{n}=a^{mn}$(additive notation: $n(ma)=mna$).
+    \end{enumerate}
+\end{theorem}
